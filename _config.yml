@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://wbinglee.github.io
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://wbinglee.com
+title: Bruce Li's Blog
+subtitle: IT Techonlogies
+author: Bruce Li
 simple_search: http://google.com/search
 description:
 
