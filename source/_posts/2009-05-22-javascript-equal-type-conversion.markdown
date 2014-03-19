@@ -1,5 +1,5 @@
 ---
-author: liwenbing
+author: Bruce Li
 comments: true
 date: 2009-05-22 04:59:18+00:00
 layout: post
