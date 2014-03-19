@@ -1,10 +1,10 @@
 ---
-author: liwenbing
+author: Bruce Li
 comments: true
 date: 2009-11-29 09:40:19+00:00
 layout: post
 slug: using-jconsole-in-websphere-application-server
-title: ' 用jconsole来管理WebSphere AppServer的MBean'
+title: '用jconsole来管理WebSphere AppServer的MBean'
 wordpress_id: 289
 tags:
 - webpshere application server was jmx jconsole mbean RMI
@@ -14,27 +14,15 @@ tags:
 
 在启动jconsole时需要一些WAS的jar，所以我这样来做：
 
-1.创建一个文件夹，例如：C:\programs\jconsole
+- 创建一个文件夹，例如：C:\programs\jconsole
+- 将一些需要的jar 拷贝进入到这个文件夹的libs中：
 
-2.将一些需要的jar 拷贝进入到这个文件夹的libs中：
-
-
-
-	
-  * com.ibm.ws.admin.client_6.1.0.jar   （在<WAS_HOME>/runtimes)
-
-	
+  * com.ibm.ws.admin.client_6.1.0.jar   （在<WAS_HOME>/runtimes)	
   * ibmorbapi.jar  (在<WAS_HOME>/java/jre/lib)
-
-	
   * ibmorb.jar (在<WAS_HOME>/java/jre/lib)
-
-	
   * ibmcfw.jar (在<WAS_HOME>/java/jre/lib)
 
-
-3.编写一个bat文件
-
+- 编写一个bat文件
     
     set JAVA_HOME="C:\Program Files\Java\jdk1.6.0_16"
     set WAS6.1_JARS=C:\programs\jconsole\libs
@@ -49,23 +37,14 @@ tags:
     
     %JAVA_HOME%\bin\jconsole  -J-Xbootclasspath/p:%BOOTJARS% -J-Djava.class.path=%CLASSPATH%
     
-
-
-4.使用如下URL来远程连接WAS中的JMX server
-
-    
+- 使用如下URL来远程连接WAS中的JMX server
     
     service:jmx:iiop://localhost:2809/jndi/JMXConnector
     
-
-
 其中这个端口号是RMI Connector的端口号，可以在启动的logs发现。
-
     
     ADMC0026I:The RMI Connector is available at port  2809
     
-
-
 或者到admin console中查看
 Application servers > server1 >   Administration Services > JMX   connectors
 
