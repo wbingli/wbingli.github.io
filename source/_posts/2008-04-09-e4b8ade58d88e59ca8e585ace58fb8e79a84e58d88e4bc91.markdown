@@ -1,0 +1,18 @@
+---
+author: liwenbing
+comments: true
+date: 2008-04-09 05:02:44+00:00
+layout: post
+slug: '%e4%b8%ad%e5%8d%88%e5%9c%a8%e5%85%ac%e5%8f%b8%e7%9a%84%e5%8d%88%e4%bc%91'
+title: 中午在公司的午休
+wordpress_id: 7
+---
+
+[![](http://liwenbing.cn/wp-content/uploads/2008/04/it.jpg)](http://liwenbing.cn/wp-content/uploads/2008/04/it.jpg)每天中午在中午总要小睡15-20分钟。这是一个非常好的习惯，:)。是否睡午觉对下午的工作效率影响是很大的，不睡到晚上会很困。  
+
+自己的网站应该在周末的时候好好改造一下，加入一些自己的东西，比如说projects，ideas，books。。。  
+
+wordpress 2.5的新的管理界面感觉有点怪，不知道是否是改善了。不过从色彩上来看我还是比较喜欢原来的，现在这个太淡了....--午睡前胡言乱语之......
+
+
+
