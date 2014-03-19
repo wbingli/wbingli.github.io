@@ -17,36 +17,43 @@ tags:
 - 创建一个文件夹，例如：C:\programs\jconsole
 - 将一些需要的jar 拷贝进入到这个文件夹的libs中：
 
-  * com.ibm.ws.admin.client_6.1.0.jar   （在<WAS_HOME>/runtimes)	
-  * ibmorbapi.jar  (在<WAS_HOME>/java/jre/lib)
-  * ibmorb.jar (在<WAS_HOME>/java/jre/lib)
-  * ibmcfw.jar (在<WAS_HOME>/java/jre/lib)
+```
+com.ibm.ws.admin.client_6.1.0.jar   （在<WAS_HOME>/runtimes)	
+ibmorbapi.jar  (在<WAS_HOME>/java/jre/lib)
+ibmorb.jar (在<WAS_HOME>/java/jre/lib)
+ibmcfw.jar (在<WAS_HOME>/java/jre/lib)
+```
 
 - 编写一个bat文件
-    
-    set JAVA_HOME="C:\Program Files\Java\jdk1.6.0_16"
-    set WAS6.1_JARS=C:\programs\jconsole\libs
-    
-    set BOOTJARS=%WAS6.1_JARS%\ibmorbapi.jar
-    set BOOTJARS=%BOOTJARS%;%WAS6.1_JARS%\ibmorb.jar
-    set BOOTJARS=%BOOTJARS%;%WAS6.1_JARS%\ibmcfw.jar
-    
-    set CLASSPATH=%WAS6.1_JARS%\com.ibm.ws.admin.client_6.1.0.jar
-    set CLASSPATH=%CLASSPATH%;%JAVA_HOME%\lib\tools.jar
-    set CLASSPATH=%CLASSPATH%;%JAVA_HOME%\lib\jconsole.jar
-    
-    %JAVA_HOME%\bin\jconsole  -J-Xbootclasspath/p:%BOOTJARS% -J-Djava.class.path=%CLASSPATH%
-    
+
+```bat
+set JAVA_HOME="C:\Program Files\Java\jdk1.6.0_16"
+set WAS6.1_JARS=C:\programs\jconsole\libs
+
+set BOOTJARS=%WAS6.1_JARS%\ibmorbapi.jar
+set BOOTJARS=%BOOTJARS%;%WAS6.1_JARS%\ibmorb.jar
+set BOOTJARS=%BOOTJARS%;%WAS6.1_JARS%\ibmcfw.jar
+
+set CLASSPATH=%WAS6.1_JARS%\com.ibm.ws.admin.client_6.1.0.jar
+set CLASSPATH=%CLASSPATH%;%JAVA_HOME%\lib\tools.jar
+set CLASSPATH=%CLASSPATH%;%JAVA_HOME%\lib\jconsole.jar
+
+%JAVA_HOME%\bin\jconsole  -J-Xbootclasspath/p:%BOOTJARS% -J-Djava.class.path=%CLASSPATH%
+```
+
 - 使用如下URL来远程连接WAS中的JMX server
-    
-    service:jmx:iiop://localhost:2809/jndi/JMXConnector
-    
+
+```    
+service:jmx:iiop://localhost:2809/jndi/JMXConnector
+```
+
 其中这个端口号是RMI Connector的端口号，可以在启动的logs发现。
-    
-    ADMC0026I:The RMI Connector is available at port  2809
-    
+
+```    
+ADMC0026I:The RMI Connector is available at port  2809
+```    
+
 或者到admin console中查看
 Application servers > server1 >   Administration Services > JMX   connectors
 
 好，这样就可以了。
- 
