@@ -4,7 +4,7 @@
 
 url: http://wbinglee.com
 title: Bruce Li
-subtitle: 无他,唯手熟尔 
+subtitle: 无他,唯手熟尔
 author: Bruce Li
 simple_search: http://google.com/search
 description:
@@ -91,10 +91,10 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name: wbinglee
-disqus_show_comment_count: true 
+disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-52116997-1
 
 # Facebook Like
 facebook_like: false
