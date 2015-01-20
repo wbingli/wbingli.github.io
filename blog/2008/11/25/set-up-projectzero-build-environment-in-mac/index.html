@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>在Mac机上搭建Projectzero的Build环境 - Bruce Li</title>
+  <meta name="author" content="Bruce Li">
+
+  
+  <meta name="description" content="一直想在本地建立zero的Build环境，无奈总是太耗时，也没有机器，现在有了mac在旁边，当然要拿它来做build的环境了。最近几天下班后都要整一会这个，现在终于是过了，在欢快地BUILD,TEST&hellip;. 所有的应该参考：http://www.projectzero.org/wiki &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bruce Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">在Mac机上搭建Projectzero的Build环境</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-25T04:56:02+13:00" pubdate data-updated="true">Nov 25<span>th</span>, 2008</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>一直想在本地建立zero的Build环境，无奈总是太耗时，也没有机器，现在有了mac在旁边，当然要拿它来做build的环境了。最近几天下班后都要整一会这个，现在终于是过了，在欢快地BUILD,TEST&hellip;.</p>
+
+<p>所有的应该参考：<a href="http://www.projectzero.org/wiki/bin/view/Development/Build">http://www.projectzero.org/wiki/bin/view/Development/Build</a>。下面一步一步来讲吧。</p>
+
+<ol>
+<li>Check out code.</li>
+</ol>
+
+
+<p>这个比较简单了。对于zero现在不同的版本最好是建立对于的结构，这样以后做不同的build也利于管理。Mac已经内置了svn，所以直接敲就可以了。打开酷酷的Terminal，敲吧。。</p>
+
+<pre><code>mkdir zero
+cd  zero
+mkdir sebring
+mkdir silverstone
+cd sebring
+mkdir source
+cd source
+svn checkout https://www.projectzero.org/svn/zero/trunk --username liwenb --password 
+</code></pre>
+
+<p>然后等着吧，喝点咖啡，论坛逛逛。。。。</p>
+
+<p>终于checkout了zero所有的code了，嘿嘿。那么要不试试呗，</p>
+
+<pre><code>cd trunk/BUILD/zero.build/
+ant -f zbuild.xml BUILD
+</code></pre>
+
+<p>很好，开始build了。。。嗯，nice。。。咋啦咋啦，错了？什么标签不支持（我现在是不记得了).看来是因为ant的版本的问题。查查看：</p>
+
+<p>ant -version</p>
+
+<p>哦，原来是1.7，而zero指明需要1.7.1，那么没有办法，安装呗。</p>
+
+<p>2.安装ant 1.7.1</p>
+
+<p>这个倒是简单啦，去<a href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</a>.解压，那么到底放到哪里呢？于是查看了一下ant的实际地址。原来mac装在了/usr/share/ant/. 反正我也用不着它的旧的，干脆替换吧。</p>
+
+<p>cp -R apache-ant-1.7.1 /usr/share/ant/</p>
+
+<p>什么什么？没有权限！？查看后是这些文件是root的用户文件。之前也遇到过这个问题，想删除一个root用户的文件，可惜总是没有权限。问了mark老大，也不知道root的用户哪里去了。Google了一把，才知道原来对于Mac机，root用户是需要自己来启动的。好，去启动</p>
+
+<p>3.启动Mac的root用户</p>
+
+<p>当然看到apple的help就可以完成这个了，<a href="http://support.apple.com/kb/HT1528">http://support.apple.com/kb/HT1528</a>。</p>
+
+<p>ok，su root, 将ant替换原来的。 好，再试试，ant -f zbuild.xml BUILD。什么错？zso&hellip;?OK，zero的build中是需要build一个native的code，对于Mac需要安装Xcode。</p>
+
+<p>4.安装Xcode 到Mac上</p>
+
+<p>默认来说，mac是没有安装这些的。只需要找到第二张安装盘就可以了，很容易就安装上了。如果没有安装盘，那么就可以follow这个来安装了。<a href="http://www.macworld.com/article/46286/2005/08/installxcode.html">http://www.macworld.com/article/46286/2005/08/installxcode.html</a>.</p>
+
+<p>好，再来ant -f zbuild.xml BUILD。。。很好，10分钟一直在跑，嗯？eclipse的plugin的build有问题。没办法回去看前提要求吧，原来是需要配置jdk和eclipse的。</p>
+
+<p>5.配置eclipse</p>
+
+<p>这个简单了。到<a href="http://aeneis.raleigh.ibm.com/prereqs/eclipse/">http://aeneis.raleigh.ibm.com/prereqs/eclipse/</a>copy过来，注意download macosx的就好了，根据要求unzipped in your {prereqs directory}/eclipse/3.3.2就可以了。</p>
+
+<p>6.配置JDK</p>
+
+<p>根据Michael的说明，# create a link from zero.build/prereqs/jdks/java5 to  /System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home</p>
+
+<p>好ln java5 &hellip;..</p>
+
+<p>7.完成，:)</p>
+
+<p>再ant -f zbuild.xml BUILD，等上15分钟，就可以看到success的信息了。如果你要跑TEST,那可能就要等好几个小时了。</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/11/terminal.png"><img src="http://liwenbing.cn/wp-content/uploads/2008/11/terminal-300x192.png" alt="" /></a></p>
+
+<p>P.S. 本来是上周末的文章，放到draft就到了现在，kaka..</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-25T04:56:02+13:00" pubdate data-updated="true">Nov 25<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/english/'>english</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/projectzero/'>projectzero</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/" data-via="" data-counturl="http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/11/07/happy-time-with-mac/" title="Previous Post: Happy time with Mac">&laquo; Happy time with Mac</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/12/12/love-wordpress-new-ui/" title="Next Post: 实在是喜欢新版本Wordpress">实在是喜欢新版本Wordpress &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Bruce Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/';
+        var disqus_url = 'http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

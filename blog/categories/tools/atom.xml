@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tools | Bruce Li]]></title>
+  <link href="http://wbinglee.com/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://wbinglee.com/"/>
+  <updated>2015-01-21T10:01:01+13:00</updated>
+  <id>http://wbinglee.com/</id>
+  <author>
+    <name><![CDATA[Bruce Li]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Start Blogging]]></title>
+    <link href="http://wbinglee.com/blog/2014/03/17/start-blogging/"/>
+    <updated>2014-03-17T18:23:36+13:00</updated>
+    <id>http://wbinglee.com/blog/2014/03/17/start-blogging</id>
+    <content type="html"><![CDATA[<h2>Blogging, NOW!</h2>
+
+<p>以前有一个blog，但是各种原因最后连之前的文章都找不回来了。这也是一个很好的教训，能不自己hosting就不要自己hosting，数据备份还是不如source code管理容易，于是我就选择了当然颇为流行的github+octopress.</p>
+
+<p>到新西兰快两年的时间，做个各种各样的事情，其实还是不错的，接触面还是挺广的。基本上每天都在解决各种各样的问题，每每解决了问题，心里都有一种强烈的冲动把它blog下来，谈不上说分享，更多想记录一下自己做的事情，希望能两年后知道自己之前做了什么事情。一直觉得家里忙（本人是两个孩子的爸了哦，:)),但这一切都不是借口，要做就现在做吧。</p>
+
+<p>于是买了域名(wbinglee.com)，就开干了。至于为什么要用这个域名，只是它和我太有缘了吧。我的gmail的帐号就是这个，很多网站的帐号也是这个，那域名也就这个吧，看起来无比的熟悉。</p>
+
+<p>新的blog中关于技术问题，我会尽量使用英文（虽然不咋地&hellip;）;其他杂七杂八的就中文吧，英文肯定写不出感觉。</p>
+
+<p>好，开始了。</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>为什么Firefox 3不能加载本地的JavaScript文件了？ - Bruce Li</title>
+  <meta name="author" content="Bruce Li">
+
+  
+  <meta name="description" content="一段时间来一直受这样的困扰，就是我的Firefox无法运行本地的dojo的测试文件。一直以为是我的firefox或者机器出了什么问题，就只好去使用IE或者Chrome去运行这些测试例子，可惜不能用firebug的确让人很不爽。 今天在firebug查看了一些错误情况，报错居然是“Access to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bruce Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">为什么Firefox 3不能加载本地的JavaScript文件了？</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-05T20:36:38+12:00" pubdate data-updated="true">Jun 5<span>th</span>, 2009</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>一段时间来一直受这样的困扰，就是我的Firefox无法运行本地的dojo的测试文件。一直以为是我的firefox或者机器出了什么问题，就只好去使用IE或者Chrome去运行这些测试例子，可惜不能用firebug的确让人很不爽。</p>
+
+<p>今天在firebug查看了一些错误情况，报错居然是“Access to restricted URI denied”。这个明显是跨域访问的错误，但是本地文件怎么报这样的错呢？在Firefox的about:config搜索了一下policy,居然找到了原因所在，原来Firefox对于本地文件也进行了同源访问的安全设置,配置参数是：security.fileuri.strict_origin_policy。这个新的设置只是在firefox 3才被加入，并且默认是开启的。不过你也可以将这个关掉，这样就可以如同以前那样运行本地的dojo测试用例，或者其它你想本地加载的JavaScript文件。</p>
+
+<p><a href="http://liwenbing.cn/2009/06/05/why-ff3-cannot-load-local-javascript-file/local-file-p-origin-policy/"><img src="http://liwenbing.cn/wp-content/uploads/2009/06/local-file-p-origin-policy-300x42.png" alt="local-file-p-origin-policy" /></a></p>
+
+<p>继续在google了一下，找了这个&#8221;feature&#8221;的由来，<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=230606">https://bugzilla.mozilla.org/show_bug.cgi?id=230606</a>，大概是说本地的文件如果没有这样的限制，可以访问本机的其他文件，这样会造成安全隐患。John Resig（Father of  jQuery) 也有一个blog关于这个问题，<a href="http://ejohn.org/blog/tightened-local-file-security/">http://ejohn.org/blog/tightened-local-file-security/</a>，下面的评论也挺值得看看的。</p>
+
+<p><strong>More Links: </strong></p>
+
+<ul>
+<li><p><a href="http://www.dojotoolkit.org/support/faq/why-does-dojo-fail-load-file-urls-firefox-3">http://www.dojotoolkit.org/support/faq/why-does-dojo-fail-load-file-urls-firefox-3</a></p></li>
+<li><p><a href="http://kb.mozillazine.org/Security.fileuri.origin_policy">http://kb.mozillazine.org/Security.fileuri.origin_policy</a></p></li>
+<li><p><a href="http://kb.mozillazine.org/Security.fileuri.strict_origin_policy">http://kb.mozillazine.org/Security.fileuri.strict_origin_policy</a></p></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-05T20:36:38+12:00" pubdate data-updated="true">Jun 5<span>th</span>, 2009</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>javascript</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/" data-via="" data-counturl="http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/05/22/javascript-equal-type-conversion/" title="Previous Post: JavaScript中==等同运算符的类型转换">&laquo; JavaScript中==等同运算符的类型转换</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/06/05/dojo-widget-destructor/" title="Next Post: Dojo widget的析构过程">Dojo widget的析构过程 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Bruce Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/';
+        var disqus_url = 'http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

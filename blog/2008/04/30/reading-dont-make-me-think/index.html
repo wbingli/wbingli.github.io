@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>读《Don't Make Me Think》 - Bruce Li</title>
+  <meta name="author" content="Bruce Li">
+
+  
+  <meta name="description" content="一本很薄的书，关于Web的可用性的书籍。这本书讲的还是一些最本质的东西。关键的还是从用户，咳，Web用户的角度来看问题，了解一个浏览Web页面人的行为到底是怎么样，从而来对现有的网点做一些改善。改善也是回归本质，就是用最直接的方式来提供最有用的信息给用户。特别喜欢的一个部分是如何来进行可用性测试， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bruce Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">读《Don't Make Me Think》</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-30T03:05:42+12:00" pubdate data-updated="true">Apr 30<span>th</span>, 2008</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><a href="http://www.douban.com/subject/1901208/"><img src="http://liwenbing.cn/wp-content/uploads/2008/04/dontmakemethink-223x300.jpg" alt="The book &lt;Don\'t make me think&gt;" /></a>一本很薄的书，关于Web的可用性的书籍。这本书讲的还是一些最本质的东西。关键的还是从用户，咳，Web用户的角度来看问题，了解一个浏览Web页面人的行为到底是怎么样，从而来对现有的网点做一些改善。改善也是回归本质，就是用最直接的方式来提供最有用的信息给用户。特别喜欢的一个部分是如何来进行可用性测试，平时我们在每日每夜干，却并不知道自己的东西到底怎么样，经常觉得这个东西不可用呀&hellip;还是需要平时花点滴时间来做这样的可用性测试。另外，特别想从“救命！老板想我要&hellip;..”得到点什么，hoho，似乎也没有特别的地方。</p>
+
+<p>在lab里面做的东东和这个里面所讲的可能还是有很大的区别的。这里面讲的主要的还是基于content的website，而我们的项目都是基于Web的工具了。下面把该书用在本website来看看自己的website还有哪些需要改善的地方。一个巨熟悉本website的人的测试：</p>
+
+<ol>
+<li><p> 导航到其他页面，为什么选中的导航部分没有被高亮呢？比如到了点导航的About后，出现About的页面，并没有将about在导航条中高亮；</p></li>
+<li><p> 我需要在导航条中添加home吗？（我的考虑，对于这种小型的个人主页，用户可能会习惯性点击名字来回到主页，多了home可能多余&hellip;）</p></li>
+<li><p> blog的导航条中就是到homepage，为什么需要这个呢？（奇怪，需要思考为什么有这个一不一致的行为？）</p></li>
+<li><p> 点击projects，labs，出现是File Not Found。（的确是没有去做，但是为什么要留在上面呢？最简单可以加一个标题，写暂没有内容）</p></li>
+<li><p> music部分没有title，也不知道这个页是干什么的。（就算是放音乐，也应该有一两句话来进行介绍。）</p></li>
+<li><p> 中英文混合，习惯吗？（这个是一个问题，我不清楚。。。给点意见？）</p></li>
+<li><p> 我怎么加留言？（我需要先点文章，或者日期旁边的comments，到新的页面后才可以留言，这样容易吗？自己没有找到好的办法）</p></li>
+<li><p> 右边栏中第一个是什么？（我需要加注释吗？可能对国内用户来说没有用，那么我需要去掉吗？）（P.S.:对该website进行bookmark的快捷方式！）</p></li>
+<li><p> 右边栏接这下来两个图标是什么意思呢？（国内用户有多少用feed的呢？为什么需要两个呢？我怎么知道哪个是我想要的呢？似乎一个好的办法是在icon的下面加一行字。比如订阅文章，订阅留言）</p></li>
+<li><p>. 为什么Search要和输入框换行呢？（的确不好，不知道我在哪里写错了）</p></li>
+<li><p>. Search是否用中文的‘搜索’要好一些呢？（not sure，自我感觉search比搜索要舒服些）</p></li>
+<li><p>. 在最后来翻看‘以前的文章’方便吗？（有更好，更直接的办法吗？）</p></li>
+<li><p>. Archives好吗？（自我觉得这个英文不是很好懂，还是换成中文好？）</p></li>
+</ol>
+
+
+<p>还有什么？</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-04-30T03:05:42+12:00" pubdate data-updated="true">Apr 30<span>th</span>, 2008</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/book/'>book</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think/" data-via="" data-counturl="http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/04/29/dependency-management-is-a-big-issue-in-projectzero/" title="Previous Post: Projectzero的版本管理是一个大问题">&laquo; Projectzero的版本管理是一个大问题</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/05/05/alone-tai-shan-trip/" title="Next Post: 一个人的泰山">一个人的泰山 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Bruce Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think/';
+        var disqus_url = 'http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

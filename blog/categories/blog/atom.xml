@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Blog | Bruce Li]]></title>
+  <link href="http://wbinglee.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://wbinglee.com/"/>
+  <updated>2015-01-21T10:01:01+13:00</updated>
+  <id>http://wbinglee.com/</id>
+  <author>
+    <name><![CDATA[Bruce Li]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Start Blogging]]></title>
+    <link href="http://wbinglee.com/blog/2014/03/17/start-blogging/"/>
+    <updated>2014-03-17T18:23:36+13:00</updated>
+    <id>http://wbinglee.com/blog/2014/03/17/start-blogging</id>
+    <content type="html"><![CDATA[<h2>Blogging, NOW!</h2>
+
+<p>以前有一个blog，但是各种原因最后连之前的文章都找不回来了。这也是一个很好的教训，能不自己hosting就不要自己hosting，数据备份还是不如source code管理容易，于是我就选择了当然颇为流行的github+octopress.</p>
+
+<p>到新西兰快两年的时间，做个各种各样的事情，其实还是不错的，接触面还是挺广的。基本上每天都在解决各种各样的问题，每每解决了问题，心里都有一种强烈的冲动把它blog下来，谈不上说分享，更多想记录一下自己做的事情，希望能两年后知道自己之前做了什么事情。一直觉得家里忙（本人是两个孩子的爸了哦，:)),但这一切都不是借口，要做就现在做吧。</p>
+
+<p>于是买了域名(wbinglee.com)，就开干了。至于为什么要用这个域名，只是它和我太有缘了吧。我的gmail的帐号就是这个，很多网站的帐号也是这个，那域名也就这个吧，看起来无比的熟悉。</p>
+
+<p>新的blog中关于技术问题，我会尽量使用英文（虽然不咋地&hellip;）;其他杂七杂八的就中文吧，英文肯定写不出感觉。</p>
+
+<p>好，开始了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[一直在写]]></title>
+    <link href="http://wbinglee.com/blog/2009/09/15/keep-writing/"/>
+    <updated>2009-09-15T03:25:15+12:00</updated>
+    <id>http://wbinglee.com/blog/2009/09/15/keep-writing</id>
+    <content type="html"><![CDATA[<p>刚和同学聊天时，问我blog怎么好长时间都没有更新了。看了看上篇文章的日期，离现在也有两个月有余了，有些惭愧。最近在做一些有意思的技术调研，倒是会在接下来的文章中分享一些。其实这段日子也在写一些东西，不过不在自己的blog上面了罢了。</p>
+
+<ul>
+<li><p>带给PHP 和 Java 世界的双赢  (<a href="http://www.netvibes.com/shawnzhu">朱可</a>&amp;me) -《 程序员》杂志 2009年09月刊</p></li>
+<li><p>Ajax &ndash; 超越桌面的Web 用户体验 &ndash; 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> &ndash; developerWorks</p></li>
+</ul>
+
+
+<p>时间总是匆匆，让我们继续前行&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[怎么用twitter？]]></title>
+    <link href="http://wbinglee.com/blog/2009/05/02/how-to-use-twitter/"/>
+    <updated>2009-05-02T05:12:09+12:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/02/how-to-use-twitter</id>
+    <content type="html"><![CDATA[<p>09年是year of twitter, 这个东西现在火的一塌糊涂，google和facebook对它是羡慕的不得了。国内IT圈中也是刮起了一阵twitter风，好像你没有个twitter都不好意思和别人打招呼。但是当你屁颠屁颠地在上面发点东西的时候，也同时也被大量的信息噪音给淹没。有的人用twitter在聊天，有的人发布的信息非常多但是毫无意义，慢慢地这个东西成为了一种负担。其实twitter火起来有它的原因，但要看怎么来用了。</p>
+
+<p>twitter来至一个简单的想法，告诉别人你在做什么。现在有很多的工具来帮助人们进行交流，比如blog和IM，但是日常发生在自己身上的一些事情使用这样一些工具都不太适合。我们不可以发一个blog告诉别人我在做什么，也不可能在聊天工具上面像疯了似的给每个人发这些消息。然而通过twitter，人们可以进一步加深相互的了解。比如，我的一个好朋友发消息说他在做一道菜。我看到后，很好奇他居然还会做菜呀，于是我们有了公共的兴趣点，可以进一步地聊聊。</p>
+
+<p>从技术上面来讲，twitter的火爆说明了开放API的成功。有了twitter提供的API，就有了它的客户端的繁荣，桌面的、浏览器插件的、手机的&hellip;.任何平台任何环境，只要你想到的都可以找到一堆的twitter客户端。 如果twitter没有这些多的客户端和社区支持，估计也难以流行起来。</p>
+
+<p>话说回来，怎么用twitter呢？我想可以从两点来看，一是你希望收到什么消息；二是你应该给出什么样信息。关于收到什么消息，基本的原则应该是：<strong>只follow你所关心的人和事</strong>。前端日子follow了很多技术名人的twitter，发现他们发的信息根本都不是我关心的。我并不是他们的朋友，我根本不关心你和谁吃饭了，你今天去哪里运动了。所以很简单，将你并不认识的名人从你的follow列表中删掉，因为你对这些名人其实真正关心只是他的知识，而这些只要订阅他们的blog就可以啦。对于技术和某种事情的关注，follow这个社区的twitter就好了。另外对于那些乱发垃圾消息的人，删除好了。这个世界不是信息太少，而是太多了。</p>
+
+<p>那用twitter应该发什么样的消息呢？我想原则应该是：<strong>只发有用的信息，并且这个信息不需要通过其他消息的上下文就能理解。</strong>如果是个人还是用twitter的本意就好了，就是发你在做什么，或者发现什么有意思的事情。社区类的twitter可以发当然社区发生重要的事情。切忌使用twitter进行聊天了，因为follow你的人并不一定follow了和你聊天的朋友，所以这些没有上下文的消息就毫无意义。</p>
+
+<p>最后我想到了一位美女同事对于twitter的理解，<em>twitter的消息就像一种缘分，你看到了就是一种缘分，不需要像聊天那么有紧迫感，也不像blog那么正式</em>。<strong>所以还是一切随缘吧</strong>。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[实在是喜欢新版本Wordpress]]></title>
+    <link href="http://wbinglee.com/blog/2008/12/12/love-wordpress-new-ui/"/>
+    <updated>2008-12-12T04:31:13+13:00</updated>
+    <id>http://wbinglee.com/blog/2008/12/12/love-wordpress-new-ui</id>
+    <content type="html"><![CDATA[<p>Wordpress总是给我带来一些小小的惊喜，刚刚更新到2.7，居然有如此大的变化。</p>
+
+<ul>
+<li><p>超cool的界面，合理的布局，新的layout，适应各种resolution让我吃惊。不过以前的theme也挺爽的。有时候觉得wordpress就像美女一样，换肤就像换时装一样，需要时髦，嗯。</p></li>
+<li><p>支持gears了。对我的使用上带来的好处还是非常大的</p></li>
+<li><p>能够自动更新了。这点非常赞。以前总是提示你要upgrade，我总是要做一系列的事情。现在点个button就可以了。Love it!</p></li>
+<li><p>导航条可以折叠，关键是缩起来超炫。</p></li>
+<li><p>每个page的各个module(categories,tags&hellip;)都可以拖拽来调整位置。不过因人而异，默认位置就很好了。</p></li>
+</ul>
+
+
+<p>如何？一起来感受美妙软件带来快乐吧。</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/12/wordpress27.jpg"><img src="http://liwenbing.cn/wp-content/uploads/2008/12/wordpress27-300x216.jpg" alt="wordpress27" /></a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aptana Jaxer:The Ajax Server?]]></title>
+    <link href="http://wbinglee.com/blog/2008/06/14/aptana-jaxer-the-ajax-server/"/>
+    <updated>2008-06-14T04:04:22+12:00</updated>
+    <id>http://wbinglee.com/blog/2008/06/14/aptana-jaxer-the-ajax-server</id>
+    <content type="html"><![CDATA[<p>一直以来都在用Aptana的Editor来编辑Javascript/CSS/HTML,都挺好。今天尝试了Aptana自己一直在推的所谓‘世界上第一个Ajax Server的<a href="http://aptana.com/jaxer">Jaxer</a>。</p>
+
+<p>在Jaxar里面写code倒是很有意思，所有你需要做的事情就是写Javascript/CSS/HTML。你根本不需要使用任何其他server-side语言,所有的事情就是写Javascript就可以了。来看一个例子：</p>
+
+<pre><code>&lt;code&gt;
+ &lt;script type="text/javascript" runat="server"&gt;
+    function getAuthenticatedUser()
+    {
+        var username = Jaxer.session.get("username");
+        if (typeof username == "undefined") return null;
+        var rs = Jaxer.DB.execute("SELECT * FROM users WHERE username = ?", [username]);
+        if (rs.rows.length == 0)
+        {
+            return null;
+        }
+        return rs.rows[0];
+    }
+&lt;/script&gt;
+&lt;/code&gt;
+</code></pre>
+
+<p>用‘runat=server’就可以让上面对数据库的操作运行在server端，而client端对该方法的调用不变，这样在写Web应用时就不用在Server side和client side两边跑来跑去了。并且还有对template的支持。</p>
+
+<p>这个和原来老毛和科长做的project zero client programming model是非常相似的，目的是都用来屏蔽client和server之间的boundary。不过Jaxar做的更加彻底，通过扩展Apache的server，加入自己的Server side framework和client side framework，让所有的一切都通过写JS就搞定了。并且对session，database, web ,SMTP 进行支持，对于一般的应用差不多就够了。老毛原来做的也是通过加入client framework以及扩展server的一些能力来让开发者在client和server之间进行无缝交互。可惜还是需要写Javascript和groovy，并且有一大堆的convention，不知道为什么没有发展下去（又是政治问题?).</p>
+
+<p>那么这种开发模式到底好不好呢？我觉得对于比较小的应用，不考虑扩展和与外界交互，还是一个比较快捷的开发方式。毕竟client和server的无缝交互所带来的好处是非常大的，比如说学习的门槛低（只需要知道一个Javascript就搞定了), 数据传输中麻烦的异步调用，编码，解码，格式转换等等都将消失。但是一旦你的web应用大一些的时候，我想这种模式就面临着很大的问题。关键还是不容易扩展，当它把UI和数据逻辑混合的时候，要做分离是比较困难的。当然你可以在它的编程模型上写一层数据操作层，但是这样就变成了典型的RPC了。另外，这样做并不<a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>,Jaxer开发出来的应用根本提供不了service(更谈不上RESTful)，这样就无法被它人所用了。如果Jaxer应用以后要做整合，那绝对是一个大麻烦。</p>
+]]></content>
+  </entry>
+  
+</feed>

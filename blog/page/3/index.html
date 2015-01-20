@@ -1,0 +1,785 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Bruce Li</title>
+  <meta name="author" content="Bruce Li">
+
+  
+  <meta name="description" content="一直想在本地建立zero的Build环境，无奈总是太耗时，也没有机器，现在有了mac在旁边，当然要拿它来做build的环境了。最近几天下班后都要整一会这个，现在终于是过了，在欢快地BUILD,TEST&hellip;. 所有的应该参考：http://www.projectzero.org/wiki &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/page/3">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bruce Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/">在Mac机上搭建Projectzero的Build环境</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-25T04:56:02+13:00" pubdate data-updated="true">Nov 25<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一直想在本地建立zero的Build环境，无奈总是太耗时，也没有机器，现在有了mac在旁边，当然要拿它来做build的环境了。最近几天下班后都要整一会这个，现在终于是过了，在欢快地BUILD,TEST&hellip;.</p>
+
+<p>所有的应该参考：<a href="http://www.projectzero.org/wiki/bin/view/Development/Build">http://www.projectzero.org/wiki/bin/view/Development/Build</a>。下面一步一步来讲吧。</p>
+
+<ol>
+<li>Check out code.</li>
+</ol>
+
+
+<p>这个比较简单了。对于zero现在不同的版本最好是建立对于的结构，这样以后做不同的build也利于管理。Mac已经内置了svn，所以直接敲就可以了。打开酷酷的Terminal，敲吧。。</p>
+
+<pre><code>mkdir zero
+cd  zero
+mkdir sebring
+mkdir silverstone
+cd sebring
+mkdir source
+cd source
+svn checkout https://www.projectzero.org/svn/zero/trunk --username liwenb --password 
+</code></pre>
+
+<p>然后等着吧，喝点咖啡，论坛逛逛。。。。</p>
+
+<p>终于checkout了zero所有的code了，嘿嘿。那么要不试试呗，</p>
+
+<pre><code>cd trunk/BUILD/zero.build/
+ant -f zbuild.xml BUILD
+</code></pre>
+
+<p>很好，开始build了。。。嗯，nice。。。咋啦咋啦，错了？什么标签不支持（我现在是不记得了).看来是因为ant的版本的问题。查查看：</p>
+
+<p>ant -version</p>
+
+<p>哦，原来是1.7，而zero指明需要1.7.1，那么没有办法，安装呗。</p>
+
+<p>2.安装ant 1.7.1</p>
+
+<p>这个倒是简单啦，去<a href="http://ant.apache.org/bindownload.cgi">http://ant.apache.org/bindownload.cgi</a>.解压，那么到底放到哪里呢？于是查看了一下ant的实际地址。原来mac装在了/usr/share/ant/. 反正我也用不着它的旧的，干脆替换吧。</p>
+
+<p>cp -R apache-ant-1.7.1 /usr/share/ant/</p>
+
+<p>什么什么？没有权限！？查看后是这些文件是root的用户文件。之前也遇到过这个问题，想删除一个root用户的文件，可惜总是没有权限。问了mark老大，也不知道root的用户哪里去了。Google了一把，才知道原来对于Mac机，root用户是需要自己来启动的。好，去启动</p>
+
+<p>3.启动Mac的root用户</p>
+
+<p>当然看到apple的help就可以完成这个了，<a href="http://support.apple.com/kb/HT1528">http://support.apple.com/kb/HT1528</a>。</p>
+
+<p>ok，su root, 将ant替换原来的。 好，再试试，ant -f zbuild.xml BUILD。什么错？zso&hellip;?OK，zero的build中是需要build一个native的code，对于Mac需要安装Xcode。</p>
+
+<p>4.安装Xcode 到Mac上</p>
+
+<p>默认来说，mac是没有安装这些的。只需要找到第二张安装盘就可以了，很容易就安装上了。如果没有安装盘，那么就可以follow这个来安装了。<a href="http://www.macworld.com/article/46286/2005/08/installxcode.html">http://www.macworld.com/article/46286/2005/08/installxcode.html</a>.</p>
+
+<p>好，再来ant -f zbuild.xml BUILD。。。很好，10分钟一直在跑，嗯？eclipse的plugin的build有问题。没办法回去看前提要求吧，原来是需要配置jdk和eclipse的。</p>
+
+<p>5.配置eclipse</p>
+
+<p>这个简单了。到<a href="http://aeneis.raleigh.ibm.com/prereqs/eclipse/">http://aeneis.raleigh.ibm.com/prereqs/eclipse/</a>copy过来，注意download macosx的就好了，根据要求unzipped in your {prereqs directory}/eclipse/3.3.2就可以了。</p>
+
+<p>6.配置JDK</p>
+
+<p>根据Michael的说明，# create a link from zero.build/prereqs/jdks/java5 to  /System/Library/Frameworks/JavaVM.framework/Versions/1.5/Home</p>
+
+<p>好ln java5 &hellip;..</p>
+
+<p>7.完成，:)</p>
+
+<p>再ant -f zbuild.xml BUILD，等上15分钟，就可以看到success的信息了。如果你要跑TEST,那可能就要等好几个小时了。</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/11/terminal.png"><img src="http://liwenbing.cn/wp-content/uploads/2008/11/terminal-300x192.png" alt="" /></a></p>
+
+<p>P.S. 本来是上周末的文章，放到draft就到了现在，kaka..</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/07/happy-time-with-mac/">Happy Time With Mac</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-11-07T00:57:08+13:00" pubdate data-updated="true">Nov 7<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/11/07/happy-time-with-mac/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/11/07/happy-time-with-mac/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近一直在我的mac机上折腾，简直是越来越喜欢这个小东西了。装了各种各样的软件，就是乐在其中呀。今天还down了vmware fusion.公司也有各种的虚拟机文件可以down。于是一不小心就下了Redhat，WinXP，Vista。看来以后做什么事情都可以在mac上了。</p>
+
+<p>show一下变态的界面。</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/11/e59bbee78987-1.png"><img src="http://liwenbing.cn/wp-content/uploads/2008/11/e59bbee78987-1-300x187.png" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/29/e4be9de784b6e59190e5968a/">依然呐喊&#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-29T02:28:07+13:00" pubdate data-updated="true">Oct 29<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/10/29/e4be9de784b6e59190e5968a/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/10/29/e4be9de784b6e59190e5968a/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://liwenbing.cn/wp-content/uploads/2008/10/howl1.png"><img src="http://liwenbing.cn/wp-content/uploads/2008/10/howl1.png" alt="依旧呐喊" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/10/22/e4b880e4b8aae5a49ae69c88e79a84e6b581e9809d/">一个多月的流逝</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-10-22T04:03:50+13:00" pubdate data-updated="true">Oct 22<span>nd</span>, 2008</time>
+        
+           | <a href="/blog/2008/10/22/e4b880e4b8aae5a49ae69c88e79a84e6b581e9809d/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/10/22/e4b880e4b8aae5a49ae69c88e79a84e6b581e9809d/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>往往从blog的post的频率就可以看出来我的精神状态。。不知道为什么，最近总被一种很抑郁的心情压着，整天过的不知所云，日子看着我慢慢走掉&hellip;让情绪控制而不知所措不是解决问题的办法，以此post为凭，让自己能从现在的状态扭转出来。</p>
+
+<p>勉之，勉之。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/09/03/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0/">Assemble在developerWorks上面的文章</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-03T18:59:39+12:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2008</time>
+        
+           | <a href="/blog/2008/09/03/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/09/03/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一直都准备发很多文章来宣传我们的工作，但是总是由于很多的事情都没有时间来做。好不容易，终于完成了一篇。</p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/web/wa-lo-pz-assembleflow1/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 1 部分</a>。</p>
+
+<p>以后希望发出更多的来。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/08/15/olympic-basketball-game/">看奥运男篮比赛</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-08-15T11:48:37+12:00" pubdate data-updated="true">Aug 15<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/08/15/olympic-basketball-game/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/08/15/olympic-basketball-game/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>还是上周了，看了奥运男篮A组的首场对决。开始还不知道，原来一张票可以看两场比赛。分别是俄罗斯-伊朗，德国-安哥拉，看来了只能在电视里面看到的NBA大牌，基里连科和诺维斯基。可惜位置太远，只能傻呵呵地在那瞎喊。</p>
+
+<p>其实比赛很一般了，只有德国队打的不错。给我最大的感受就是篮球馆太棒了，让你觉得坐在哪里自己的位置都是最好的。以后有了比赛一定多去看看。</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/08/e59cbae9a686e5898d.jpg"><img src="http://liwenbing.cn/wp-content/uploads/2008/08/e59cbae9a686e5898d-300x225.jpg" alt="" /></a><a href="http://liwenbing.cn/wp-content/uploads/2008/08/e7afaee79083e59cba.jpg"><img src="http://liwenbing.cn/wp-content/uploads/2008/08/e7afaee79083e59cba-300x225.jpg" alt="" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/13/will-firefox-be-the-next-rcp/">Firefox会成为新的RCP吗？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-13T02:05:19+12:00" pubdate data-updated="true">Jul 13<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/07/13/will-firefox-be-the-next-rcp/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/07/13/will-firefox-be-the-next-rcp/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>对于firefox的插件大家都觉得属于添加浏览器的功能，这些插件只是firefox中的小甜点，并不能自成一个完整的软件。 我也是一直这么认为，但是今天看到一个用firefox做的画图的工具，<a href="http://www.evolus.vn/Pencil/Home.html">http://www.evolus.vn/Pencil/Home.html</a>，一个和原有插件很不一样的插件。它只是将 <strong>Mozilla Gecko engine</strong>做成了一个画图的工具。并且最特别的地方是大小只有400K，非常的惊人。</p>
+
+<p>觉得firefox非常有希望成为一个RCP的平台，相对Eclipse这样的RCP平台(或者Abode的AIR)来说是有非常多的优势的：</p>
+
+<ul>
+<li><p>安装非常的方便:显然firefox的插件安装方式非常方便，点个link就安装了。</p></li>
+<li><p>更新同样简单： 同样由firefox自己对插件更新的支持，自动检查更新最新版本。</p></li>
+<li><p>软件大小非常小：看一个完整的画图工具只有400K，就知道能它能多小，安装可以多快。使用firefox所提供的对UI等的支持，将js的文件压缩后真的可以非常的小。</p></li>
+<li><p>多平台支持：firefox就支持多平台，你写出来的软件也就自然能跑在所有firefox能支持的平台了。</p></li>
+<li><p>开发要求低：基本上只需要掌握javascript，而世界上最多程序员的将会是javascript程序员。firefox的UI开发比起HTML，CSS来说是简单的。每个人估计是受到过写HTML，尤其是CSS中要处理多平台的煎熬。从这个角度来说，写firefox的插件比开发一个Rich的Web应用要快很多。</p></li>
+<li><p>不需要安装体积庞大的SDK：你只需要firefox就可以了。很多人抱怨abode的SDK或者java的JDK都太大了，而很多非技术人不明白为什么需要安装这些乱七八糟并且几十M的东西，这也是abode的AIR很难快速流行的问题。</p></li>
+</ul>
+
+
+<p>现在也是有很多不太如意的地方：</p>
+
+<ul>
+<li><p>每次启动你得从firefox中启动，不能直接在OS的建立快捷方式。我觉得这个问题应该不大，看看<a href="http://labs.mozilla.com/projects/prism/">Prism</a>这样的firefox的lab project就可以了。</p></li>
+<li><p>如何来操作数据库？操作数据库是一个基本的，可惜firefox并没有提供这样的支持。wait，firefox 3提供了类似google gears的能力，估计将数据持久化到本地是问题不大。但是连接到传统的数据库mysql等的呢？</p></li>
+</ul>
+
+
+<p>当然firefox从来没有提过它要成为一个RCP的platform，它是否想成为abode AIR的competitor？是否它可以成为新的RCP平台，甚至它是否可以成为<a href="http://en.wikipedia.org/wiki/Rich_Internet_application">RIA</a>平台，让我们试目以待吧。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/10/smash-lecture/">昨天做的一次技术讲座</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-10T21:29:13+12:00" pubdate data-updated="true">Jul 10<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/07/10/smash-lecture/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/07/10/smash-lecture/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://liwenbing.cn/wp-content/uploads/2008/07/e68a80e69cafe6b299e9be99.jpg"><img src="http://liwenbing.cn/wp-content/uploads/2008/07/e68a80e69cafe6b299e9be99-300x200.jpg" alt="" /></a>第一次给别人讲东西，呵呵，居然没有紧张，不错，虽然感觉自己讲错了很多东西，嘿嘿。</p>
+
+<p>quote:&ldquo;2008年7月8日下午IBM国际商业机器全球服务(中国)有限公司软件部在京伦饭店举办的IBM 技术专家沙龙&mdash;“解读WebSphere sMash”专场沙龙活动顺利开展，此次沙龙活动我们邀请到WebSphere sMash项目组的三位技术专家来与北京的WebSphere技术专家们一块探讨和演示 WebSphere sMash 的搭建、部署和使用。&rdquo;</p>
+
+<p><a href="http://www.webspherechina.net/club/viewthread.php?tid=1392&amp;extra=page%3D1">http://www.webspherechina.net/club/viewthread.php?tid=1392&amp;extra=page%3D1</a></p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/07/e68a80e69cafe6b299e9be99.jpg">
+</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/06/26/ajax-upload-file-using-dojo-in-smash/">在sMash环境中，使用dojo来Ajax上传文件</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-26T03:13:24+12:00" pubdate data-updated="true">Jun 26<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/06/26/ajax-upload-file-using-dojo-in-smash/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/06/26/ajax-upload-file-using-dojo-in-smash/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在dojo的test page中给出了如何上传文件，<a href="http://archive.dojotoolkit.org/nightly/dojotoolkit/dojo/tests/io/iframeUploadTest.html">http://archive.dojotoolkit.org/nightly/dojotoolkit/dojo/tests/io/iframeUploadTest.html</a>.可惜server端的code是python写的，现在把dojo的upload文件在WebSphere sMash的环境下实现，并且强调几个关键的trick,在code中进行说明。故事很简单：上传一个文件，完毕后返回文件的大小，最后浏览器弹出该信息。</p>
+
+<ol>
+<li><p> <strong>HTML code</strong></p>
+
+<p><form action="/resources/upload" id="uploadForm"
+<!-- 注意上传文件时需要的form属性enctype="multipart/form-data"  -->
+    method=&ldquo;POST&rdquo;  enctype=&ldquo;multipart/form-data&rdquo;>
+<!-- 上传文件在HTML的控件 -->
+    <input type="file" name="attachment">
+    <input type="button" onclick="uploadIt(); return false;" value="send it!">
+</form></p></li>
+<li><p> <strong>Javascript code</strong></p>
+
+<p><script type="text/javascript">
+    dojo.require(&ldquo;dojo.io.iframe&rdquo;);
+    function uploadIt(){
+        dojo.io.iframe.send({     //使用iframe进行提交
+            form: dojo.byId(&ldquo;uploadForm&rdquo;),
+            handleAs: &ldquo;application/json&rdquo;,
+            handle: function(response, ioArgs){
+                if(response instanceof Error){
+                    console.error(&ldquo;Request FAILED: &rdquo;, response);
+                }else{
+                    alert(response);  //alert结果
+                }
+            }
+        });
+    }
+</script></p></li>
+<li><p> <strong>zero code</strong></p>
+
+<p>def onCreate() {
+    //zero中的上传文件放在request的files中
+    def attachment = request.files[&ldquo;attachment&rdquo;]</p>
+
+<pre><code>//每个上传文件有上传文件的临时路径以及文件
+def filepathUpload = attachment.path[0]
+def fileName = attachment.filename[0]
+
+int fileSize = new FileInputStream(new File(filepathUpload)).available()
+def msg = "The size of your file '" + fileName + "' is " + fileSize + " bytes."
+
+//这个是dojo iframe做定义的，必须要使用一个&lt;textarea&gt;进行包裹结果.
+def iframeData = "&lt;textarea&gt;" + msg + "&lt;/textarea&gt;"
+println iframeData
+</code></pre>
+
+<p>}</p></li>
+</ol>
+
+
+<p>这个是sMash的project，可以<a href="http://liwenbing.cn/wp-content/uploads/2008/06/zeroupload.zip">Download(Ajax upload file using dojo in sMash)</a>下来试试。</p>
+
+<p><strong><em>Useful links:</em></strong></p>
+
+<p><a href="http://www.cs.tut.fi/~jkorpela/forms/file.html">http://www.cs.tut.fi/~jkorpela/forms/file.html</a>
+<a href="https://www.projectzero.org/javadoc/latest/CORE/API/zero/core/context/GlobalContextURIs.Request.html#files">https://www.projectzero.org/javadoc/latest/CORE/API/zero/core/context/GlobalContextURIs.Request.html#files</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/06/20/css-selector-advanced/">CSS Selector - 高级</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-20T11:57:17+12:00" pubdate data-updated="true">Jun 20<span>th</span>, 2008</time>
+        
+           | <a href="/blog/2008/06/20/css-selector-advanced/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/06/20/css-selector-advanced/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在前面一篇文章中(<a href="http://liwenbing.cn/2008/06/03/css-selector-basic/">CSS Selector &ndash; 基础</a>)介绍一些CSS selector的基本用法。里面来谈一些平时比较少用的CSS selector用法。</p>
+
+<p><strong>一.Child selector</strong>
+这个选择器和前面的descendent比较类似，descendent适用与所有的下代，但是Child描述的是父子关系。它需要用尖括号&#8217;>&lsquo;来表示。  例子如下：</p>
+
+<pre><code>body&gt;h2{
+ font-size:2.5em;
+}
+</code></pre>
+
+<p>在未来的发展中，有些有趣的讨论就是：<a href="http://www.shauninman.com/archive/2008/05/05/css_qualified_selectors">是否我们需要右括号</a>,就像：
+a &lt; img { border: none; }就表明如果  父亲是, 那么border就不存在。当然这只是一个提议，更加站在目标tag来进行表述。可惜并不在CSS3的规范中。</p>
+
+<p><strong>二.Adjacent siblings selecor</strong>
+前面说了父子关系的选择器，这个是关于兄弟关系的选择器。</p>
+
+<pre><code>h2+p{
+ font-size:1.2em;
+}
+</code></pre>
+
+<p>如果一个<a>前面是<h2>那么将应用该selector。</p>
+
+<p><strong>三.属性 selector</strong>
+属性选择器是一个更加强大的选择器。前面的selector都是更加tag的位置关系等来进行选择。属性选择器是根据标签内部的属性来进行选择。</p>
+
+<pre><code>//选择&lt;a&gt;中href属性为'liwenbing.cn'的
+a[href='liwenbing.cn'] {
+ font-size:red;
+}
+//选中&lt;input&gt;中类型type为text的。
+input[type="text"]{
+ border-color:1px solid #666;
+}
+</code></pre>
+
+<p>在CSS3中，<a href="http://www.w3.org/TR/2005/WD-css3-selectors-20051215/#attribute-substrings">对属性选择器是有加强的</a>。并且现在流行的浏览器(IE7,FF)基本上已经支持这样的selector了。
+有三种：</p>
+
+<ul>
+<li><p>[att^=val]：选择属性att的值是以val来开头的；</p></li>
+<li><p>[att&amp;=val]：选择属性att的值是以val来结束的；</p></li>
+<li><p>[att*=val]：选择属性att的值是包含val的；</p>
+
+<p>//这个将选中 <p title='home' ></p>
+p[title^=&ldquo;ho&rdquo;] {background: green;}</p>
+
+<p>//这个将选中 <p title='hot' ></p>
+p[title$=&ldquo;t&rdquo;] {background: green;}</p>
+
+<p>//这个将选中 <p title='contact' ></p>
+p[title*=&ldquo;on&rdquo;] {background: green;}</p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Bruce Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

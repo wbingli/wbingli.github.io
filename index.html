@@ -1,1 +1,1087 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Bruce Li</title>
+  <meta name="author" content="Bruce Li">
+
+  
+  <meta name="description" content="cucumber is a BDD(Behaviour driver development) framework. Basically test cases are written in plain text which is called Gherkin language, just in &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bruce Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-21T09:14:44+13:00" pubdate data-updated="true">Jan 21<span>st</span>, 2015</time>
+        
+           | <a href="/blog/2015/01/21/cucumber-best-practices/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2015/01/21/cucumber-best-practices/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://cukes.info/">cucumber</a> is a BDD(Behaviour driver development) framework. Basically test cases are written in plain text which is called Gherkin language, just in Given-When-Then steps. After that, developer will write implementation for those steps.</p>
+
+<p>It&rsquo;s good to bridge the communication between business requirement and implementation. The ideal work flow would be business analysis or QA write features and developer implements them. However, in a real world, developer write both of them. Cucumber is different programming model than what we normmaly use like Java, ruby, etc. It is not mature enough like OO which has tons of patterns and best practices to apply.</p>
+
+<p>Below are some best practices when I use cucumber for one project.</p>
+
+<h2>Write declarative features</h2>
+
+<p>Scenarios should be written like a user would describe them.</p>
+
+<p>Beware of scenarios that only describe clicking links and filling in form fields, or of steps that contain code or CSS selectors. This is just another variant of programming, but certainly not a feature description.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Scenario:</span><span class="nf"> Adding a todo item</span>
+</span><span class='line'><span class="k">    Given </span><span class="nf">I have a todo list named &quot;</span><span class="s">Mondays list</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">When </span><span class="nf">I go to the home page</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I fill in &quot;</span><span class="s">username</span><span class="nf">&quot; with &quot;</span><span class="s">dave</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I fill in &quot;</span><span class="s">password</span><span class="nf">&quot; with &quot;</span><span class="s">secret</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I press &quot;</span><span class="s">Log In</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I go to the todo page</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I click on link &quot;</span><span class="s">Mondays list</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I fill in &quot;</span><span class="s">todo</span><span class="nf">&quot; with &quot;</span><span class="s">Grab some milk</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I press &quot;</span><span class="s">Add todo</span><span class="nf">&quot;</span>
+</span><span class='line'><span class="nf">    </span><span class="k">Then </span><span class="nf">I should see &quot;</span><span class="s">Todo item added successfully</span><span class="nf">&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Scenario:</span><span class="nf"> Adding a todo item</span>
+</span><span class='line'><span class="k">    Given </span><span class="nf">I have a todo list</span>
+</span><span class='line'><span class="nf">    </span><span class="k">And </span><span class="nf">I am logged in as a normal user</span>
+</span><span class='line'><span class="nf">    </span><span class="k">When </span><span class="nf">I add a todo item</span>
+</span><span class='line'><span class="nf">    </span><span class="k">Then </span><span class="nf">It should be added to the todo list</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Use <code>As a &lt;role&gt;, I want &lt;goal/desire&gt; So that &lt;benefit&gt;</code> format for feature description</h2>
+
+<p>Describe feature in user story style. Starts the feature and gives it a title, then follow with user story format.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Feature:</span><span class="nf"> Create an account</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> ...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Feature:</span><span class="nf"> Create an account</span>
+</span><span class='line'><span class="nf">  As a user</span>
+</span><span class='line'><span class="nf">  I want to create an account for me</span>
+</span><span class='line'><span class="nf">  So that I can re-login to the same account</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">  </span><span class="k">Scenario:</span><span class="nf"> ...</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Use <code>should</code> in each <code>Then</code> and following <code>And</code> steps</h2>
+
+<p>The purpose of <code>Then</code> steps is to observe outcomes and verify result. Using <code>should</code> word as a convention makes it easy to understand, and make sure do verification in implementation step.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Then </span><span class="nf">My job is displayed in the table</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>*Good</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Then </span><span class="nf">My job should be displayed in the table</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Capitalize first letter of every step</h2>
+
+<p>Each step is independant, capitalize first letter makes a nice format.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Then </span><span class="nf">my job should be displayed in the table</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Then </span><span class="nf">My job should be displayed in the table</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Use page object model</h2>
+
+<p>Don&rsquo;t write implementation in step definition, use page object model.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">When</span><span class="p">(</span><span class="sr">/^I search for my job$/</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">visit</span> <span class="n">path_to</span><span class="p">(</span><span class="s1">&#39;manage jobs&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="ss">:text</span> <span class="o">=&gt;</span> <span class="s1">&#39;Filter Jobs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span>
+</span><span class='line'>  <span class="n">fill_in</span><span class="p">(</span><span class="s1">&#39;users-id-search&#39;</span><span class="p">,</span> <span class="ss">:with</span><span class="o">=&gt;</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">page</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;#users-id-search&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">native</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="ss">:backspace</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">fill_in</span><span class="p">(</span><span class="s1">&#39;requisition.title&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="vi">@job</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">click_button</span><span class="p">(</span><span class="s1">&#39;Search&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<p><em>job_steps.rb</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">When</span><span class="p">(</span><span class="sr">/^I search for my job$/</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="vi">@app</span><span class="o">.</span><span class="n">manage_job_page</span><span class="o">.</span><span class="n">load</span>
+</span><span class='line'>  <span class="vi">@app</span><span class="o">.</span><span class="n">manage_job_page</span><span class="o">.</span><span class="n">search</span> <span class="vi">@job</span><span class="o">.</span><span class="n">title</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>manage_job_page.rb</em></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">job_title</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="ss">:text</span> <span class="o">=&gt;</span> <span class="s1">&#39;Filter Jobs&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span>
+</span><span class='line'>  <span class="n">fill_in</span><span class="p">(</span><span class="s1">&#39;users-id-search&#39;</span><span class="p">,</span> <span class="ss">:with</span><span class="o">=&gt;</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">page</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;#users-id-search&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">native</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="ss">:backspace</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">fill_in</span><span class="p">(</span><span class="s1">&#39;requisition.title&#39;</span><span class="p">,</span> <span class="ss">:with</span> <span class="o">=&gt;</span> <span class="vi">@job</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">click_button</span><span class="p">(</span><span class="s1">&#39;Search&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Use background</h2>
+
+<p>If all the scenario in one feature file have the same steps, put them in the background.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Scenario:</span><span class="nf"> Foo</span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">I am logged in as an admin</span>
+</span><span class='line'><span class="nf">  </span><span class="k">And </span><span class="nf">....</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">Scenario:</span><span class="nf"> Bar</span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">I am logged in as an admin</span>
+</span><span class='line'><span class="nf">  </span><span class="k">And </span><span class="nf">....</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Background:</span><span class="nf"></span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">I am logged in as an admin</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">Scenario:</span><span class="nf"> Foo</span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">....</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">Scenario:</span><span class="nf"> Bar</span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">....</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Use Tags</h2>
+
+<p>Tags are a great way to organise your features and scenarios.</p>
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="nt">@job</span><span class="nf"> </span><span class="nt">@smoke</span><span class="nf"></span>
+</span><span class='line'><span class="k">Feature:</span><span class="nf"> Job management</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Avoid to use step params</h2>
+
+<p>Step params is a smell which the feature is not declarative.</p>
+
+<p>The parameter in feature should <strong>not</strong> be used as <strong>implementation parameter</strong>.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Given </span><span class="nf">I complete registration from using email &quot;</span><span class="s">test@example.com</span><span class="nf">&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Given </span><span class="nf">I complete registration form using a valid email</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Avoid to use scenario outlines</h2>
+
+<p>A Scenario Outline provides a parametrized scenario script. However, it easily become an anti-pattern if you use it too many.</p>
+
+<p>Each scenario with example actually means a different scenario. It&rsquo;s better to <strong>use scenario with a meaningful name</strong> instead of using scenario example.</p>
+
+<p>Scenario outlines uses step params, which should avoid to use.</p>
+
+<p>Beware of feature that only has one scenario but have a long list of examples. It could be a smell that too many different scenario are put together.</p>
+
+<h2>Avoid to use data tables</h2>
+
+<p>Data tables provides data for implementation. It is against the rule of feature should be declarative and business focus.</p>
+
+<p>Feature should not provide any detail implementation or data for testing.</p>
+
+<h2>Use Capybara <code>find</code> whenever possible</h2>
+
+<p><code>find</code> will wait for a set amount of time and continuously retry finding the element until either the element is found or the time expires.</p>
+
+<p><strong>Bad</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">first</span><span class="p">(</span><span class="s2">&quot;.active&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Good</strong></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">find</span><span class="p">(</span><span class="s2">&quot;.active&quot;</span><span class="p">,</span> <span class="ss">match</span><span class="p">:</span> <span class="ss">:first</span><span class="p">)</span><span class="o">.</span><span class="n">click</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T11:01:26+12:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2014/05/14/using-atom-editor-in-ubuntu/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="atom.io">Atom</a> is a new editor from github.com, which is very similar to Sublime. It&rsquo;s written using nodejs, coffeescript and less. And it&rsquo;s <strong>opensource</strong>. It makes lots of potentials for the future of the editor.</p>
+
+<p>However, atom does not provide a Linux package yet. As it&rsquo;s opensource, we can build from source.</p>
+
+<h2>Build Atom Editor for Ubuntu 14.04</h2>
+
+<p>From <a href="https://github.com/atom/atom">atom github repo</a> you can find the <a href="https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md">Linux installation guide</a>. Basically just following this guide should be OK.</p>
+
+<p>The only problem I met is <strong>node-gyp rebuild</strong> issue. It&rsquo;s because of the <strong>gyp</strong> installed in your machine which is conflicting with gyp version in node-gyp.</p>
+
+<p>Simple solution is :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo apt-get remove gyp
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After that, you will find a .deb atom file under <em>/tmp/atom-build</em> folder. Then install it :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nb">cd</span> /tmp/atom-build
+</span><span class='line'>sudo dpkg -i atom-0.95.0-amd64.deb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now you can open it by command <code>atom</code>.</p>
+
+<h2>Configure keybindings for Ubuntu</h2>
+
+<p>Most of the keybindings in atom are for Mac OS. You can add your own keys in key map file <code>~/.atom/keymap.cson</code>. There are some basic hotkeys I have added for Ubuntu:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="s1">&#39;.editor&#39;</span>:
+</span><span class='line'>    <span class="s1">&#39;ctrl-l&#39;</span>: <span class="s1">&#39;editor:select-line&#39;</span>
+</span><span class='line'>    <span class="s1">&#39;ctrl-d&#39;</span>: <span class="s1">&#39;find-and-replace:select-next&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="s1">&#39;body&#39;</span>:
+</span><span class='line'>  <span class="s1">&#39;ctrl-pagedown&#39;</span>: <span class="s1">&#39;pane:show-next-item&#39;</span>
+</span><span class='line'>  <span class="s1">&#39;ctrl-pageup&#39;</span>: <span class="s1">&#39;pane:show-previous-item&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Check the source code e.g. <a href="https://github.com/atom/atom/blob/master/src/editor-view.coffee">edit-view.coffee</a> for available commands you can use.</p>
+
+<p>Happy hacking!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-25T17:47:06+13:00" pubdate data-updated="true">Mar 25<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Mod Security</h2>
+
+<p>Recently we want to directly use couchdb REST API. But only expose GET REST API so the data could be safe for the public.</p>
+
+<p>A simple mod security rule do this trick:</p>
+
+<pre><code>SecRule REQUEST_URI "/database" "chain,log,deny,status:403,phase:2,id:1234567010"
+SecRule REQUEST_METHOD "!@rx ^(?:GET)$" 
+</code></pre>
+
+<h2>Two layers application &ndash; AngularJS + CouchDB</h2>
+
+<p>Speaking to this mod security, we are actually working some simple two layers application, only front-end(AngularJS) and datastore(Couchdb).</p>
+
+<p>This simple stack suits for some applications, which only load data from backend.And backend data would be updated by application operator.Those applications could be FAQ or News website etc. We use CouchDB because it has very good REST API and Web UI to manage the data.</p>
+
+<p>So no application layer, :&ndash;)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/17/start-blogging/">Start Blogging</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-17T18:23:36+13:00" pubdate data-updated="true">Mar 17<span>th</span>, 2014</time>
+        
+           | <a href="/blog/2014/03/17/start-blogging/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2014/03/17/start-blogging/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Blogging, NOW!</h2>
+
+<p>以前有一个blog，但是各种原因最后连之前的文章都找不回来了。这也是一个很好的教训，能不自己hosting就不要自己hosting，数据备份还是不如source code管理容易，于是我就选择了当然颇为流行的github+octopress.</p>
+
+<p>到新西兰快两年的时间，做个各种各样的事情，其实还是不错的，接触面还是挺广的。基本上每天都在解决各种各样的问题，每每解决了问题，心里都有一种强烈的冲动把它blog下来，谈不上说分享，更多想记录一下自己做的事情，希望能两年后知道自己之前做了什么事情。一直觉得家里忙（本人是两个孩子的爸了哦，:)),但这一切都不是借口，要做就现在做吧。</p>
+
+<p>于是买了域名(wbinglee.com)，就开干了。至于为什么要用这个域名，只是它和我太有缘了吧。我的gmail的帐号就是这个，很多网站的帐号也是这个，那域名也就这个吧，看起来无比的熟悉。</p>
+
+<p>新的blog中关于技术问题，我会尽量使用英文（虽然不咋地&hellip;）;其他杂七杂八的就中文吧，英文肯定写不出感觉。</p>
+
+<p>好，开始了。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-29T22:40:19+13:00" pubdate data-updated="true">Nov 29<span>th</span>, 2009</time>
+        
+           | <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近需要在WebSphere中做点魔术，所以要使用WAS(WebSphere Application Server)中的管理能力。JMX是WAS的管理的核心，苦于<a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.websphere.javadoc.doc/public_html/mbeandocs/index.html">WAS Mbean文档</a>并不是那么详细，这个时候就可以使用jconsole了。jconsole是一个JDK自带的JMX兼容的JVM管理工具，可以用它来可视化的查看和操作Mbean。</p>
+
+<p>在启动jconsole时需要一些WAS的jar，所以我这样来做：</p>
+
+<ul>
+<li>创建一个文件夹，例如：C:\programs\jconsole</li>
+<li>将一些需要的jar 拷贝进入到这个文件夹的libs中：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>com.ibm.ws.admin.client_6.1.0.jar   （在&lt;WAS_HOME&gt;/runtimes)   
+</span><span class='line'>ibmorbapi.jar  (在&lt;WAS_HOME&gt;/java/jre/lib)
+</span><span class='line'>ibmorb.jar (在&lt;WAS_HOME&gt;/java/jre/lib)
+</span><span class='line'>ibmcfw.jar (在&lt;WAS_HOME&gt;/java/jre/lib)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>编写一个bat文件</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'><span class="k">set</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&quot;C:\Program Files\Java\jdk1.6.0_16&quot;</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">WAS6</span>.<span class="m">1</span>_JARS<span class="o">=</span>C:\programs\jconsole\libs
+</span><span class='line'>
+</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmorbapi.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%BOOTJARS%</span>;<span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmorb.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%BOOTJARS%</span>;<span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmcfw.jar
+</span><span class='line'>
+</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\com.ibm.ws.admin.client_<span class="m">6</span>.<span class="m">1</span>.<span class="m">0</span>.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%CLASSPATH%</span>;<span class="nv">%JAVA_HOME%</span>\lib\tools.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%CLASSPATH%</span>;<span class="nv">%JAVA_HOME%</span>\lib\jconsole.jar
+</span><span class='line'>
+</span><span class='line'><span class="nv">%JAVA_HOME%</span>\bin\jconsole  -J-Xbootclasspath<span class="n">/p:%BOOTJARS%</span> -J-Djava.class.path<span class="o">=</span><span class="nv">%CLASSPATH%</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>使用如下URL来远程连接WAS中的JMX server</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'>service:jmx<span class="nl">:iiop</span>:<span class="n">//localhost:2809/jndi/JMXConnector</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其中这个端口号是RMI Connector的端口号，可以在启动的logs发现。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'>ADMC<span class="m">0026</span>I:The RMI Connector is available at port  <span class="m">2809</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>或者到admin console中查看
+Application servers > server1 >   Administration Services > JMX   connectors</p>
+
+<p>好，这样就可以了。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/09/15/keep-writing/">一直在写</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-09-15T03:25:15+12:00" pubdate data-updated="true">Sep 15<span>th</span>, 2009</time>
+        
+           | <a href="/blog/2009/09/15/keep-writing/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/09/15/keep-writing/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>刚和同学聊天时，问我blog怎么好长时间都没有更新了。看了看上篇文章的日期，离现在也有两个月有余了，有些惭愧。最近在做一些有意思的技术调研，倒是会在接下来的文章中分享一些。其实这段日子也在写一些东西，不过不在自己的blog上面了罢了。</p>
+
+<ul>
+<li><p>带给PHP 和 Java 世界的双赢  (<a href="http://www.netvibes.com/shawnzhu">朱可</a>&amp;me) -《 程序员》杂志 2009年09月刊</p></li>
+<li><p>Ajax &ndash; 超越桌面的Web 用户体验 &ndash; 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> &ndash; developerWorks</p></li>
+</ul>
+
+
+<p>时间总是匆匆，让我们继续前行&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/07/08/read-ppk-on-javascript/">读《PPK on JavaScript》</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-08T11:53:46+12:00" pubdate data-updated="true">Jul 8<span>th</span>, 2009</time>
+        
+           | <a href="/blog/2009/07/08/read-ppk-on-javascript/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p> <a href="http://www.quirksmode.org/">PPK</a>也是在JavaScript世界中的风云人物了，这位老兄对于浏览器端的技术以及各种浏览器的兼容性有极其丰富的经验。在这本书中，他谈了很多关于可访问性(Accessibility)和可用性(Usability)的一些问题，非常有趣。比如他说“不同的开发者以不同的方式诠释了JavaScript的目的。简单而形象地说就是：深受CSS革命影响的传统Web开发者们，创建的是瘦的、可访问性很强、乱糟糟的JavaScript代码；而来至服务器端开发的‘资深程序员们’用完美的面向对象代码、创建的是胖的、可访问性很差的Ajax客户端”。显然，ppk同学应该属于写乱糟糟但可访问性很好的人，而现在我做的大量事情却是后者。他更多相信现在的Ajax只是一种泡沫，当这个泡沫破灭并且大量‘资深服务器程序员’消失时，JS的开发者会更加注重可访问性。  可能体会不到ppk经历浏览器各种痛苦的经历，但是总体来说浏览器都在坚定地遵循Web标准，JavaScript的支持也会成为浏览器必备要求。anyway，事情总在发展，好戏在后头。分享一下我觉得这本书中几个有趣的地方。</p>
+
+<h3>可访问性和可用性</h3>
+
+<p>可访问性(<a href="http://en.wikipedia.org/wiki/Accessibility">Accessibility</a>)是指你的网页对于任何人、在任何环境下都是可持续访问的。特别是指某些用户，比如弱视、浏览器不支持JavaScript或者另外一些情况，比如用户使用Mobile使用你的网页等等。而可用性(Usability)是指使用或者浏览你的网页的容易程度(这里我们只谈web页面),通常它指我们能更有效率地使用、更容易地学习以及更加满意地使用它。举个例子来说，你让你的web页面支持IE6，或者支持mobile都是在提高它的可访问性；而是用CSS来改善布局让用户更容易阅读、使用JavaScript做一些对用户有帮助的互动都是在提高它的可用性。</p>
+
+<p>Web页面都是由下面三个层组成的，通过它们我们可以了解到它们之间的关系以及它们和可访问性和可用性之间的关系。</p>
+
+<ul>
+<li><p>HTML结构层</p></li>
+<li><p>CSS表现层</p></li>
+<li><p>JavaScript行为层</p></li>
+</ul>
+
+
+<p><img src="http://liwenbing.cn/wp-content/uploads/2009/07/web3layers-300x245.PNG" alt="web3layers" /></p>
+
+<p>Web页面的三个层，HTML结构层是必需的基础，CSS表现层和JavaScript行为层建于它之上。所以在客户端代码中不得不关注的话题就是这三个层的关注点分离。具体探讨一下这三个的分离：</p>
+
+<p><strong>表现与结构的分离(CSS与HTML)</strong></p>
+
+<p>这个分离很好理解，基本思想就是确保HTML来定义结构，而所有的表现都定义在另外单独的CSS文件中。HTML不应该出现<code>&lt;font&gt;</code>标签和用于表现的表格。如果想定义字体和布局，都应该在CSS中处理。</p>
+
+<p>大部分情况下面我们知道达到某个效果是修改表现或者结构是清楚的。但是有些情况下当更改HTML和修改CSS都可以时，你需要慎重地思考到底哪种是合理的。比如一个节点，你希望它不显示，那么你可以在HTML上面删除该节点或者使用CSS来“display:none”。当这种情况是，需要自己分析所需要的效果属于哪种情况，然后修改合理的层。</p>
+
+<p><strong>行为与结构的分离(JavaScript与HTML)</strong></p>
+
+<p>这个也比较好理解，就是不要把任何的JavaScript代码写到你的HTML页面中。应该把所有JavaScript代码放到一个独立的js文件中，然后将它链入到所有需要它的HTML页面中。</p>
+
+<p>关于这个有一个有趣的话题就是：<strong>无侵入脚本编程(unobtrusive scripting).</strong>简单来说它就是通过HTML和JavaScript的分离以达到页面的可访问性和可用性的最大化。既JavaScript失效了，页面还是可阅读和理解的；而通过引入脚本和JavaScript的hook，就可以让脚本运行，增强可用性。</p>
+
+<p><strong>行为与表现的分离(JavaScript与CSS)</strong></p>
+
+<p>这个的分离是非常复杂的，而且并没有总结出什么特别系统的规则。CSS和JavaScript是有重合的灰色地带的，有时候完全不能确切地把某个效果归为表现还是行为。比如是使用CSS中的hover还是JavaScript的mouseover/mouseout。基本来说你自己得根据具体情况做合理的选择吧。</p>
+
+<h3>事件捕捉模型</h3>
+
+<p>在HTML的事件模型中有一个有趣的话题。这个简单的问题就是：如果一个节点和它的父亲节点都有对同一个事件的处理，那么到底哪个事件会被先执行呢？这就是关于事件的冒泡和捕获。事件冒泡是说事件从它的目标元素开始，沿着文档树依次向上冒泡，并触发相应的事件处理函数。而事件的捕捉是刚好相反的，它从文档的第一级开始，然后沿着文档树向下游，知道事件目标为止。</p>
+
+<p>在W3C模型中，捕获和冒泡都会发生。当一个事件触发时，它先被文档捕获，到了事件目标后，再冒泡到文档顶层。而传统模型和微软模型只支持事件冒泡，而不支持事件捕获。所以最好是限制使用事件冒泡。其实在我们的实际编程中，很少关心这个话题，是因为大部分情况我们都只使用了事件冒泡。</p>
+
+<p>更加具体的可以查看ppk的文章：<a href="http://www.quirksmode.org/js/events_order.html">http://www.quirksmode.org/js/events_order.html</a></p>
+
+<h3>小记</h3>
+
+<p>应该来说PPK所谈的JavaScript是一个更加全面的浏览器编程的世界，让人可以全面来了解这个世界包含的东西。其实大部分的内容在PPK的网站上都有，值得读读。<a href="http://www.quirksmode.org/js/contents.html">http://www.quirksmode.org/js/contents.html</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/18/blue-blood/">蓝色的血液</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-18T04:51:16+12:00" pubdate data-updated="true">Jun 18<span>th</span>, 2009</time>
+        
+           | <a href="/blog/2009/06/18/blue-blood/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/06/18/blue-blood/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我是一名pure blue，从在IBM实习到开始工作到现在，在这样的一家百年老店工作，虽然有太多让人抱怨的地方，但是你会喜欢这里的人（虽然不是全部），并且从心里慢慢接受它的文化和价值观。这样的一个公司的价值观是令人敬佩的，足以指导你做人做事。特别不喜欢一些人张口闭口说这不如人那不爽，只怕自己没有自信罢了。不足就努力去改变它，你真受不了了就quit，what&rsquo;s the big deal？一个人在外人面前骂娘（自己老娘）的时候，是不可能得到尊重的，只是哗众取宠罢了。当你流淌着蓝色的血液时，你是自豪的。</p>
+
+<p>今早一聊天之不爽，故有此文。下面摘除一些从《品味蓝色》上句子。我很喜欢。</p>
+
+<blockquote><p>任何一名优秀的IBM人，当你问他成功之道的时候，他也许无法教会你具体的流程和方法，但他一定会告诉你，没有什么，不过是秉承诚信负责之道好好做人、好好做事罢了，因为在IBM，机会永远青睐于那些有好的工作表现和正直诚实的人。 &mdash; 周伟焜</p>
+
+<p>学会尊重别人，同时赢得别人尊重，这很重要。尊重别人身上的优点，你会变得更宽容。执着、专业、深入是赢得他人尊重的根本。谁都有缺点，包括我们的公司。但是要学会用宽容的心来对待周围的一切。得到尊重，你每天都会快乐。 &mdash; 郭希文</p>
+
+<p>所谓分享成功其实就是看你怎样Increase your influence，这并不是仅指依靠手中的权力发号施令，而是指能够提供给别人有价值的意见或见地。同时，在团队合作中，“诚信（integrity）”则是最重要的原则。无论对公司，还是对在公司团队中工作的个体，诚信都是立足之本，信任之基。对一个科学家来说，诚信就更重要，科学是不容半点虚假成分的，谁想投机取巧，违背科学规律，只能是搬起石头砸自己的脚。&mdash; 叶天正</p>
+
+<p>认真积极地工作，让我在事业上可以不断进步；以尊重、信任的态度与家人、同事沟通，让我得到了家人的支持，同事的尊敬，从而拥有了和谐美满的家庭和成功的事业。面对这一切，我最深的感受就是四个字——“知福惜福”。 &mdash;于雪莉</p></blockquote>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/18/smash-stakeholder-meeting/">sMash Stakeholder Meeting</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-18T03:41:37+12:00" pubdate data-updated="true">Jun 18<span>th</span>, 2009</time>
+        
+           | <a href="/blog/2009/06/18/smash-stakeholder-meeting/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/06/18/smash-stakeholder-meeting/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>上周进行了sMash的stakeholder meeting，在这个会上我介绍了Flow的新的特性，并且进行Demo的演示。我们的演示大概从5分钟开始，之前是产品开发经理的一些介绍。本人英文口语比较烂，不知道他们到底听懂了没有。详细的信息可以看<a href="http://www.projectzero.org/blog/index.php/2009/06/15/june-stakeholder-meeting-replay/">projectzero 的blog</a>。Vido在Viddler上，至于为什么在viddler上，我想可能是为了照顾中国用户无法访问YouTube的原因吧，呵呵。</p>
+
+<p><a href="http://www.viddler.com/explore/projectzero/videos/4/">http://www.viddler.com/explore/projectzero/videos/4/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/05/dojo-widget-destructor/">Dojo Widget的析构过程</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-05T23:09:13+12:00" pubdate data-updated="true">Jun 5<span>th</span>, 2009</time>
+        
+           | <a href="/blog/2009/06/05/dojo-widget-destructor/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/06/05/dojo-widget-destructor/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>了解dojo widget（或者说dijit）的析构过程，不仅让你更加了解整个dijit的生命周期，同样也能帮助我们在自己定制化的dijit中如何正确地释放资源。（这里讨论的dojo应该是在0.9或者以上版本的)</p>
+
+<p>下面是dijit的析构过程：</p>
+
+<pre><code>                        destroyRecursive
+                    /                      \
+                destroy                   destroyDescendants
+        /        |        \
+uninitialize  disconnect() destroyRendering
+</code></pre>
+
+<p>一些常见的<strong>错误</strong>是如下：</p>
+
+<ul>
+<li><p>使用destroy()去销毁一个dijit。我们应该使用destroyRecursive()去销毁一个dijit，从上面的过程可以看出，destroyRecursive()会销毁其孩子widgets。</p></li>
+<li><p>使用destory()去销毁定制dijit中的资源。更可怕的是有的代码可能是直接覆盖destroy，而根本不调用_Widget中的destory。uninitialize()才是dijit暴露出来给定制化widget进行析构的stub function。</p></li>
+</ul>
+
+
+<h3>结论</h3>
+
+<p><strong>使用destroyRecursive()去销毁dijit，使用uninitialize()在定制化的dijit来释放自己的资源</strong>。destroyDescendants，destroyRendering基本上用不到，也不要去覆盖它们。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Bruce Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

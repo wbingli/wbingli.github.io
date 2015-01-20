@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>用jconsole来管理WebSphere AppServer的MBean - Bruce Li</title>
+  <meta name="author" content="Bruce Li">
+
+  
+  <meta name="description" content="最近需要在WebSphere中做点魔术，所以要使用WAS(WebSphere Application Server)中的管理能力。JMX是WAS的管理的核心，苦于WAS Mbean文档并不是那么详细，这个时候就可以使用jconsole了。jconsole是一个JDK自带的JMX兼容的JVM管理工具 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Bruce Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">用jconsole来管理WebSphere AppServer的MBean</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-29T22:40:19+13:00" pubdate data-updated="true">Nov 29<span>th</span>, 2009</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近需要在WebSphere中做点魔术，所以要使用WAS(WebSphere Application Server)中的管理能力。JMX是WAS的管理的核心，苦于<a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.websphere.javadoc.doc/public_html/mbeandocs/index.html">WAS Mbean文档</a>并不是那么详细，这个时候就可以使用jconsole了。jconsole是一个JDK自带的JMX兼容的JVM管理工具，可以用它来可视化的查看和操作Mbean。</p>
+
+<p>在启动jconsole时需要一些WAS的jar，所以我这样来做：</p>
+
+<ul>
+<li>创建一个文件夹，例如：C:\programs\jconsole</li>
+<li>将一些需要的jar 拷贝进入到这个文件夹的libs中：</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>com.ibm.ws.admin.client_6.1.0.jar   （在&lt;WAS_HOME&gt;/runtimes)   
+</span><span class='line'>ibmorbapi.jar  (在&lt;WAS_HOME&gt;/java/jre/lib)
+</span><span class='line'>ibmorb.jar (在&lt;WAS_HOME&gt;/java/jre/lib)
+</span><span class='line'>ibmcfw.jar (在&lt;WAS_HOME&gt;/java/jre/lib)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>编写一个bat文件</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'><span class="k">set</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&quot;C:\Program Files\Java\jdk1.6.0_16&quot;</span>
+</span><span class='line'><span class="k">set</span> <span class="nv">WAS6</span>.<span class="m">1</span>_JARS<span class="o">=</span>C:\programs\jconsole\libs
+</span><span class='line'>
+</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmorbapi.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%BOOTJARS%</span>;<span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmorb.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%BOOTJARS%</span>;<span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmcfw.jar
+</span><span class='line'>
+</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\com.ibm.ws.admin.client_<span class="m">6</span>.<span class="m">1</span>.<span class="m">0</span>.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%CLASSPATH%</span>;<span class="nv">%JAVA_HOME%</span>\lib\tools.jar
+</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%CLASSPATH%</span>;<span class="nv">%JAVA_HOME%</span>\lib\jconsole.jar
+</span><span class='line'>
+</span><span class='line'><span class="nv">%JAVA_HOME%</span>\bin\jconsole  -J-Xbootclasspath<span class="n">/p:%BOOTJARS%</span> -J-Djava.class.path<span class="o">=</span><span class="nv">%CLASSPATH%</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>使用如下URL来远程连接WAS中的JMX server</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'>service:jmx<span class="nl">:iiop</span>:<span class="n">//localhost:2809/jndi/JMXConnector</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其中这个端口号是RMI Connector的端口号，可以在启动的logs发现。</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bat'><span class='line'>ADMC<span class="m">0026</span>I:The RMI Connector is available at port  <span class="m">2809</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>或者到admin console中查看
+Application servers > server1 >   Administration Services > JMX   connectors</p>
+
+<p>好，这样就可以了。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-29T22:40:19+13:00" pubdate data-updated="true">Nov 29<span>th</span>, 2009</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server/" data-via="" data-counturl="http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/09/15/keep-writing/" title="Previous Post: 一直在写">&laquo; 一直在写</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/03/17/start-blogging/" title="Next Post: Start Blogging">Start Blogging &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Bruce Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server/';
+        var disqus_url = 'http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Book | Bruce Li]]></title>
+  <link href="http://wbinglee.com/blog/categories/book/atom.xml" rel="self"/>
+  <link href="http://wbinglee.com/"/>
+  <updated>2015-01-21T10:01:01+13:00</updated>
+  <id>http://wbinglee.com/</id>
+  <author>
+    <name><![CDATA[Bruce Li]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[读《PPK on JavaScript》]]></title>
+    <link href="http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript/"/>
+    <updated>2009-07-08T11:53:46+12:00</updated>
+    <id>http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript</id>
+    <content type="html"><![CDATA[<p> <a href="http://www.quirksmode.org/">PPK</a>也是在JavaScript世界中的风云人物了，这位老兄对于浏览器端的技术以及各种浏览器的兼容性有极其丰富的经验。在这本书中，他谈了很多关于可访问性(Accessibility)和可用性(Usability)的一些问题，非常有趣。比如他说“不同的开发者以不同的方式诠释了JavaScript的目的。简单而形象地说就是：深受CSS革命影响的传统Web开发者们，创建的是瘦的、可访问性很强、乱糟糟的JavaScript代码；而来至服务器端开发的‘资深程序员们’用完美的面向对象代码、创建的是胖的、可访问性很差的Ajax客户端”。显然，ppk同学应该属于写乱糟糟但可访问性很好的人，而现在我做的大量事情却是后者。他更多相信现在的Ajax只是一种泡沫，当这个泡沫破灭并且大量‘资深服务器程序员’消失时，JS的开发者会更加注重可访问性。  可能体会不到ppk经历浏览器各种痛苦的经历，但是总体来说浏览器都在坚定地遵循Web标准，JavaScript的支持也会成为浏览器必备要求。anyway，事情总在发展，好戏在后头。分享一下我觉得这本书中几个有趣的地方。</p>
+
+<h3>可访问性和可用性</h3>
+
+<p>可访问性(<a href="http://en.wikipedia.org/wiki/Accessibility">Accessibility</a>)是指你的网页对于任何人、在任何环境下都是可持续访问的。特别是指某些用户，比如弱视、浏览器不支持JavaScript或者另外一些情况，比如用户使用Mobile使用你的网页等等。而可用性(Usability)是指使用或者浏览你的网页的容易程度(这里我们只谈web页面),通常它指我们能更有效率地使用、更容易地学习以及更加满意地使用它。举个例子来说，你让你的web页面支持IE6，或者支持mobile都是在提高它的可访问性；而是用CSS来改善布局让用户更容易阅读、使用JavaScript做一些对用户有帮助的互动都是在提高它的可用性。</p>
+
+<p>Web页面都是由下面三个层组成的，通过它们我们可以了解到它们之间的关系以及它们和可访问性和可用性之间的关系。</p>
+
+<ul>
+<li><p>HTML结构层</p></li>
+<li><p>CSS表现层</p></li>
+<li><p>JavaScript行为层</p></li>
+</ul>
+
+
+<p><img src="http://liwenbing.cn/wp-content/uploads/2009/07/web3layers-300x245.PNG" alt="web3layers" /></p>
+
+<p>Web页面的三个层，HTML结构层是必需的基础，CSS表现层和JavaScript行为层建于它之上。所以在客户端代码中不得不关注的话题就是这三个层的关注点分离。具体探讨一下这三个的分离：</p>
+
+<p><strong>表现与结构的分离(CSS与HTML)</strong></p>
+
+<p>这个分离很好理解，基本思想就是确保HTML来定义结构，而所有的表现都定义在另外单独的CSS文件中。HTML不应该出现<code>&lt;font&gt;</code>标签和用于表现的表格。如果想定义字体和布局，都应该在CSS中处理。</p>
+
+<p>大部分情况下面我们知道达到某个效果是修改表现或者结构是清楚的。但是有些情况下当更改HTML和修改CSS都可以时，你需要慎重地思考到底哪种是合理的。比如一个节点，你希望它不显示，那么你可以在HTML上面删除该节点或者使用CSS来“display:none”。当这种情况是，需要自己分析所需要的效果属于哪种情况，然后修改合理的层。</p>
+
+<p><strong>行为与结构的分离(JavaScript与HTML)</strong></p>
+
+<p>这个也比较好理解，就是不要把任何的JavaScript代码写到你的HTML页面中。应该把所有JavaScript代码放到一个独立的js文件中，然后将它链入到所有需要它的HTML页面中。</p>
+
+<p>关于这个有一个有趣的话题就是：<strong>无侵入脚本编程(unobtrusive scripting).</strong>简单来说它就是通过HTML和JavaScript的分离以达到页面的可访问性和可用性的最大化。既JavaScript失效了，页面还是可阅读和理解的；而通过引入脚本和JavaScript的hook，就可以让脚本运行，增强可用性。</p>
+
+<p><strong>行为与表现的分离(JavaScript与CSS)</strong></p>
+
+<p>这个的分离是非常复杂的，而且并没有总结出什么特别系统的规则。CSS和JavaScript是有重合的灰色地带的，有时候完全不能确切地把某个效果归为表现还是行为。比如是使用CSS中的hover还是JavaScript的mouseover/mouseout。基本来说你自己得根据具体情况做合理的选择吧。</p>
+
+<h3>事件捕捉模型</h3>
+
+<p>在HTML的事件模型中有一个有趣的话题。这个简单的问题就是：如果一个节点和它的父亲节点都有对同一个事件的处理，那么到底哪个事件会被先执行呢？这就是关于事件的冒泡和捕获。事件冒泡是说事件从它的目标元素开始，沿着文档树依次向上冒泡，并触发相应的事件处理函数。而事件的捕捉是刚好相反的，它从文档的第一级开始，然后沿着文档树向下游，知道事件目标为止。</p>
+
+<p>在W3C模型中，捕获和冒泡都会发生。当一个事件触发时，它先被文档捕获，到了事件目标后，再冒泡到文档顶层。而传统模型和微软模型只支持事件冒泡，而不支持事件捕获。所以最好是限制使用事件冒泡。其实在我们的实际编程中，很少关心这个话题，是因为大部分情况我们都只使用了事件冒泡。</p>
+
+<p>更加具体的可以查看ppk的文章：<a href="http://www.quirksmode.org/js/events_order.html">http://www.quirksmode.org/js/events_order.html</a></p>
+
+<h3>小记</h3>
+
+<p>应该来说PPK所谈的JavaScript是一个更加全面的浏览器编程的世界，让人可以全面来了解这个世界包含的东西。其实大部分的内容在PPK的网站上都有，值得读读。<a href="http://www.quirksmode.org/js/contents.html">http://www.quirksmode.org/js/contents.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aptana Jaxer:The Ajax Server?]]></title>
+    <link href="http://wbinglee.com/blog/2008/06/14/aptana-jaxer-the-ajax-server/"/>
+    <updated>2008-06-14T04:04:22+12:00</updated>
+    <id>http://wbinglee.com/blog/2008/06/14/aptana-jaxer-the-ajax-server</id>
+    <content type="html"><![CDATA[<p>一直以来都在用Aptana的Editor来编辑Javascript/CSS/HTML,都挺好。今天尝试了Aptana自己一直在推的所谓‘世界上第一个Ajax Server的<a href="http://aptana.com/jaxer">Jaxer</a>。</p>
+
+<p>在Jaxar里面写code倒是很有意思，所有你需要做的事情就是写Javascript/CSS/HTML。你根本不需要使用任何其他server-side语言,所有的事情就是写Javascript就可以了。来看一个例子：</p>
+
+<pre><code>&lt;code&gt;
+ &lt;script type="text/javascript" runat="server"&gt;
+    function getAuthenticatedUser()
+    {
+        var username = Jaxer.session.get("username");
+        if (typeof username == "undefined") return null;
+        var rs = Jaxer.DB.execute("SELECT * FROM users WHERE username = ?", [username]);
+        if (rs.rows.length == 0)
+        {
+            return null;
+        }
+        return rs.rows[0];
+    }
+&lt;/script&gt;
+&lt;/code&gt;
+</code></pre>
+
+<p>用‘runat=server’就可以让上面对数据库的操作运行在server端，而client端对该方法的调用不变，这样在写Web应用时就不用在Server side和client side两边跑来跑去了。并且还有对template的支持。</p>
+
+<p>这个和原来老毛和科长做的project zero client programming model是非常相似的，目的是都用来屏蔽client和server之间的boundary。不过Jaxar做的更加彻底，通过扩展Apache的server，加入自己的Server side framework和client side framework，让所有的一切都通过写JS就搞定了。并且对session，database, web ,SMTP 进行支持，对于一般的应用差不多就够了。老毛原来做的也是通过加入client framework以及扩展server的一些能力来让开发者在client和server之间进行无缝交互。可惜还是需要写Javascript和groovy，并且有一大堆的convention，不知道为什么没有发展下去（又是政治问题?).</p>
+
+<p>那么这种开发模式到底好不好呢？我觉得对于比较小的应用，不考虑扩展和与外界交互，还是一个比较快捷的开发方式。毕竟client和server的无缝交互所带来的好处是非常大的，比如说学习的门槛低（只需要知道一个Javascript就搞定了), 数据传输中麻烦的异步调用，编码，解码，格式转换等等都将消失。但是一旦你的web应用大一些的时候，我想这种模式就面临着很大的问题。关键还是不容易扩展，当它把UI和数据逻辑混合的时候，要做分离是比较困难的。当然你可以在它的编程模型上写一层数据操作层，但是这样就变成了典型的RPC了。另外，这样做并不<a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">REST</a>,Jaxer开发出来的应用根本提供不了service(更谈不上RESTful)，这样就无法被它人所用了。如果Jaxer应用以后要做整合，那绝对是一个大麻烦。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[读《Don't Make Me Think》]]></title>
+    <link href="http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think/"/>
+    <updated>2008-04-30T03:05:42+12:00</updated>
+    <id>http://wbinglee.com/blog/2008/04/30/reading-dont-make-me-think</id>
+    <content type="html"><![CDATA[<p><a href="http://www.douban.com/subject/1901208/"><img src="http://liwenbing.cn/wp-content/uploads/2008/04/dontmakemethink-223x300.jpg" alt="The book &lt;Don\'t make me think&gt;" /></a>一本很薄的书，关于Web的可用性的书籍。这本书讲的还是一些最本质的东西。关键的还是从用户，咳，Web用户的角度来看问题，了解一个浏览Web页面人的行为到底是怎么样，从而来对现有的网点做一些改善。改善也是回归本质，就是用最直接的方式来提供最有用的信息给用户。特别喜欢的一个部分是如何来进行可用性测试，平时我们在每日每夜干，却并不知道自己的东西到底怎么样，经常觉得这个东西不可用呀&hellip;还是需要平时花点滴时间来做这样的可用性测试。另外，特别想从“救命！老板想我要&hellip;..”得到点什么，hoho，似乎也没有特别的地方。</p>
+
+<p>在lab里面做的东东和这个里面所讲的可能还是有很大的区别的。这里面讲的主要的还是基于content的website，而我们的项目都是基于Web的工具了。下面把该书用在本website来看看自己的website还有哪些需要改善的地方。一个巨熟悉本website的人的测试：</p>
+
+<ol>
+<li><p> 导航到其他页面，为什么选中的导航部分没有被高亮呢？比如到了点导航的About后，出现About的页面，并没有将about在导航条中高亮；</p></li>
+<li><p> 我需要在导航条中添加home吗？（我的考虑，对于这种小型的个人主页，用户可能会习惯性点击名字来回到主页，多了home可能多余&hellip;）</p></li>
+<li><p> blog的导航条中就是到homepage，为什么需要这个呢？（奇怪，需要思考为什么有这个一不一致的行为？）</p></li>
+<li><p> 点击projects，labs，出现是File Not Found。（的确是没有去做，但是为什么要留在上面呢？最简单可以加一个标题，写暂没有内容）</p></li>
+<li><p> music部分没有title，也不知道这个页是干什么的。（就算是放音乐，也应该有一两句话来进行介绍。）</p></li>
+<li><p> 中英文混合，习惯吗？（这个是一个问题，我不清楚。。。给点意见？）</p></li>
+<li><p> 我怎么加留言？（我需要先点文章，或者日期旁边的comments，到新的页面后才可以留言，这样容易吗？自己没有找到好的办法）</p></li>
+<li><p> 右边栏中第一个是什么？（我需要加注释吗？可能对国内用户来说没有用，那么我需要去掉吗？）（P.S.:对该website进行bookmark的快捷方式！）</p></li>
+<li><p> 右边栏接这下来两个图标是什么意思呢？（国内用户有多少用feed的呢？为什么需要两个呢？我怎么知道哪个是我想要的呢？似乎一个好的办法是在icon的下面加一行字。比如订阅文章，订阅留言）</p></li>
+<li><p>. 为什么Search要和输入框换行呢？（的确不好，不知道我在哪里写错了）</p></li>
+<li><p>. Search是否用中文的‘搜索’要好一些呢？（not sure，自我感觉search比搜索要舒服些）</p></li>
+<li><p>. 在最后来翻看‘以前的文章’方便吗？（有更好，更直接的办法吗？）</p></li>
+<li><p>. Archives好吗？（自我觉得这个英文不是很好懂，还是换成中文好？）</p></li>
+</ol>
+
+
+<p>还有什么？</p>
+]]></content>
+  </entry>
+  
+</feed>
