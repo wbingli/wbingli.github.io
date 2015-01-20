@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Fun | Bruce Li]]></title>
   <link href="http://wbinglee.com/blog/categories/fun/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:01:01+13:00</updated>
+  <updated>2015-01-21T10:04:29+13:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
     <name><![CDATA[Bruce Li]]></name>
@@ -134,7 +134,7 @@
 
 <ol>
 <li><p> 下载后，修改app.yaml 文件中的application: 。</p></li>
-<li><p> 在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#x3a;&#x77;&#x62;&#x69;&#x6e;&#103;&#108;&#101;&#101;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#x6f;&#109;">&#119;&#98;&#x69;&#110;&#103;&#x6c;&#x65;&#101;&#x40;&#103;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
+<li><p> 在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#x77;&#98;&#x69;&#x6e;&#x67;&#108;&#x65;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;">&#119;&#98;&#105;&#x6e;&#x67;&#108;&#x65;&#101;&#64;&#x67;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
 <li><p> 然后appcfg.gy update 就好了。</p></li>
 </ol>
 
