@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tech | Bruce Li]]></title>
+  <title><![CDATA[Category: Tech | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[读《PPK on JavaScript》]]></title>
-    <link href="http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript/"/>
-    <updated>2009-07-08T11:53:46+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript</id>
+    <link href="http://wbinglee.com/blog/2009/07/07/read-ppk-on-javascript/"/>
+    <updated>2009-07-07T23:53:46+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/07/07/read-ppk-on-javascript</id>
     <content type="html"><![CDATA[<p> <a href="http://www.quirksmode.org/">PPK</a>也是在JavaScript世界中的风云人物了，这位老兄对于浏览器端的技术以及各种浏览器的兼容性有极其丰富的经验。在这本书中，他谈了很多关于可访问性(Accessibility)和可用性(Usability)的一些问题，非常有趣。比如他说“不同的开发者以不同的方式诠释了JavaScript的目的。简单而形象地说就是：深受CSS革命影响的传统Web开发者们，创建的是瘦的、可访问性很强、乱糟糟的JavaScript代码；而来至服务器端开发的‘资深程序员们’用完美的面向对象代码、创建的是胖的、可访问性很差的Ajax客户端”。显然，ppk同学应该属于写乱糟糟但可访问性很好的人，而现在我做的大量事情却是后者。他更多相信现在的Ajax只是一种泡沫，当这个泡沫破灭并且大量‘资深服务器程序员’消失时，JS的开发者会更加注重可访问性。  可能体会不到ppk经历浏览器各种痛苦的经历，但是总体来说浏览器都在坚定地遵循Web标准，JavaScript的支持也会成为浏览器必备要求。anyway，事情总在发展，好戏在后头。分享一下我觉得这本书中几个有趣的地方。</p>
 
 <h3>可访问性和可用性</h3>
@@ -69,9 +69,9 @@
   
   <entry>
     <title type="html"><![CDATA[怎么用twitter？]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/02/how-to-use-twitter/"/>
-    <updated>2009-05-02T05:12:09+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/02/how-to-use-twitter</id>
+    <link href="http://wbinglee.com/blog/2009/05/01/how-to-use-twitter/"/>
+    <updated>2009-05-01T17:12:09+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/01/how-to-use-twitter</id>
     <content type="html"><![CDATA[<p>09年是year of twitter, 这个东西现在火的一塌糊涂，google和facebook对它是羡慕的不得了。国内IT圈中也是刮起了一阵twitter风，好像你没有个twitter都不好意思和别人打招呼。但是当你屁颠屁颠地在上面发点东西的时候，也同时也被大量的信息噪音给淹没。有的人用twitter在聊天，有的人发布的信息非常多但是毫无意义，慢慢地这个东西成为了一种负担。其实twitter火起来有它的原因，但要看怎么来用了。</p>
 
 <p>twitter来至一个简单的想法，告诉别人你在做什么。现在有很多的工具来帮助人们进行交流，比如blog和IM，但是日常发生在自己身上的一些事情使用这样一些工具都不太适合。我们不可以发一个blog告诉别人我在做什么，也不可能在聊天工具上面像疯了似的给每个人发这些消息。然而通过twitter，人们可以进一步加深相互的了解。比如，我的一个好朋友发消息说他在做一道菜。我看到后，很好奇他居然还会做菜呀，于是我们有了公共的兴趣点，可以进一步地聊聊。</p>
@@ -88,14 +88,14 @@
   
   <entry>
     <title type="html"><![CDATA[你的website也social了吗？]]></title>
-    <link href="http://wbinglee.com/blog/2008/12/12/diy-your-website-social/"/>
-    <updated>2008-12-12T06:10:58+13:00</updated>
-    <id>http://wbinglee.com/blog/2008/12/12/diy-your-website-social</id>
+    <link href="http://wbinglee.com/blog/2008/12/11/diy-your-website-social/"/>
+    <updated>2008-12-11T17:10:58+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/12/11/diy-your-website-social</id>
     <content type="html"><![CDATA[<p>如果你访问我的website，你可能注意到我的页面中多了两个小东西（我们一般叫gadget），通过它们，你可以加入我的website、看到所有的人、加他们为好友、或者可以留言。嘿嘿，看，我的website也成为social了哦。（一定要给面子加入到我的website，:),）。不过感觉比较遗憾的一点是，朋友之间不能相互地发message，是我漏点了什么吗？</p>
 
 <p>这就是<a href="http://www.google.com/friendconnect/">Google Friend Connect</a>所提供的能力，你只需要copy/paste它提供的HTML到你的页面中就完事了。是不是很简单呢？</p>
 
-<p>Google的确在兑现它的承诺，让所有的website都能容易加入social的能力，并且还是使用最基本的东西(HTML/Javscript)。年初的时候在讲什么OpenSocial，觉得挺玄乎的，并没有搞懂这个东西到底怎么折腾到我的website，也懒得去研究它。现在Friend Connect可以说是提供了一个平民化的social方式 &ndash; Copy/Paste HTML总会了吧， 2分钟搞定。</p>
+<p>Google的确在兑现它的承诺，让所有的website都能容易加入social的能力，并且还是使用最基本的东西(HTML/Javscript)。年初的时候在讲什么OpenSocial，觉得挺玄乎的，并没有搞懂这个东西到底怎么折腾到我的website，也懒得去研究它。现在Friend Connect可以说是提供了一个平民化的social方式 - Copy/Paste HTML总会了吧， 2分钟搞定。</p>
 
 <p>OpenSocial就是提供了一堆的API来帮助你构建你需要的Social能力。当然这个对于需要social能力的商业网站是可行，能力很强，干啥都可以。而Friend Connect就更进一步了，就是将OpenSocial的能力平民化。通过使用OpenSocial的API写相关的OpenSocial gadget，你就可以通过Copy/Paste的方式加入各种各样的gadget。Cool？YES.  当然Friend Connect另外提供了一些基本的login，管理的能力。</p>
 
@@ -119,9 +119,9 @@
   
   <entry>
     <title type="html"><![CDATA[Firefox会成为新的RCP吗？]]></title>
-    <link href="http://wbinglee.com/blog/2008/07/13/will-firefox-be-the-next-rcp/"/>
-    <updated>2008-07-13T02:05:19+12:00</updated>
-    <id>http://wbinglee.com/blog/2008/07/13/will-firefox-be-the-next-rcp</id>
+    <link href="http://wbinglee.com/blog/2008/07/12/will-firefox-be-the-next-rcp/"/>
+    <updated>2008-07-12T14:05:19+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/07/12/will-firefox-be-the-next-rcp</id>
     <content type="html"><![CDATA[<p>对于firefox的插件大家都觉得属于添加浏览器的功能，这些插件只是firefox中的小甜点，并不能自成一个完整的软件。 我也是一直这么认为，但是今天看到一个用firefox做的画图的工具，<a href="http://www.evolus.vn/Pencil/Home.html">http://www.evolus.vn/Pencil/Home.html</a>，一个和原有插件很不一样的插件。它只是将 <strong>Mozilla Gecko engine</strong>做成了一个画图的工具。并且最特别的地方是大小只有400K，非常的惊人。</p>
 
 <p>觉得firefox非常有希望成为一个RCP的平台，相对Eclipse这样的RCP平台(或者Abode的AIR)来说是有非常多的优势的：</p>
@@ -150,15 +150,15 @@
   
   <entry>
     <title type="html"><![CDATA[Google I/O Session]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/18/google-io-session/"/>
-    <updated>2008-06-18T02:57:57+12:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/18/google-io-session</id>
+    <link href="http://wbinglee.com/blog/2008/06/17/google-io-session/"/>
+    <updated>2008-06-17T14:57:57+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/06/17/google-io-session</id>
     <content type="html"><![CDATA[<p>这个是google对developer的一个大会，有非常多好的session，做web的都需要关注一下google到底在做什么。在它的keynote 讲了google努力做事情的方向：</p>
 
 <ol>
-<li><p> Make the cloud more accessible</p></li>
-<li><p> Keep connectivity pervasive</p></li>
-<li><p> Make the client more powerful</p></li>
+<li><p>Make the cloud more accessible</p></li>
+<li><p>Keep connectivity pervasive</p></li>
+<li><p>Make the client more powerful</p></li>
 </ol>
 
 

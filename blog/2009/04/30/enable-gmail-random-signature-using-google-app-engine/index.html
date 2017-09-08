@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Enable Gmail Random Signature Using Google App Engine - Wenbing Li</title>
+  <meta name="author" content="Wenbing Li">
+
+  
+  <meta name="description" content="在GMail的Lab中有这样的一个小东西，它可以随机地加入签名档到你的邮件中。这个一直是我想要的，于是在五一无聊的时候试试。 首先当然是要到GMail的Lab中enable这个功能了。 这个时候到Setting->General中的Signature中会多出这么一个东西， 默认是http:// &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Wenbing Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Wenbing Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Enable Gmail Random Signature Using Google App Engine</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-30T21:21:52+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>在GMail的Lab中有这样的一个小东西，它可以随机地加入签名档到你的邮件中。这个一直是我想要的，于是在五一无聊的时候试试。</p>
+
+<p>首先当然是要到GMail的Lab中enable这个功能了。</p>
+
+<p><a href="http://liwenbing.cn/2009/05/01/enable-gmail-random-signature-using-google-app-engine/enable1/"><img src="http://liwenbing.cn/wp-content/uploads/2009/05/enable1.png" alt="enable1" /></a></p>
+
+<p>这个时候到Setting->General中的Signature中会多出这么一个东西，</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2009/05/setting.png"><img src="http://liwenbing.cn/wp-content/uploads/2009/05/setting.png" alt="setting" /></a></p>
+
+<p>默认是<a href="http://www.brainyquote.com/link/quotefu.rss%E8%BF%99%E4%B8%AA%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%97%B6%E5%80%99%E5%BD%93%E4%BD%A0%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%82%AE%E4%BB%B6%EF%BC%8C%E5%B0%B1%E4%BC%9A%E5%8F%91%E7%8E%B0%E6%9C%89%E7%AD%BE%E5%90%8D%E6%A1%A3%E9%9A%8F%E6%9C%BA%E6%8F%92%E5%85%A5%E5%88%B0%E9%82%AE%E4%BB%B6%E4%B8%AD%E3%80%82%E4%BD%86%E6%98%AF%E8%BF%99%E4%B8%AA%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%EF%BC%8C%E6%88%91%E9%9C%80%E8%A6%81%E5%AE%83%E6%98%AF%E4%BB%8E%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E5%88%97%E8%A1%A8%E4%B8%AD%E5%8E%BB%E6%89%BE%E3%80%82%E8%BF%99%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E7%94%B1%E4%B8%80%E4%B8%AARSS%E6%9D%A5%E7%BB%99%E5%87%BA%E7%9A%84%EF%BC%8C%E9%82%A3%E4%B9%88%E4%BD%95%E4%B8%8D%E4%BD%BF%E7%94%A8Google">http://www.brainyquote.com/link/quotefu.rss%E8%BF%99%E4%B8%AA%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%97%B6%E5%80%99%E5%BD%93%E4%BD%A0%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%82%AE%E4%BB%B6%EF%BC%8C%E5%B0%B1%E4%BC%9A%E5%8F%91%E7%8E%B0%E6%9C%89%E7%AD%BE%E5%90%8D%E6%A1%A3%E9%9A%8F%E6%9C%BA%E6%8F%92%E5%85%A5%E5%88%B0%E9%82%AE%E4%BB%B6%E4%B8%AD%E3%80%82%E4%BD%86%E6%98%AF%E8%BF%99%E4%B8%AA%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%EF%BC%8C%E6%88%91%E9%9C%80%E8%A6%81%E5%AE%83%E6%98%AF%E4%BB%8E%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E5%88%97%E8%A1%A8%E4%B8%AD%E5%8E%BB%E6%89%BE%E3%80%82%E8%BF%99%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E7%94%B1%E4%B8%80%E4%B8%AARSS%E6%9D%A5%E7%BB%99%E5%87%BA%E7%9A%84%EF%BC%8C%E9%82%A3%E4%B9%88%E4%BD%95%E4%B8%8D%E4%BD%BF%E7%94%A8Google</a> App Engine来做一个自己的签名档管理的小系统，这样我可以加入自己新的签名档，然后还可以提供签名档的RSS给它呢？</p>
+
+<p>说动手就动手吧，很快就完成了。<a href="http://liwb-quote.appspot.com/">http://liwb-quote.appspot.com/</a>。界面是抄twitter的，因为我的功能的确就是和它一样。我不得不说，在App Engine上面开发这样的应用的效率是惊人的。我很久没有动python了，App Engine的东西也是边看它的tutorial来完成的。但是我还是没有碰到太多的障碍就完成这些事情。看截图吧。</p>
+
+<p><a href="http://liwb-quote.appspot.com/"><img src="http://liwenbing.cn/wp-content/uploads/2009/05/quote.png" alt="quote" /></a></p>
+
+<p>然后再是提供RSS就可以了：<a href="http://liwb-quote.appspot.com/rss%E3%80%82">http://liwb-quote.appspot.com/rss%E3%80%82</a> 再将这个地址放到gmail中设置就可以了。嘿嘿，当你再新建一个邮件的时候，签名档就是你在appspot上面的自己的了。是不是很high呢？</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>App Egine来开发这样的应用的效率是极高的。无非是数据库的一些操作，开发、调试和上线的体验只有用过才知道是如何的high。</p>
+
+<p>另外，Gmail中的<a href="http://groups.google.com/group/gmail-labs-help-random-signature">Random Signature</a>还是非常不成熟，它并不是实时地去拿我当前的记录。也不知道它多久抓一下，这点让人沮丧。</p>
+
+<p><strong>Download</strong></p>
+
+<p>这个是我的App Engine的工程，如果你管理自己的签名档或者类似一句话的东东，这个都可以用。</p>
+
+<p><a href="http://liwenbing.cn/download/liwb-quote.zip"><strong>下载App Engine应用</strong></a></p>
+
+<p>一些注意事项：</p>
+
+<ol>
+<li><p>下载后，修改app.yaml 文件中的application: 。</p></li>
+<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x77;&#x62;&#x69;&#110;&#x67;&#x6c;&#101;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#119;&#98;&#105;&#x6e;&#103;&#x6c;&#101;&#x65;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
+<li><p>然后appcfg.gy update 就好了。</p></li>
+</ol>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-30T21:21:52+00:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/fun/'>fun</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/" data-via="" data-counturl="http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/04/25/at-beijing-openparty/" title="Previous Post: 在Beijing OpenParty">&laquo; 在Beijing OpenParty</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/05/01/how-to-use-twitter/" title="Next Post: 怎么用twitter？">怎么用twitter？ &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - Wenbing Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/';
+        var disqus_url = 'http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

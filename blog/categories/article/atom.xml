@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Article | Bruce Li]]></title>
+  <title><![CDATA[Category: Article | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/article/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,17 +15,17 @@
   
   <entry>
     <title type="html"><![CDATA[最近的一篇新的developerWorks文章 - 使用 Assemble Flow 开发简单协作流程]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/15/new-article-in-developerworks/"/>
-    <updated>2009-05-15T05:05:04+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/15/new-article-in-developerworks</id>
+    <link href="http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks/"/>
+    <updated>2009-05-14T17:05:04+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks</id>
     <content type="html"><![CDATA[<p>终于这篇文章在dWs上面发表出来了。
 <a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 2 部分: 使用 Assemble Flow 开发简单协作流程</a></p>
 
-<p>&mdash;文章摘要如下</p>
+<p>&ndash;文章摘要如下</p>
 
 <p>在使用 WebSphere® sMash 中的 Assemble flow 来构建 Mashup 应用的<a href="http://www.ibm.com/developerworks/cn/web/wa-lo-pz-assembleflow1/">第 1 部分</a>中，我们介绍了 Assemble flow 的基本概念，以及如何使用 Assemble flow 来实现基于 Feed 的 Mashup 服务。本文中，我们将向您介绍如何使用 Assemble flow 来开发简单的协作流程。</p>
 
-<p>&mdash;文章目录如下:</p>
+<p>&ndash;文章目录如下:</p>
 
 <p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#">本文内容包括：</a></p>
 
@@ -85,7 +85,7 @@
 
 <p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#rate">对本文的评价</a></p>
 
-<p>&mdash;另外，发了另外两个blog在projectzero的中文博客上面；</p>
+<p>&ndash;另外，发了另外两个blog在projectzero的中文博客上面；</p>
 
 <ul>
 <li><p><a href="http://www.projectzero.org/cblog/index.php/2009/05/14/article-at-developerworks-assemble-flow-collaboration/">developerWorks文章：使用 Assemble Flow 开发简单协作流程</a></p></li>

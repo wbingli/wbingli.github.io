@@ -5,11 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>CSS Selector - 基础 - Bruce Li</title>
-  <meta name="author" content="Bruce Li">
+  <title>CSS Selector - 基础 - Wenbing Li</title>
+  <meta name="author" content="Wenbing Li">
 
   
-  <meta name="description" content="想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是： 基础：主要是从CSS selector来谈起，也是平时用的最多的； 高级：谈谈一些高级的selector的用法； 关于Cascade：关于CSS继承， &hellip;">
+  <meta name="description" content="想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是： 基础：主要是从CSS selector来谈起，也是平时用的最多的；
+高级：谈谈一些高级的selector的用法；
+关于Cascade：关于CSS继承， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +23,7 @@
   <link rel="canonical" href="http://wbinglee.com/blog/2008/06/03/css-selector-basic">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Bruce Li" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Wenbing Li" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
@@ -48,7 +50,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">Bruce Li</a></h1>
+  <h1><a href="/">Wenbing Li</a></h1>
   
     <h2>It's all about the fundamentals.</h2>
   
@@ -96,7 +98,7 @@
   
 
 
-<time datetime="2008-06-03T18:22:25+12:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2008</time>
+<time datetime="2008-06-03T06:22:25+00:00" pubdate data-updated="true"></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://wbinglee.com">Comments</a>
@@ -109,10 +111,10 @@
 <div class="entry-content"><p>想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是：</p>
 
 <ol>
-<li><p> 基础：主要是从CSS selector来谈起，也是平时用的最多的；</p></li>
-<li><p> 高级：谈谈一些高级的selector的用法；</p></li>
-<li><p> 关于Cascade：关于CSS继承，优先级的一些topic；</p></li>
-<li><p> 未来的思考：未来的CSS selector会怎么发展？CSS 3做了什么？javascript所带来的影响是什么？</p></li>
+<li><p>基础：主要是从CSS selector来谈起，也是平时用的最多的；</p></li>
+<li><p>高级：谈谈一些高级的selector的用法；</p></li>
+<li><p>关于Cascade：关于CSS继承，优先级的一些topic；</p></li>
+<li><p>未来的思考：未来的CSS selector会怎么发展？CSS 3做了什么？javascript所带来的影响是什么？</p></li>
 </ol>
 
 
@@ -128,7 +130,7 @@
 </code></pre>
 
 <p><strong>二.Class Selector</strong>
-类选择器和HTML中的class相结合，应用到所有声明了该class的标签中。类选择器必须要以 &ldquo;.&#8221;来开头。
+类选择器和HTML中的class相结合，应用到所有声明了该class的标签中。类选择器必须要以 &ldquo;."来开头。
 对于</p>
 
 <pre><code>.title{
@@ -192,7 +194,7 @@ ID选择器会将其syle应用在HTML中该ID的tag上。
 
 <p><strong>五.Group selector</strong></p>
 
-<p>组选择器顾名思义就是对于一组selector应用同一中style，以逗号&#8221;,&ldquo;隔开；组中的元素都可以是前面四中的任何一种。</p>
+<p>组选择器顾名思义就是对于一组selector应用同一中style，以逗号",&ldquo;隔开；组中的元素都可以是前面四中的任何一种。</p>
 
 <pre><code>h1,
 p .intro,
@@ -243,7 +245,7 @@ a:visited{
   
 
 
-<time datetime="2008-06-03T18:22:25+12:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2008</time>
+<time datetime="2008-06-03T06:22:25+00:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -323,7 +325,7 @@ a:visited{
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Bruce Li -
+  Copyright &copy; 2017 - Wenbing Li -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

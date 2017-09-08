@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Blog | Bruce Li]]></title>
+  <title><![CDATA[Category: Blog | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/blog/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -34,15 +34,15 @@
   
   <entry>
     <title type="html"><![CDATA[一直在写]]></title>
-    <link href="http://wbinglee.com/blog/2009/09/15/keep-writing/"/>
-    <updated>2009-09-15T03:25:15+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/09/15/keep-writing</id>
+    <link href="http://wbinglee.com/blog/2009/09/14/keep-writing/"/>
+    <updated>2009-09-14T15:25:15+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/09/14/keep-writing</id>
     <content type="html"><![CDATA[<p>刚和同学聊天时，问我blog怎么好长时间都没有更新了。看了看上篇文章的日期，离现在也有两个月有余了，有些惭愧。最近在做一些有意思的技术调研，倒是会在接下来的文章中分享一些。其实这段日子也在写一些东西，不过不在自己的blog上面了罢了。</p>
 
 <ul>
 <li><p>带给PHP 和 Java 世界的双赢  (<a href="http://www.netvibes.com/shawnzhu">朱可</a>&amp;me) -《 程序员》杂志 2009年09月刊</p></li>
-<li><p>Ajax &ndash; 超越桌面的Web 用户体验 &ndash; 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
-<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> &ndash; developerWorks</p></li>
+<li><p>Ajax - 超越桌面的Web 用户体验 - 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> - developerWorks</p></li>
 </ul>
 
 
@@ -52,9 +52,9 @@
   
   <entry>
     <title type="html"><![CDATA[怎么用twitter？]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/02/how-to-use-twitter/"/>
-    <updated>2009-05-02T05:12:09+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/02/how-to-use-twitter</id>
+    <link href="http://wbinglee.com/blog/2009/05/01/how-to-use-twitter/"/>
+    <updated>2009-05-01T17:12:09+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/01/how-to-use-twitter</id>
     <content type="html"><![CDATA[<p>09年是year of twitter, 这个东西现在火的一塌糊涂，google和facebook对它是羡慕的不得了。国内IT圈中也是刮起了一阵twitter风，好像你没有个twitter都不好意思和别人打招呼。但是当你屁颠屁颠地在上面发点东西的时候，也同时也被大量的信息噪音给淹没。有的人用twitter在聊天，有的人发布的信息非常多但是毫无意义，慢慢地这个东西成为了一种负担。其实twitter火起来有它的原因，但要看怎么来用了。</p>
 
 <p>twitter来至一个简单的想法，告诉别人你在做什么。现在有很多的工具来帮助人们进行交流，比如blog和IM，但是日常发生在自己身上的一些事情使用这样一些工具都不太适合。我们不可以发一个blog告诉别人我在做什么，也不可能在聊天工具上面像疯了似的给每个人发这些消息。然而通过twitter，人们可以进一步加深相互的了解。比如，我的一个好朋友发消息说他在做一道菜。我看到后，很好奇他居然还会做菜呀，于是我们有了公共的兴趣点，可以进一步地聊聊。</p>
@@ -71,9 +71,9 @@
   
   <entry>
     <title type="html"><![CDATA[实在是喜欢新版本Wordpress]]></title>
-    <link href="http://wbinglee.com/blog/2008/12/12/love-wordpress-new-ui/"/>
-    <updated>2008-12-12T04:31:13+13:00</updated>
-    <id>http://wbinglee.com/blog/2008/12/12/love-wordpress-new-ui</id>
+    <link href="http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui/"/>
+    <updated>2008-12-11T15:31:13+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui</id>
     <content type="html"><![CDATA[<p>Wordpress总是给我带来一些小小的惊喜，刚刚更新到2.7，居然有如此大的变化。</p>
 
 <ul>
@@ -93,9 +93,9 @@
   
   <entry>
     <title type="html"><![CDATA[Aptana Jaxer:The Ajax Server?]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/14/aptana-jaxer-the-ajax-server/"/>
-    <updated>2008-06-14T04:04:22+12:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/14/aptana-jaxer-the-ajax-server</id>
+    <link href="http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
+    <updated>2008-06-13T16:04:22+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
     <content type="html"><![CDATA[<p>一直以来都在用Aptana的Editor来编辑Javascript/CSS/HTML,都挺好。今天尝试了Aptana自己一直在推的所谓‘世界上第一个Ajax Server的<a href="http://aptana.com/jaxer">Jaxer</a>。</p>
 
 <p>在Jaxar里面写code倒是很有意思，所有你需要做的事情就是写Javascript/CSS/HTML。你根本不需要使用任何其他server-side语言,所有的事情就是写Javascript就可以了。来看一个例子：</p>

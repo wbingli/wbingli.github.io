@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tools | Bruce Li]]></title>
+  <title><![CDATA[Category: Tools | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>

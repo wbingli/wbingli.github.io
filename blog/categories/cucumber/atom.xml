@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Cucumber | Bruce Li]]></title>
+  <title><![CDATA[Category: Cucumber | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/cucumber/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -32,55 +32,55 @@
 
 <p><strong>Bad</strong></p>
 
-<p>```Cucumber
-Scenario: Adding a todo item</p>
-
-<pre><code>Given I have a todo list named "Mondays list"
-When I go to the home page
-And I fill in "username" with "dave"
-And I fill in "password" with "secret"
-And I press "Log In"
-And I go to the todo page
-And I click on link "Mondays list"
-And I fill in "todo" with "Grab some milk"
-And I press "Add todo"
-Then I should see "Todo item added successfully"
+<pre><code class="Cucumber">Scenario: Adding a todo item
+    Given I have a todo list named "Mondays list"
+    When I go to the home page
+    And I fill in "username" with "dave"
+    And I fill in "password" with "secret"
+    And I press "Log In"
+    And I go to the todo page
+    And I click on link "Mondays list"
+    And I fill in "todo" with "Grab some milk"
+    And I press "Add todo"
+    Then I should see "Todo item added successfully"
 </code></pre>
-
-<p>```</p>
 
 <p><strong>Good</strong>
-```Cucumber
-Scenario: Adding a todo item</p>
-
-<pre><code>Given I have a todo list
-And I am logged in as a normal user
-When I add a todo item
-Then It should be added to the todo list
-</code></pre>
-
-<p>```</p>
+<code>Cucumber
+Scenario: Adding a todo item
+    Given I have a todo list
+    And I am logged in as a normal user
+    When I add a todo item
+    Then It should be added to the todo list
+</code></p>
 
 <h2>Use <code>As a &lt;role&gt;, I want &lt;goal/desire&gt; So that &lt;benefit&gt;</code> format for feature description</h2>
 
 <p>Describe feature in user story style. Starts the feature and gives it a title, then follow with user story format.</p>
 
 <p><strong>Bad</strong>
-```Cucumber
-Feature: Create an account</p>
-
-<p>  Scenario: &hellip;
-```</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Feature:</span><span class="nf"> Create an account&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">&lt;p&gt;  Scenario: &amp;hellip;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p><strong>Good</strong>
-```Cucumber
-Feature: Create an account
-  As a user
-  I want to create an account for me
-  So that I can re-login to the same account</p>
-
-<p>  Scenario: &hellip;
-```</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Feature:</span><span class="nf"> Create an account</span>
+</span><span class='line'><span class="nf">  As a user</span>
+</span><span class='line'><span class="nf">  I want to create an account for me</span>
+</span><span class='line'><span class="nf">  So that I can re-login to the same account&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">&lt;p&gt;  Scenario: &amp;hellip;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h2>Use <code>should</code> in each <code>Then</code> and following <code>And</code> steps</h2>
 
@@ -116,8 +116,7 @@ Then My job should be displayed in the table
 
 <p><strong>Bad</strong></p>
 
-<p><code>ruby
-When(/^I search for my job$/) do
+<pre><code class="ruby">When(/^I search for my job$/) do
   visit path_to('manage jobs')
   find('a', :text =&gt; 'Filter Jobs').click
   fill_in('users-id-search', :with=&gt;"")
@@ -125,7 +124,7 @@ When(/^I search for my job$/) do
   fill_in('requisition.title', :with =&gt; @job.title)
   click_button('Search')
 end
-</code></p>
+</code></pre>
 
 <p><strong>Good</strong></p>
 
@@ -152,27 +151,40 @@ end
 <p>If all the scenario in one feature file have the same steps, put them in the background.</p>
 
 <p><strong>Bad</strong>
-```Cucumber
-Scenario: Foo
-  Given I am logged in as an admin
-  And &hellip;.</p>
-
-<p>Scenario: Bar
-  Given I am logged in as an admin
-  And &hellip;.
-```</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Scenario:</span><span class="nf"> Foo</span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">I am logged in as an admin</span>
+</span><span class='line'><span class="nf">  </span><span class="k">And </span><span class="nf">&amp;hellip;.</span><span class="nv">&lt;/p&gt;</span><span class="nf"></span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="nf">Scenario: Bar</span>
+</span><span class='line'><span class="nf">  </span><span class="k">Given </span><span class="nf">I am logged in as an admin</span>
+</span><span class='line'><span class="nf">  </span><span class="k">And </span><span class="nf">&amp;hellip;.</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p><strong>Good</strong>
-```Cucumber
-Background:
-  Given I am logged in as an admin</p>
-
-<p>Scenario: Foo
-  Given &hellip;.</p>
-
-<p>Scenario: Bar
-  Given &hellip;.
-```</p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='Cucumber'><span class='line'><span class="k">Background:</span><span class="nf"></span>
+</span><span class='line'><span class="k">  Given </span><span class="nf">I am logged in as an admin</span><span class="nv">&lt;/p&gt;</span><span class="nf"></span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="nf">Scenario: Foo</span>
+</span><span class='line'><span class="nf">  </span><span class="k">Given </span><span class="nf">&amp;hellip;.</span><span class="nv">&lt;/p&gt;</span><span class="nf"></span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="nf">Scenario: Bar</span>
+</span><span class='line'><span class="nf">  </span><span class="k">Given </span><span class="nf">&amp;hellip;.</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h2>Use Tags</h2>
 
@@ -222,9 +234,8 @@ Given I complete registration form using a valid email
 
 <p><strong>Bad</strong></p>
 
-<p><code>ruby
-first(".active").click
-</code></p>
+<pre><code class="ruby">first(".active").click
+</code></pre>
 
 <p><strong>Good</strong>
 <code>ruby

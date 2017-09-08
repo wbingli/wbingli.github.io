@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CSS Selector - 高级 - Wenbing Li</title>
+  <meta name="author" content="Wenbing Li">
+
+  
+  <meta name="description" content="在前面一篇文章中(CSS Selector - 基础)介绍一些CSS selector的基本用法。里面来谈一些平时比较少用的CSS selector用法。 一.Child selector
+这个选择器和前面的descendent比较类似，descendent适用与所有的下代， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/blog/2008/06/19/css-selector-advanced">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Wenbing Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Wenbing Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">CSS Selector - 高级</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-19T23:57:17+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>在前面一篇文章中(<a href="http://liwenbing.cn/2008/06/03/css-selector-basic/">CSS Selector - 基础</a>)介绍一些CSS selector的基本用法。里面来谈一些平时比较少用的CSS selector用法。</p>
+
+<p><strong>一.Child selector</strong>
+这个选择器和前面的descendent比较类似，descendent适用与所有的下代，但是Child描述的是父子关系。它需要用尖括号'>&lsquo;来表示。  例子如下：</p>
+
+<pre><code>body&gt;h2{
+ font-size:2.5em;
+}
+</code></pre>
+
+<p>在未来的发展中，有些有趣的讨论就是：<a href="http://www.shauninman.com/archive/2008/05/05/css_qualified_selectors">是否我们需要右括号</a>,就像：
+a &lt; img { border: none; }就表明如果  父亲是, 那么border就不存在。当然这只是一个提议，更加站在目标tag来进行表述。可惜并不在CSS3的规范中。</p>
+
+<p><strong>二.Adjacent siblings selecor</strong>
+前面说了父子关系的选择器，这个是关于兄弟关系的选择器。</p>
+
+<pre><code>h2+p{
+ font-size:1.2em;
+}
+</code></pre>
+
+<p>如果一个<a>前面是<h2>那么将应用该selector。</p>
+
+<p><strong>三.属性 selector</strong>
+属性选择器是一个更加强大的选择器。前面的selector都是更加tag的位置关系等来进行选择。属性选择器是根据标签内部的属性来进行选择。</p>
+
+<pre><code>//选择&lt;a&gt;中href属性为'liwenbing.cn'的
+a[href='liwenbing.cn'] {
+ font-size:red;
+}
+//选中&lt;input&gt;中类型type为text的。
+input[type="text"]{
+ border-color:1px solid #666;
+}
+</code></pre>
+
+<p>在CSS3中，<a href="http://www.w3.org/TR/2005/WD-css3-selectors-20051215/#attribute-substrings">对属性选择器是有加强的</a>。并且现在流行的浏览器(IE7,FF)基本上已经支持这样的selector了。
+有三种：</p>
+
+<ul>
+<li><p>[att^=val]：选择属性att的值是以val来开头的；</p></li>
+<li><p>[att&amp;=val]：选择属性att的值是以val来结束的；</p></li>
+<li><p>[att*=val]：选择属性att的值是包含val的；</p>
+
+<p>//这个将选中 <p title='home' ></p>
+p[title^=&ldquo;ho&rdquo;] {background: green;}</p>
+
+<p>//这个将选中 <p title='hot' ></p>
+p[title$=&ldquo;t&rdquo;] {background: green;}</p>
+
+<p>//这个将选中 <p title='contact' ></p>
+p[title*=&ldquo;on&rdquo;] {background: green;}</p></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-19T23:57:17+00:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wbinglee.com/blog/2008/06/19/css-selector-advanced/" data-via="" data-counturl="http://wbinglee.com/blog/2008/06/19/css-selector-advanced/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/06/17/google-io-session/" title="Previous Post: Google I/O session">&laquo; Google I/O session</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/06/25/ajax-upload-file-using-dojo-in-smash/" title="Next Post: 在sMash环境中，使用dojo来Ajax上传文件">在sMash环境中，使用dojo来Ajax上传文件 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - Wenbing Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wbinglee.com/blog/2008/06/19/css-selector-advanced/';
+        var disqus_url = 'http://wbinglee.com/blog/2008/06/19/css-selector-advanced/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Bruce Li]]></title>
+  <title><![CDATA[Wenbing Li]]></title>
   <link href="http://wbinglee.com/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -387,13 +387,13 @@
 SecRule REQUEST_METHOD "!@rx ^(?:GET)$" 
 </code></pre>
 
-<h2>Two layers application &ndash; AngularJS + CouchDB</h2>
+<h2>Two layers application - AngularJS + CouchDB</h2>
 
 <p>Speaking to this mod security, we are actually working some simple two layers application, only front-end(AngularJS) and datastore(Couchdb).</p>
 
 <p>This simple stack suits for some applications, which only load data from backend.And backend data would be updated by application operator.Those applications could be FAQ or News website etc. We use CouchDB because it has very good REST API and Web UI to manage the data.</p>
 
-<p>So no application layer, :&ndash;)</p>
+<p>So no application layer, :-)</p>
 ]]></content>
   </entry>
   
@@ -419,7 +419,7 @@ SecRule REQUEST_METHOD "!@rx ^(?:GET)$"
   <entry>
     <title type="html"><![CDATA[用jconsole来管理WebSphere AppServer的MBean]]></title>
     <link href="http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server/"/>
-    <updated>2009-11-29T22:40:19+13:00</updated>
+    <updated>2009-11-29T09:40:19+00:00</updated>
     <id>http://wbinglee.com/blog/2009/11/29/using-jconsole-in-websphere-application-server</id>
     <content type="html"><![CDATA[<p>最近需要在WebSphere中做点魔术，所以要使用WAS(WebSphere Application Server)中的管理能力。JMX是WAS的管理的核心，苦于<a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.websphere.javadoc.doc/public_html/mbeandocs/index.html">WAS Mbean文档</a>并不是那么详细，这个时候就可以使用jconsole了。jconsole是一个JDK自带的JMX兼容的JVM管理工具，可以用它来可视化的查看和操作Mbean。</p>
 
@@ -501,15 +501,15 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
   <entry>
     <title type="html"><![CDATA[一直在写]]></title>
-    <link href="http://wbinglee.com/blog/2009/09/15/keep-writing/"/>
-    <updated>2009-09-15T03:25:15+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/09/15/keep-writing</id>
+    <link href="http://wbinglee.com/blog/2009/09/14/keep-writing/"/>
+    <updated>2009-09-14T15:25:15+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/09/14/keep-writing</id>
     <content type="html"><![CDATA[<p>刚和同学聊天时，问我blog怎么好长时间都没有更新了。看了看上篇文章的日期，离现在也有两个月有余了，有些惭愧。最近在做一些有意思的技术调研，倒是会在接下来的文章中分享一些。其实这段日子也在写一些东西，不过不在自己的blog上面了罢了。</p>
 
 <ul>
 <li><p>带给PHP 和 Java 世界的双赢  (<a href="http://www.netvibes.com/shawnzhu">朱可</a>&amp;me) -《 程序员》杂志 2009年09月刊</p></li>
-<li><p>Ajax &ndash; 超越桌面的Web 用户体验 &ndash; 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
-<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> &ndash; developerWorks</p></li>
+<li><p>Ajax - 超越桌面的Web 用户体验 - 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
+<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> - developerWorks</p></li>
 </ul>
 
 
@@ -519,9 +519,9 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
   <entry>
     <title type="html"><![CDATA[读《PPK on JavaScript》]]></title>
-    <link href="http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript/"/>
-    <updated>2009-07-08T11:53:46+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/07/08/read-ppk-on-javascript</id>
+    <link href="http://wbinglee.com/blog/2009/07/07/read-ppk-on-javascript/"/>
+    <updated>2009-07-07T23:53:46+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/07/07/read-ppk-on-javascript</id>
     <content type="html"><![CDATA[<p> <a href="http://www.quirksmode.org/">PPK</a>也是在JavaScript世界中的风云人物了，这位老兄对于浏览器端的技术以及各种浏览器的兼容性有极其丰富的经验。在这本书中，他谈了很多关于可访问性(Accessibility)和可用性(Usability)的一些问题，非常有趣。比如他说“不同的开发者以不同的方式诠释了JavaScript的目的。简单而形象地说就是：深受CSS革命影响的传统Web开发者们，创建的是瘦的、可访问性很强、乱糟糟的JavaScript代码；而来至服务器端开发的‘资深程序员们’用完美的面向对象代码、创建的是胖的、可访问性很差的Ajax客户端”。显然，ppk同学应该属于写乱糟糟但可访问性很好的人，而现在我做的大量事情却是后者。他更多相信现在的Ajax只是一种泡沫，当这个泡沫破灭并且大量‘资深服务器程序员’消失时，JS的开发者会更加注重可访问性。  可能体会不到ppk经历浏览器各种痛苦的经历，但是总体来说浏览器都在坚定地遵循Web标准，JavaScript的支持也会成为浏览器必备要求。anyway，事情总在发展，好戏在后头。分享一下我觉得这本书中几个有趣的地方。</p>
 
 <h3>可访问性和可用性</h3>
@@ -573,28 +573,28 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
   <entry>
     <title type="html"><![CDATA[蓝色的血液]]></title>
-    <link href="http://wbinglee.com/blog/2009/06/18/blue-blood/"/>
-    <updated>2009-06-18T04:51:16+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/06/18/blue-blood</id>
+    <link href="http://wbinglee.com/blog/2009/06/17/blue-blood/"/>
+    <updated>2009-06-17T16:51:16+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/06/17/blue-blood</id>
     <content type="html"><![CDATA[<p>我是一名pure blue，从在IBM实习到开始工作到现在，在这样的一家百年老店工作，虽然有太多让人抱怨的地方，但是你会喜欢这里的人（虽然不是全部），并且从心里慢慢接受它的文化和价值观。这样的一个公司的价值观是令人敬佩的，足以指导你做人做事。特别不喜欢一些人张口闭口说这不如人那不爽，只怕自己没有自信罢了。不足就努力去改变它，你真受不了了就quit，what&rsquo;s the big deal？一个人在外人面前骂娘（自己老娘）的时候，是不可能得到尊重的，只是哗众取宠罢了。当你流淌着蓝色的血液时，你是自豪的。</p>
 
 <p>今早一聊天之不爽，故有此文。下面摘除一些从《品味蓝色》上句子。我很喜欢。</p>
 
-<blockquote><p>任何一名优秀的IBM人，当你问他成功之道的时候，他也许无法教会你具体的流程和方法，但他一定会告诉你，没有什么，不过是秉承诚信负责之道好好做人、好好做事罢了，因为在IBM，机会永远青睐于那些有好的工作表现和正直诚实的人。 &mdash; 周伟焜</p>
+<blockquote><p>任何一名优秀的IBM人，当你问他成功之道的时候，他也许无法教会你具体的流程和方法，但他一定会告诉你，没有什么，不过是秉承诚信负责之道好好做人、好好做事罢了，因为在IBM，机会永远青睐于那些有好的工作表现和正直诚实的人。 &ndash; 周伟焜</p>
 
-<p>学会尊重别人，同时赢得别人尊重，这很重要。尊重别人身上的优点，你会变得更宽容。执着、专业、深入是赢得他人尊重的根本。谁都有缺点，包括我们的公司。但是要学会用宽容的心来对待周围的一切。得到尊重，你每天都会快乐。 &mdash; 郭希文</p>
+<p>学会尊重别人，同时赢得别人尊重，这很重要。尊重别人身上的优点，你会变得更宽容。执着、专业、深入是赢得他人尊重的根本。谁都有缺点，包括我们的公司。但是要学会用宽容的心来对待周围的一切。得到尊重，你每天都会快乐。 &ndash; 郭希文</p>
 
-<p>所谓分享成功其实就是看你怎样Increase your influence，这并不是仅指依靠手中的权力发号施令，而是指能够提供给别人有价值的意见或见地。同时，在团队合作中，“诚信（integrity）”则是最重要的原则。无论对公司，还是对在公司团队中工作的个体，诚信都是立足之本，信任之基。对一个科学家来说，诚信就更重要，科学是不容半点虚假成分的，谁想投机取巧，违背科学规律，只能是搬起石头砸自己的脚。&mdash; 叶天正</p>
+<p>所谓分享成功其实就是看你怎样Increase your influence，这并不是仅指依靠手中的权力发号施令，而是指能够提供给别人有价值的意见或见地。同时，在团队合作中，“诚信（integrity）”则是最重要的原则。无论对公司，还是对在公司团队中工作的个体，诚信都是立足之本，信任之基。对一个科学家来说，诚信就更重要，科学是不容半点虚假成分的，谁想投机取巧，违背科学规律，只能是搬起石头砸自己的脚。&ndash; 叶天正</p>
 
-<p>认真积极地工作，让我在事业上可以不断进步；以尊重、信任的态度与家人、同事沟通，让我得到了家人的支持，同事的尊敬，从而拥有了和谐美满的家庭和成功的事业。面对这一切，我最深的感受就是四个字——“知福惜福”。 &mdash;于雪莉</p></blockquote>
+<p>认真积极地工作，让我在事业上可以不断进步；以尊重、信任的态度与家人、同事沟通，让我得到了家人的支持，同事的尊敬，从而拥有了和谐美满的家庭和成功的事业。面对这一切，我最深的感受就是四个字——“知福惜福”。 &ndash;于雪莉</p></blockquote>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[sMash Stakeholder Meeting]]></title>
-    <link href="http://wbinglee.com/blog/2009/06/18/smash-stakeholder-meeting/"/>
-    <updated>2009-06-18T03:41:37+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/06/18/smash-stakeholder-meeting</id>
+    <link href="http://wbinglee.com/blog/2009/06/17/smash-stakeholder-meeting/"/>
+    <updated>2009-06-17T15:41:37+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/06/17/smash-stakeholder-meeting</id>
     <content type="html"><![CDATA[<p>上周进行了sMash的stakeholder meeting，在这个会上我介绍了Flow的新的特性，并且进行Demo的演示。我们的演示大概从5分钟开始，之前是产品开发经理的一些介绍。本人英文口语比较烂，不知道他们到底听懂了没有。详细的信息可以看<a href="http://www.projectzero.org/blog/index.php/2009/06/15/june-stakeholder-meeting-replay/">projectzero 的blog</a>。Vido在Viddler上，至于为什么在viddler上，我想可能是为了照顾中国用户无法访问YouTube的原因吧，呵呵。</p>
 
 <p><a href="http://www.viddler.com/explore/projectzero/videos/4/">http://www.viddler.com/explore/projectzero/videos/4/</a></p>
@@ -604,7 +604,7 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   <entry>
     <title type="html"><![CDATA[Dojo Widget的析构过程]]></title>
     <link href="http://wbinglee.com/blog/2009/06/05/dojo-widget-destructor/"/>
-    <updated>2009-06-05T23:09:13+12:00</updated>
+    <updated>2009-06-05T11:09:13+00:00</updated>
     <id>http://wbinglee.com/blog/2009/06/05/dojo-widget-destructor</id>
     <content type="html"><![CDATA[<p>了解dojo widget（或者说dijit）的析构过程，不仅让你更加了解整个dijit的生命周期，同样也能帮助我们在自己定制化的dijit中如何正确地释放资源。（这里讨论的dojo应该是在0.9或者以上版本的)</p>
 
@@ -634,7 +634,7 @@ uninitialize  disconnect() destroyRendering
   <entry>
     <title type="html"><![CDATA[为什么Firefox 3不能加载本地的JavaScript文件了？]]></title>
     <link href="http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/"/>
-    <updated>2009-06-05T20:36:38+12:00</updated>
+    <updated>2009-06-05T08:36:38+00:00</updated>
     <id>http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file</id>
     <content type="html"><![CDATA[<p>一段时间来一直受这样的困扰，就是我的Firefox无法运行本地的dojo的测试文件。一直以为是我的firefox或者机器出了什么问题，就只好去使用IE或者Chrome去运行这些测试例子，可惜不能用firebug的确让人很不爽。</p>
 
@@ -642,7 +642,7 @@ uninitialize  disconnect() destroyRendering
 
 <p><a href="http://liwenbing.cn/2009/06/05/why-ff3-cannot-load-local-javascript-file/local-file-p-origin-policy/"><img src="http://liwenbing.cn/wp-content/uploads/2009/06/local-file-p-origin-policy-300x42.png" alt="local-file-p-origin-policy" /></a></p>
 
-<p>继续在google了一下，找了这个&#8221;feature&#8221;的由来，<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=230606">https://bugzilla.mozilla.org/show_bug.cgi?id=230606</a>，大概是说本地的文件如果没有这样的限制，可以访问本机的其他文件，这样会造成安全隐患。John Resig（Father of  jQuery) 也有一个blog关于这个问题，<a href="http://ejohn.org/blog/tightened-local-file-security/">http://ejohn.org/blog/tightened-local-file-security/</a>，下面的评论也挺值得看看的。</p>
+<p>继续在google了一下，找了这个"feature"的由来，<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=230606">https://bugzilla.mozilla.org/show_bug.cgi?id=230606</a>，大概是说本地的文件如果没有这样的限制，可以访问本机的其他文件，这样会造成安全隐患。John Resig（Father of  jQuery) 也有一个blog关于这个问题，<a href="http://ejohn.org/blog/tightened-local-file-security/">http://ejohn.org/blog/tightened-local-file-security/</a>，下面的评论也挺值得看看的。</p>
 
 <p><strong>More Links: </strong></p>
 
@@ -658,7 +658,7 @@ uninitialize  disconnect() destroyRendering
   <entry>
     <title type="html"><![CDATA[JavaScript中==等同运算符的类型转换]]></title>
     <link href="http://wbinglee.com/blog/2009/05/22/javascript-equal-type-conversion/"/>
-    <updated>2009-05-22T16:59:18+12:00</updated>
+    <updated>2009-05-22T04:59:18+00:00</updated>
     <id>http://wbinglee.com/blog/2009/05/22/javascript-equal-type-conversion</id>
     <content type="html"><![CDATA[<p>这周在给一些新员工讲JavaScript的时候，谈了==和===的区别，本质来说，===是严格的等同运算符，要求两者类型相同并且值相同；而==运算符在做比较时，会做一定的类型转换。我们在使用过程中应该使用===而不是==，因为这种类型转换后的比较往往都不是你想要的。当时列出了corckfork最喜欢一些例子：</p>
 
@@ -823,17 +823,17 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[最近的一篇新的developerWorks文章 - 使用 Assemble Flow 开发简单协作流程]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/15/new-article-in-developerworks/"/>
-    <updated>2009-05-15T05:05:04+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/15/new-article-in-developerworks</id>
+    <link href="http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks/"/>
+    <updated>2009-05-14T17:05:04+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks</id>
     <content type="html"><![CDATA[<p>终于这篇文章在dWs上面发表出来了。
 <a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 2 部分: 使用 Assemble Flow 开发简单协作流程</a></p>
 
-<p>&mdash;文章摘要如下</p>
+<p>&ndash;文章摘要如下</p>
 
 <p>在使用 WebSphere® sMash 中的 Assemble flow 来构建 Mashup 应用的<a href="http://www.ibm.com/developerworks/cn/web/wa-lo-pz-assembleflow1/">第 1 部分</a>中，我们介绍了 Assemble flow 的基本概念，以及如何使用 Assemble flow 来实现基于 Feed 的 Mashup 服务。本文中，我们将向您介绍如何使用 Assemble flow 来开发简单的协作流程。</p>
 
-<p>&mdash;文章目录如下:</p>
+<p>&ndash;文章目录如下:</p>
 
 <p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#">本文内容包括：</a></p>
 
@@ -893,7 +893,7 @@ null == undefined  // true
 
 <p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#rate">对本文的评价</a></p>
 
-<p>&mdash;另外，发了另外两个blog在projectzero的中文博客上面；</p>
+<p>&ndash;另外，发了另外两个blog在projectzero的中文博客上面；</p>
 
 <ul>
 <li><p><a href="http://www.projectzero.org/cblog/index.php/2009/05/14/article-at-developerworks-assemble-flow-collaboration/">developerWorks文章：使用 Assemble Flow 开发简单协作流程</a></p></li>
@@ -905,9 +905,9 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[关于‘行’与‘你怎么知道’]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/11/about-ok-and-how-do-you-know/"/>
-    <updated>2009-05-11T04:18:39+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/11/about-ok-and-how-do-you-know</id>
+    <link href="http://wbinglee.com/blog/2009/05/10/about-ok-and-how-do-you-know/"/>
+    <updated>2009-05-10T16:18:39+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/10/about-ok-and-how-do-you-know</id>
     <content type="html"><![CDATA[<p>周末参加了一个<a href="http://www.opug.org.cn">opug</a>的一个线下,真的很棒，收集到更多资料后，我会在后面的文章中来专门谈这个活动。其实活动之后我一直在琢磨在活动中给我触动的一件小事，记得当时有一位嘉宾说了一个观点后，我立刻机械地说“对”，坐在我对面的<a href="http://www.javafox.org/">长城</a>同学的反应是”你怎么知道“。其实道理很简单，对于观点你应该有一个什么样的正确的直觉反应。做技术，甚至无论做什么，都应该有一个怀疑和刨根问底的思维方式，这样才能很好的培养对于问题的独立思考能力。</p>
 
 <p><strong>嗯，对于你不知道的东西/观点，多问点为什么，别让‘对’/&lsquo;行‘成为自己的第一反应。</strong></p>
@@ -916,9 +916,9 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[怎么用twitter？]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/02/how-to-use-twitter/"/>
-    <updated>2009-05-02T05:12:09+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/02/how-to-use-twitter</id>
+    <link href="http://wbinglee.com/blog/2009/05/01/how-to-use-twitter/"/>
+    <updated>2009-05-01T17:12:09+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/05/01/how-to-use-twitter</id>
     <content type="html"><![CDATA[<p>09年是year of twitter, 这个东西现在火的一塌糊涂，google和facebook对它是羡慕的不得了。国内IT圈中也是刮起了一阵twitter风，好像你没有个twitter都不好意思和别人打招呼。但是当你屁颠屁颠地在上面发点东西的时候，也同时也被大量的信息噪音给淹没。有的人用twitter在聊天，有的人发布的信息非常多但是毫无意义，慢慢地这个东西成为了一种负担。其实twitter火起来有它的原因，但要看怎么来用了。</p>
 
 <p>twitter来至一个简单的想法，告诉别人你在做什么。现在有很多的工具来帮助人们进行交流，比如blog和IM，但是日常发生在自己身上的一些事情使用这样一些工具都不太适合。我们不可以发一个blog告诉别人我在做什么，也不可能在聊天工具上面像疯了似的给每个人发这些消息。然而通过twitter，人们可以进一步加深相互的了解。比如，我的一个好朋友发消息说他在做一道菜。我看到后，很好奇他居然还会做菜呀，于是我们有了公共的兴趣点，可以进一步地聊聊。</p>
@@ -935,9 +935,9 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[Enable Gmail Random Signature Using Google App Engine]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/01/enable-gmail-random-signature-using-google-app-engine/"/>
-    <updated>2009-05-01T09:21:52+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/01/enable-gmail-random-signature-using-google-app-engine</id>
+    <link href="http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/"/>
+    <updated>2009-04-30T21:21:52+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine</id>
     <content type="html"><![CDATA[<p>在GMail的Lab中有这样的一个小东西，它可以随机地加入签名档到你的邮件中。这个一直是我想要的，于是在五一无聊的时候试试。</p>
 
 <p>首先当然是要到GMail的Lab中enable这个功能了。</p>
@@ -971,9 +971,9 @@ null == undefined  // true
 <p>一些注意事项：</p>
 
 <ol>
-<li><p> 下载后，修改app.yaml 文件中的application: 。</p></li>
-<li><p> 在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#119;&#98;&#105;&#x6e;&#x67;&#x6c;&#x65;&#101;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#119;&#98;&#x69;&#110;&#103;&#x6c;&#101;&#101;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#109;</a>&#8216;改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
-<li><p> 然后appcfg.gy update 就好了。</p></li>
+<li><p>下载后，修改app.yaml 文件中的application: 。</p></li>
+<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x77;&#x62;&#x69;&#110;&#x67;&#x6c;&#101;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#119;&#98;&#105;&#x6e;&#103;&#x6c;&#101;&#x65;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
+<li><p>然后appcfg.gy update 就好了。</p></li>
 </ol>
 
 ]]></content>
@@ -981,9 +981,9 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[在Beijing OpenParty]]></title>
-    <link href="http://wbinglee.com/blog/2009/04/26/at-beijing-openparty/"/>
-    <updated>2009-04-26T04:17:38+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/04/26/at-beijing-openparty</id>
+    <link href="http://wbinglee.com/blog/2009/04/25/at-beijing-openparty/"/>
+    <updated>2009-04-25T16:17:38+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/04/25/at-beijing-openparty</id>
     <content type="html"><![CDATA[<p>今天是第二次参加<a href="http://www.beijing-open-party.org/">OpenParty</a>的活动了。<a href="http://www.beijing-open-party.org/index.php/2009/03/beijing-open-party-2009-03-sunny-spring-event-preparation.html">第一次</a>参加时联系好了，还以为过去时讲东东，结果情况也不是我们预料的那样，最后的情况不是我们所想的但是依然收获颇丰，知道了有这样一个社区，认识了很多有意思的人。</p>
 
 <p><a href="http://www.beijing-open-party.org/index.php/2009/04/beijing-openparty-2009-04-serenade-to-spring-remind.html">这次</a>的活动更是精彩了，顺着QCon的风，请到了一些业界的大拿们到这里给大家讲些东西。周5的晚上还在和<a href="http://www.netvibes.com/shawnzhu">朱可</a>商量说，我们就不要讲了，这么多好的topic我们可以去听，就没有别要自讨没趣了。</p>
@@ -1006,9 +1006,9 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[I Am Still Alive]]></title>
-    <link href="http://wbinglee.com/blog/2009/03/18/i-am-still-alive/"/>
-    <updated>2009-03-18T06:45:35+13:00</updated>
-    <id>http://wbinglee.com/blog/2009/03/18/i-am-still-alive</id>
+    <link href="http://wbinglee.com/blog/2009/03/17/i-am-still-alive/"/>
+    <updated>2009-03-17T17:45:35+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/03/17/i-am-still-alive</id>
     <content type="html"><![CDATA[<p>恩，我的确还活着。我快有3个月没有发一个新的文章了，草应该长的很深了，不过不要紧，冬天不怎么长草, :) 。那么我都在做些什么呢？我还是工作在<a href="http://www.projectzero.org">ProjectZero</a>上，现在project采用新的Agile的方式进行开发，适应也是学习的过程。准备在社区做更多的事情(article，seminar，speech&hellip;)，希望能有更多富有成效的合作，总之希望在09年会是一个有收获的一年。</p>
 
 <p>另外一件值得提一提的事情就是，我的羽毛球技术大涨。自从每周六都要和研究生同学聚聚打2个小时的球，相互交流切磋，真是学到了不少。不过还是总是被ll以绝对优势赢，可以提高的地方还有很多。:)</p>
@@ -1021,14 +1021,14 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[你的website也social了吗？]]></title>
-    <link href="http://wbinglee.com/blog/2008/12/12/diy-your-website-social/"/>
-    <updated>2008-12-12T06:10:58+13:00</updated>
-    <id>http://wbinglee.com/blog/2008/12/12/diy-your-website-social</id>
+    <link href="http://wbinglee.com/blog/2008/12/11/diy-your-website-social/"/>
+    <updated>2008-12-11T17:10:58+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/12/11/diy-your-website-social</id>
     <content type="html"><![CDATA[<p>如果你访问我的website，你可能注意到我的页面中多了两个小东西（我们一般叫gadget），通过它们，你可以加入我的website、看到所有的人、加他们为好友、或者可以留言。嘿嘿，看，我的website也成为social了哦。（一定要给面子加入到我的website，:),）。不过感觉比较遗憾的一点是，朋友之间不能相互地发message，是我漏点了什么吗？</p>
 
 <p>这就是<a href="http://www.google.com/friendconnect/">Google Friend Connect</a>所提供的能力，你只需要copy/paste它提供的HTML到你的页面中就完事了。是不是很简单呢？</p>
 
-<p>Google的确在兑现它的承诺，让所有的website都能容易加入social的能力，并且还是使用最基本的东西(HTML/Javscript)。年初的时候在讲什么OpenSocial，觉得挺玄乎的，并没有搞懂这个东西到底怎么折腾到我的website，也懒得去研究它。现在Friend Connect可以说是提供了一个平民化的social方式 &ndash; Copy/Paste HTML总会了吧， 2分钟搞定。</p>
+<p>Google的确在兑现它的承诺，让所有的website都能容易加入social的能力，并且还是使用最基本的东西(HTML/Javscript)。年初的时候在讲什么OpenSocial，觉得挺玄乎的，并没有搞懂这个东西到底怎么折腾到我的website，也懒得去研究它。现在Friend Connect可以说是提供了一个平民化的social方式 - Copy/Paste HTML总会了吧， 2分钟搞定。</p>
 
 <p>OpenSocial就是提供了一堆的API来帮助你构建你需要的Social能力。当然这个对于需要social能力的商业网站是可行，能力很强，干啥都可以。而Friend Connect就更进一步了，就是将OpenSocial的能力平民化。通过使用OpenSocial的API写相关的OpenSocial gadget，你就可以通过Copy/Paste的方式加入各种各样的gadget。Cool？YES.  当然Friend Connect另外提供了一些基本的login，管理的能力。</p>
 
@@ -1052,9 +1052,9 @@ null == undefined  // true
   
   <entry>
     <title type="html"><![CDATA[实在是喜欢新版本Wordpress]]></title>
-    <link href="http://wbinglee.com/blog/2008/12/12/love-wordpress-new-ui/"/>
-    <updated>2008-12-12T04:31:13+13:00</updated>
-    <id>http://wbinglee.com/blog/2008/12/12/love-wordpress-new-ui</id>
+    <link href="http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui/"/>
+    <updated>2008-12-11T15:31:13+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui</id>
     <content type="html"><![CDATA[<p>Wordpress总是给我带来一些小小的惊喜，刚刚更新到2.7，居然有如此大的变化。</p>
 
 <ul>

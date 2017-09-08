@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Css | Bruce Li]]></title>
+  <title><![CDATA[Category: Css | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[CSS Selector - 高级]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/20/css-selector-advanced/"/>
-    <updated>2008-06-20T11:57:17+12:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/20/css-selector-advanced</id>
-    <content type="html"><![CDATA[<p>在前面一篇文章中(<a href="http://liwenbing.cn/2008/06/03/css-selector-basic/">CSS Selector &ndash; 基础</a>)介绍一些CSS selector的基本用法。里面来谈一些平时比较少用的CSS selector用法。</p>
+    <link href="http://wbinglee.com/blog/2008/06/19/css-selector-advanced/"/>
+    <updated>2008-06-19T23:57:17+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/06/19/css-selector-advanced</id>
+    <content type="html"><![CDATA[<p>在前面一篇文章中(<a href="http://liwenbing.cn/2008/06/03/css-selector-basic/">CSS Selector - 基础</a>)介绍一些CSS selector的基本用法。里面来谈一些平时比较少用的CSS selector用法。</p>
 
 <p><strong>一.Child selector</strong>
 这个选择器和前面的descendent比较类似，descendent适用与所有的下代，但是Child描述的是父子关系。它需要用尖括号'>&lsquo;来表示。  例子如下：</p>
@@ -78,15 +78,15 @@ p[title*=&ldquo;on&rdquo;] {background: green;}</p></li>
   <entry>
     <title type="html"><![CDATA[CSS Selector - 基础]]></title>
     <link href="http://wbinglee.com/blog/2008/06/03/css-selector-basic/"/>
-    <updated>2008-06-03T18:22:25+12:00</updated>
+    <updated>2008-06-03T06:22:25+00:00</updated>
     <id>http://wbinglee.com/blog/2008/06/03/css-selector-basic</id>
     <content type="html"><![CDATA[<p>想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是：</p>
 
 <ol>
-<li><p> 基础：主要是从CSS selector来谈起，也是平时用的最多的；</p></li>
-<li><p> 高级：谈谈一些高级的selector的用法；</p></li>
-<li><p> 关于Cascade：关于CSS继承，优先级的一些topic；</p></li>
-<li><p> 未来的思考：未来的CSS selector会怎么发展？CSS 3做了什么？javascript所带来的影响是什么？</p></li>
+<li><p>基础：主要是从CSS selector来谈起，也是平时用的最多的；</p></li>
+<li><p>高级：谈谈一些高级的selector的用法；</p></li>
+<li><p>关于Cascade：关于CSS继承，优先级的一些topic；</p></li>
+<li><p>未来的思考：未来的CSS selector会怎么发展？CSS 3做了什么？javascript所带来的影响是什么？</p></li>
 </ol>
 
 

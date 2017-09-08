@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Wenbing Li</title>
+  <meta name="author" content="Wenbing Li">
+
+  
+  <meta name="description" content="一段时间来一直受这样的困扰，就是我的Firefox无法运行本地的dojo的测试文件。一直以为是我的firefox或者机器出了什么问题，就只好去使用IE或者Chrome去运行这些测试例子，可惜不能用firebug的确让人很不爽。 今天在firebug查看了一些错误情况，报错居然是“Access to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wbinglee.com/page2">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Wenbing Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Wenbing Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wbinglee.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/">为什么Firefox 3不能加载本地的JavaScript文件了？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-05T08:36:38+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/06/05/why-ff3-cannot-load-local-javascript-file/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一段时间来一直受这样的困扰，就是我的Firefox无法运行本地的dojo的测试文件。一直以为是我的firefox或者机器出了什么问题，就只好去使用IE或者Chrome去运行这些测试例子，可惜不能用firebug的确让人很不爽。</p>
+
+<p>今天在firebug查看了一些错误情况，报错居然是“Access to restricted URI denied”。这个明显是跨域访问的错误，但是本地文件怎么报这样的错呢？在Firefox的about:config搜索了一下policy,居然找到了原因所在，原来Firefox对于本地文件也进行了同源访问的安全设置,配置参数是：security.fileuri.strict_origin_policy。这个新的设置只是在firefox 3才被加入，并且默认是开启的。不过你也可以将这个关掉，这样就可以如同以前那样运行本地的dojo测试用例，或者其它你想本地加载的JavaScript文件。</p>
+
+<p><a href="http://liwenbing.cn/2009/06/05/why-ff3-cannot-load-local-javascript-file/local-file-p-origin-policy/"><img src="http://liwenbing.cn/wp-content/uploads/2009/06/local-file-p-origin-policy-300x42.png" alt="local-file-p-origin-policy" /></a></p>
+
+<p>继续在google了一下，找了这个"feature"的由来，<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=230606">https://bugzilla.mozilla.org/show_bug.cgi?id=230606</a>，大概是说本地的文件如果没有这样的限制，可以访问本机的其他文件，这样会造成安全隐患。John Resig（Father of  jQuery) 也有一个blog关于这个问题，<a href="http://ejohn.org/blog/tightened-local-file-security/">http://ejohn.org/blog/tightened-local-file-security/</a>，下面的评论也挺值得看看的。</p>
+
+<p><strong>More Links: </strong></p>
+
+<ul>
+<li><p><a href="http://www.dojotoolkit.org/support/faq/why-does-dojo-fail-load-file-urls-firefox-3">http://www.dojotoolkit.org/support/faq/why-does-dojo-fail-load-file-urls-firefox-3</a></p></li>
+<li><p><a href="http://kb.mozillazine.org/Security.fileuri.origin_policy">http://kb.mozillazine.org/Security.fileuri.origin_policy</a></p></li>
+<li><p><a href="http://kb.mozillazine.org/Security.fileuri.strict_origin_policy">http://kb.mozillazine.org/Security.fileuri.strict_origin_policy</a></p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/22/javascript-equal-type-conversion/">JavaScript中==等同运算符的类型转换</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-22T04:59:18+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/22/javascript-equal-type-conversion/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/05/22/javascript-equal-type-conversion/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这周在给一些新员工讲JavaScript的时候，谈了==和===的区别，本质来说，===是严格的等同运算符，要求两者类型相同并且值相同；而==运算符在做比较时，会做一定的类型转换。我们在使用过程中应该使用===而不是==，因为这种类型转换后的比较往往都不是你想要的。当时列出了corckfork最喜欢一些例子：</p>
+
+<pre><code>    '' == '0'          // false
+    0 == ''            // true
+    0 == '0'           // true
+    false == 'false'   // false
+    false == '0'       // true
+    false == undefined // false
+    false == null      // false
+    null == undefined  // true
+    ' \t\r\n ' == 0    // true
+</code></pre>
+
+<h3>转换规则</h3>
+
+<p>当时有人就问了，那么在做类型转换的时候倒是等式的左边向右边转，还是反过来呢？其实这些都是不对的，我们去看看ECMAScript的规范，会发现它有对于等同运算符做类型转换很明确的比较算法，下面我将其翻译如下:
+<strong>对于比较x==y，</strong></p>
+
+<p>1.如果x和y类型不同，那么到14步；
+//
+//2-13步，为类型相同的比较
+//
+14.如果x是null，y是undefined，返回true；
+15.如果x是undefined，y是null，返回true；
+16.如果x是Number，y是String，将y转化成Number，然后再比较；
+17.如果x是String，y是Number，将x转化成Number，然后再比较；
+18.如果x是Boolean，那么将x转化成Number，然后再比较；
+19.如果y是Boolean，那么将y转化成Number，然后再比较；
+20。如果x是String或者Number，y是Object，那么将y转化成基本类型，再进行比较；
+21.如果x是Object，y是String或者Number，将x转化成基本类型，再进行比较；
+22.其他情况均返回false；</p>
+
+<p>ECMA这帮人写的算法过程比较啰嗦，简单一句话来概括就是，对于基本类型Boolean，Number，String，三者之间做比较时，总是向Number进行类型转换，然后再比较；如果有Object，那么将Object转化成这三者，再进行比较；对于null和undefined，只有x，y分别是它们时才相同，其他都为false。</p>
+
+<p>另外，对于转化到Number的算法，细节可以来看ECMAScript的规范，但是基本上下面这个<a href="http://www.jibbering.com/faq/faq_notes/type_convert.html#tcNumber">几个表</a>可以覆盖大部分的内容:</p>
+
+<p>type-convert to number (+col) : String Values.</p>
+
+<p>&ldquo;&rdquo;
+(empty
+string)
+&ldquo;-1.6&rdquo;
+&ldquo;0&rdquo;
+&ldquo;1&rdquo;
+&ldquo;1.6&rdquo;
+&ldquo;8&rdquo;
+&ldquo;16&rdquo;
+&ldquo;16.8&rdquo;</p>
+
+<p>+col</p>
+
+<p>0</p>
+
+<p>-1.6</p>
+
+<p>0</p>
+
+<p>1</p>
+
+<p>1.6</p>
+
+<p>8</p>
+
+<p>16</p>
+
+<p>16.8</p>
+
+<p>type-convert to number (+col) : String Values.</p>
+
+<p>&ldquo;123e-2&rdquo;
+&ldquo;010&rdquo;
+(Octal)
+&ldquo;0x10&rdquo;
+(Hex)
+&ldquo;0xFF&rdquo;
+(Hex)
+&ldquo;-010&rdquo;
+&ldquo;-0x10&rdquo;
+&ldquo;xx&rdquo;</p>
+
+<p>+col</p>
+
+<p>1.23</p>
+
+<p>10</p>
+
+<p>16</p>
+
+<p>255</p>
+
+<p>-10</p>
+
+<p>NaN</p>
+
+<p>NaN</p>
+
+<p>type-convert to number (+col) : Other Values.</p>
+
+<p>undefined
+null
+true
+false
+new Object()
+function(){
+return;
+}</p>
+
+<p>+col</p>
+
+<p>NaN</p>
+
+<p>0</p>
+
+<p>1</p>
+
+<p>0</p>
+
+<p>NaN</p>
+
+<p>NaN</p>
+
+<p>再回头来看看corkford给出的例子，然后使用上面的规则去判断；</p>
+
+<pre><code> '' == '0'          // false
+//类型相同，毫无疑问，值不同，所以结果为false
+
+0 == ''            // true
+//String要像Number转化，''是空String，根据上面的表，转成0，所以结果是true
+
+0 == '0'           // true
+//String要像Number转化，根据上面的转化Number表，'0'转成0，所以结果是true
+
+false == 'false'   // false
+//有Boolean，转化成Number，所以第一步转化后为0=='false'；
+//然后'false'向Number转，结果是NaN,最后变成比较0==NaN,那么肯定是false。
+//（NaN和任何相比都是false，就算是自己也是false， NaN==NaN //false)
+
+false == '0'       // true
+//有Boolean，转化成Number，经过第一次转化就成了0=='0';
+//就变成了上面的第3个例子，所以是true
+
+false == undefined // false
+//对于undefined和null，只有两边分别是两者才是true，其他都是false；所以是false
+
+false == null      // false
+//对于undefined和null，只有两边分别是两者才是true，其他都是false；所以是false
+
+null == undefined  // true
+//对于undefined和null，只有两边分别是两者才是true，其他都是false；所以是true
+
+' \t\r\n ' == 0    // true
+//对于String，先转成Number，对于空String，都将转成0，所以转化后成为0==0,结果为true
+//（注意，空字符不仅仅是只是空格，还包括\t\r\n等等，更多可以见ECMAScript spec的9.3.1）
+</code></pre>
+
+<h2>总结</h2>
+
+<p>虽然我们了解了==这个坏东西的本质，但是在我们的实际JavaScript编程中是要避免使用==，而是去使用===这个严格的比较运算符。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/14/new-article-in-developerworks/">最近的一篇新的developerWorks文章 - 使用 Assemble Flow 开发简单协作流程</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-14T17:05:04+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/14/new-article-in-developerworks/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>终于这篇文章在dWs上面发表出来了。
+<a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 2 部分: 使用 Assemble Flow 开发简单协作流程</a></p>
+
+<p>&ndash;文章摘要如下</p>
+
+<p>在使用 WebSphere® sMash 中的 Assemble flow 来构建 Mashup 应用的<a href="http://www.ibm.com/developerworks/cn/web/wa-lo-pz-assembleflow1/">第 1 部分</a>中，我们介绍了 Assemble flow 的基本概念，以及如何使用 Assemble flow 来实现基于 Feed 的 Mashup 服务。本文中，我们将向您介绍如何使用 Assemble flow 来开发简单的协作流程。</p>
+
+<p>&ndash;文章目录如下:</p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#">本文内容包括：</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N10110">引言</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N10142">开始之前</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N1016A">在Assemble flow中访问REST资源和服务</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N1021D">面向 REST 的流程接口</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N103BE">使用 REST 风格实现流程会话</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N10425">简单人工协作流程</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N10443">webUI 活动</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N104DE">使用 webUI 活动构建人工协作流程</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N10650">配置 sMash 应用程序</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#N106F8">结束语</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#download">下载</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#resources">参考资料 </a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#author">作者简介</a></p>
+
+<p><img src="http://www.ibm.com/i/v14/t/cl-bullet.gif" alt="" /></p>
+
+<p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/#rate">对本文的评价</a></p>
+
+<p>&ndash;另外，发了另外两个blog在projectzero的中文博客上面；</p>
+
+<ul>
+<li><p><a href="http://www.projectzero.org/cblog/index.php/2009/05/14/article-at-developerworks-assemble-flow-collaboration/">developerWorks文章：使用 Assemble Flow 开发简单协作流程</a></p></li>
+<li><p><a href="http://www.projectzero.org/cblog/index.php/2009/05/14/community-event-bpm-tt-workflow/">在TechTarget中国中的BPM活动</a></p></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/10/about-ok-and-how-do-you-know/">关于‘行’与‘你怎么知道’</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-10T16:18:39+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/10/about-ok-and-how-do-you-know/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/05/10/about-ok-and-how-do-you-know/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>周末参加了一个<a href="http://www.opug.org.cn">opug</a>的一个线下,真的很棒，收集到更多资料后，我会在后面的文章中来专门谈这个活动。其实活动之后我一直在琢磨在活动中给我触动的一件小事，记得当时有一位嘉宾说了一个观点后，我立刻机械地说“对”，坐在我对面的<a href="http://www.javafox.org/">长城</a>同学的反应是”你怎么知道“。其实道理很简单，对于观点你应该有一个什么样的正确的直觉反应。做技术，甚至无论做什么，都应该有一个怀疑和刨根问底的思维方式，这样才能很好的培养对于问题的独立思考能力。</p>
+
+<p><strong>嗯，对于你不知道的东西/观点，多问点为什么，别让‘对’/&lsquo;行‘成为自己的第一反应。</strong></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/05/01/how-to-use-twitter/">怎么用twitter？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-01T17:12:09+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/05/01/how-to-use-twitter/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/05/01/how-to-use-twitter/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>09年是year of twitter, 这个东西现在火的一塌糊涂，google和facebook对它是羡慕的不得了。国内IT圈中也是刮起了一阵twitter风，好像你没有个twitter都不好意思和别人打招呼。但是当你屁颠屁颠地在上面发点东西的时候，也同时也被大量的信息噪音给淹没。有的人用twitter在聊天，有的人发布的信息非常多但是毫无意义，慢慢地这个东西成为了一种负担。其实twitter火起来有它的原因，但要看怎么来用了。</p>
+
+<p>twitter来至一个简单的想法，告诉别人你在做什么。现在有很多的工具来帮助人们进行交流，比如blog和IM，但是日常发生在自己身上的一些事情使用这样一些工具都不太适合。我们不可以发一个blog告诉别人我在做什么，也不可能在聊天工具上面像疯了似的给每个人发这些消息。然而通过twitter，人们可以进一步加深相互的了解。比如，我的一个好朋友发消息说他在做一道菜。我看到后，很好奇他居然还会做菜呀，于是我们有了公共的兴趣点，可以进一步地聊聊。</p>
+
+<p>从技术上面来讲，twitter的火爆说明了开放API的成功。有了twitter提供的API，就有了它的客户端的繁荣，桌面的、浏览器插件的、手机的&hellip;.任何平台任何环境，只要你想到的都可以找到一堆的twitter客户端。 如果twitter没有这些多的客户端和社区支持，估计也难以流行起来。</p>
+
+<p>话说回来，怎么用twitter呢？我想可以从两点来看，一是你希望收到什么消息；二是你应该给出什么样信息。关于收到什么消息，基本的原则应该是：<strong>只follow你所关心的人和事</strong>。前端日子follow了很多技术名人的twitter，发现他们发的信息根本都不是我关心的。我并不是他们的朋友，我根本不关心你和谁吃饭了，你今天去哪里运动了。所以很简单，将你并不认识的名人从你的follow列表中删掉，因为你对这些名人其实真正关心只是他的知识，而这些只要订阅他们的blog就可以啦。对于技术和某种事情的关注，follow这个社区的twitter就好了。另外对于那些乱发垃圾消息的人，删除好了。这个世界不是信息太少，而是太多了。</p>
+
+<p>那用twitter应该发什么样的消息呢？我想原则应该是：<strong>只发有用的信息，并且这个信息不需要通过其他消息的上下文就能理解。</strong>如果是个人还是用twitter的本意就好了，就是发你在做什么，或者发现什么有意思的事情。社区类的twitter可以发当然社区发生重要的事情。切忌使用twitter进行聊天了，因为follow你的人并不一定follow了和你聊天的朋友，所以这些没有上下文的消息就毫无意义。</p>
+
+<p>最后我想到了一位美女同事对于twitter的理解，<em>twitter的消息就像一种缘分，你看到了就是一种缘分，不需要像聊天那么有紧迫感，也不像blog那么正式</em>。<strong>所以还是一切随缘吧</strong>。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/">Enable Gmail Random Signature Using Google App Engine</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-30T21:21:52+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>在GMail的Lab中有这样的一个小东西，它可以随机地加入签名档到你的邮件中。这个一直是我想要的，于是在五一无聊的时候试试。</p>
+
+<p>首先当然是要到GMail的Lab中enable这个功能了。</p>
+
+<p><a href="http://liwenbing.cn/2009/05/01/enable-gmail-random-signature-using-google-app-engine/enable1/"><img src="http://liwenbing.cn/wp-content/uploads/2009/05/enable1.png" alt="enable1" /></a></p>
+
+<p>这个时候到Setting->General中的Signature中会多出这么一个东西，</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2009/05/setting.png"><img src="http://liwenbing.cn/wp-content/uploads/2009/05/setting.png" alt="setting" /></a></p>
+
+<p>默认是<a href="http://www.brainyquote.com/link/quotefu.rss%E8%BF%99%E4%B8%AA%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%97%B6%E5%80%99%E5%BD%93%E4%BD%A0%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%82%AE%E4%BB%B6%EF%BC%8C%E5%B0%B1%E4%BC%9A%E5%8F%91%E7%8E%B0%E6%9C%89%E7%AD%BE%E5%90%8D%E6%A1%A3%E9%9A%8F%E6%9C%BA%E6%8F%92%E5%85%A5%E5%88%B0%E9%82%AE%E4%BB%B6%E4%B8%AD%E3%80%82%E4%BD%86%E6%98%AF%E8%BF%99%E4%B8%AA%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%EF%BC%8C%E6%88%91%E9%9C%80%E8%A6%81%E5%AE%83%E6%98%AF%E4%BB%8E%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E5%88%97%E8%A1%A8%E4%B8%AD%E5%8E%BB%E6%89%BE%E3%80%82%E8%BF%99%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E7%94%B1%E4%B8%80%E4%B8%AARSS%E6%9D%A5%E7%BB%99%E5%87%BA%E7%9A%84%EF%BC%8C%E9%82%A3%E4%B9%88%E4%BD%95%E4%B8%8D%E4%BD%BF%E7%94%A8Google">http://www.brainyquote.com/link/quotefu.rss%E8%BF%99%E4%B8%AA%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%97%B6%E5%80%99%E5%BD%93%E4%BD%A0%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%82%AE%E4%BB%B6%EF%BC%8C%E5%B0%B1%E4%BC%9A%E5%8F%91%E7%8E%B0%E6%9C%89%E7%AD%BE%E5%90%8D%E6%A1%A3%E9%9A%8F%E6%9C%BA%E6%8F%92%E5%85%A5%E5%88%B0%E9%82%AE%E4%BB%B6%E4%B8%AD%E3%80%82%E4%BD%86%E6%98%AF%E8%BF%99%E4%B8%AA%E5%B9%B6%E4%B8%8D%E6%98%AF%E6%88%91%E6%83%B3%E8%A6%81%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%EF%BC%8C%E6%88%91%E9%9C%80%E8%A6%81%E5%AE%83%E6%98%AF%E4%BB%8E%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E5%88%97%E8%A1%A8%E4%B8%AD%E5%8E%BB%E6%89%BE%E3%80%82%E8%BF%99%E4%B8%AA%E5%8A%9F%E8%83%BD%E7%9A%84%E7%AD%BE%E5%90%8D%E6%A1%A3%E7%9A%84%E4%BF%A1%E6%81%AF%E6%98%AF%E7%94%B1%E4%B8%80%E4%B8%AARSS%E6%9D%A5%E7%BB%99%E5%87%BA%E7%9A%84%EF%BC%8C%E9%82%A3%E4%B9%88%E4%BD%95%E4%B8%8D%E4%BD%BF%E7%94%A8Google</a> App Engine来做一个自己的签名档管理的小系统，这样我可以加入自己新的签名档，然后还可以提供签名档的RSS给它呢？</p>
+
+<p>说动手就动手吧，很快就完成了。<a href="http://liwb-quote.appspot.com/">http://liwb-quote.appspot.com/</a>。界面是抄twitter的，因为我的功能的确就是和它一样。我不得不说，在App Engine上面开发这样的应用的效率是惊人的。我很久没有动python了，App Engine的东西也是边看它的tutorial来完成的。但是我还是没有碰到太多的障碍就完成这些事情。看截图吧。</p>
+
+<p><a href="http://liwb-quote.appspot.com/"><img src="http://liwenbing.cn/wp-content/uploads/2009/05/quote.png" alt="quote" /></a></p>
+
+<p>然后再是提供RSS就可以了：<a href="http://liwb-quote.appspot.com/rss%E3%80%82">http://liwb-quote.appspot.com/rss%E3%80%82</a> 再将这个地址放到gmail中设置就可以了。嘿嘿，当你再新建一个邮件的时候，签名档就是你在appspot上面的自己的了。是不是很high呢？</p>
+
+<p><strong>Conclusion</strong></p>
+
+<p>App Egine来开发这样的应用的效率是极高的。无非是数据库的一些操作，开发、调试和上线的体验只有用过才知道是如何的high。</p>
+
+<p>另外，Gmail中的<a href="http://groups.google.com/group/gmail-labs-help-random-signature">Random Signature</a>还是非常不成熟，它并不是实时地去拿我当前的记录。也不知道它多久抓一下，这点让人沮丧。</p>
+
+<p><strong>Download</strong></p>
+
+<p>这个是我的App Engine的工程，如果你管理自己的签名档或者类似一句话的东东，这个都可以用。</p>
+
+<p><a href="http://liwenbing.cn/download/liwb-quote.zip"><strong>下载App Engine应用</strong></a></p>
+
+<p>一些注意事项：</p>
+
+<ol>
+<li><p>下载后，修改app.yaml 文件中的application: 。</p></li>
+<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x77;&#x62;&#x69;&#110;&#x67;&#x6c;&#101;&#101;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#119;&#98;&#105;&#x6e;&#103;&#x6c;&#101;&#x65;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
+<li><p>然后appcfg.gy update 就好了。</p></li>
+</ol>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/25/at-beijing-openparty/">在Beijing OpenParty</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-25T16:17:38+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/04/25/at-beijing-openparty/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/04/25/at-beijing-openparty/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天是第二次参加<a href="http://www.beijing-open-party.org/">OpenParty</a>的活动了。<a href="http://www.beijing-open-party.org/index.php/2009/03/beijing-open-party-2009-03-sunny-spring-event-preparation.html">第一次</a>参加时联系好了，还以为过去时讲东东，结果情况也不是我们预料的那样，最后的情况不是我们所想的但是依然收获颇丰，知道了有这样一个社区，认识了很多有意思的人。</p>
+
+<p><a href="http://www.beijing-open-party.org/index.php/2009/04/beijing-openparty-2009-04-serenade-to-spring-remind.html">这次</a>的活动更是精彩了，顺着QCon的风，请到了一些业界的大拿们到这里给大家讲些东西。周5的晚上还在和<a href="http://www.netvibes.com/shawnzhu">朱可</a>商量说，我们就不要讲了，这么多好的topic我们可以去听，就没有别要自讨没趣了。</p>
+
+<p>听的第一个是<a href="http://www.douban.com/people/hongqn/">hongqn</a>谈douban的技术架构的发展，从douban最早的1.2M/D到23M/D所遇到的问题以及处理相应的解决办法。简单来说就是兵来将挡，水来土掩。非常敬佩他们对于技术的全面性，而现在我们每天只在实验室做点自己的那点事情，其实还是不了解一个真正运行的系统所涉及到的东西是如此的繁多和复杂。在听的时候，我一直在想这个问题，如果云计算足够的成熟，这些网站所面对的这些技术架构（主要是性能）上面的问题还会是一个如此巨大的问题吗？一个网站需要一个十几个人团队不断维护，这个太过于浪费。期待云计算的不断的成熟，也许那一天我们不需要让每个网站都需要经历这样一个技术架构上面的不断挑战。</p>
+
+<p>第二个非常有用，来至解放军总医院的<a href="http://laiyaoshui.blog.sohu.com/">来要水</a>(别问我，名字的确很怪，我也想问，但是觉得不礼貌),讲了程序员颈椎治疗秘籍,:) .从里面的确学到很多有用的东西。完后帮我老爸（他颈椎非常严重)问了一些问题,学到很多，等搞到ppt了给老爸发过去，让他也好好学习一下。</p>
+
+<p>下面听的就是周爱民讲软件架构，非常的high level，好处就是让你能够站在更高处去思考问题，问了很多问题，周老师也是耐心解答。每次我举手，周老师过来说,&ldquo;好，<strong>您</strong>有什么问题？“，呵呵，弄的我很紧张。发现他和老毛不是一个风格，大师们的共同点就是能够对问题深度思考并且抽象，不过老毛的交流风格是彪悍的，周老师的是温和的。坐在下面我在想，做小兵的感觉很不好，如果我在未来的十年还是做IT技术的话，那么我希望我至少能有一次和世界级大师像<em>Martin Fowler，__James Gosling</em>等 同台一起做技术讲座，如果你没有影响力，这是不成功的。</p>
+
+<p>最后听了<a href="http://blog.csdn.net/zhmnsw/">糖醋鼻子</a>讲卡片机摄影，开始大家讨论了半天美学，修养的话题，呵呵。也学到了很多一些基本的技巧，对于我这样的摄影白痴很有帮助，收获很大。</p>
+
+<p>总之，收获，收获很多。以后要继续参加这样的活动并且贡献自己的所学所想。BTW，我一定要去找公司印名片了，出去没有名片太丢人了。</p>
+
+<p>附两张上次参加活动的图：</p>
+
+<p>[gallery link=&ldquo;file&rdquo;]</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/17/i-am-still-alive/">I Am Still Alive</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-17T17:45:35+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2009/03/17/i-am-still-alive/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2009/03/17/i-am-still-alive/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>恩，我的确还活着。我快有3个月没有发一个新的文章了，草应该长的很深了，不过不要紧，冬天不怎么长草, :) 。那么我都在做些什么呢？我还是工作在<a href="http://www.projectzero.org">ProjectZero</a>上，现在project采用新的Agile的方式进行开发，适应也是学习的过程。准备在社区做更多的事情(article，seminar，speech&hellip;)，希望能有更多富有成效的合作，总之希望在09年会是一个有收获的一年。</p>
+
+<p>另外一件值得提一提的事情就是，我的羽毛球技术大涨。自从每周六都要和研究生同学聚聚打2个小时的球，相互交流切磋，真是学到了不少。不过还是总是被ll以绝对优势赢，可以提高的地方还有很多。:)</p>
+
+<p>还有，我现在住的地方人是越来越多。只从xg同学搬过来，生活简直又上升了一个档次了。一伙人可以喝点茶（我最爱普洱），可以看点书，可以聊点天，可以一起笑哈哈地看海绵宝宝或者喜羊羊，可以做点菜然后相互抬举或者相互鄙视之，可以一起研究如何养龟(到现在还木有看到龟吃东西，不知道这次是否能活过2个月），还可以一起打麻将&hellip; 而fr博士同学被我成功骗到了CRL，7月份入职后会更加的热闹一点。希望能租到一个大房子，4居or超大3居，或者复式的。总之，朋友要在一起才快乐。</p>
+
+<p>春天来了，一切都应该不一样。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/11/diy-your-website-social/">你的website也social了吗？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-11T17:10:58+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2008/12/11/diy-your-website-social/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/12/11/diy-your-website-social/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>如果你访问我的website，你可能注意到我的页面中多了两个小东西（我们一般叫gadget），通过它们，你可以加入我的website、看到所有的人、加他们为好友、或者可以留言。嘿嘿，看，我的website也成为social了哦。（一定要给面子加入到我的website，:),）。不过感觉比较遗憾的一点是，朋友之间不能相互地发message，是我漏点了什么吗？</p>
+
+<p>这就是<a href="http://www.google.com/friendconnect/">Google Friend Connect</a>所提供的能力，你只需要copy/paste它提供的HTML到你的页面中就完事了。是不是很简单呢？</p>
+
+<p>Google的确在兑现它的承诺，让所有的website都能容易加入social的能力，并且还是使用最基本的东西(HTML/Javscript)。年初的时候在讲什么OpenSocial，觉得挺玄乎的，并没有搞懂这个东西到底怎么折腾到我的website，也懒得去研究它。现在Friend Connect可以说是提供了一个平民化的social方式 - Copy/Paste HTML总会了吧， 2分钟搞定。</p>
+
+<p>OpenSocial就是提供了一堆的API来帮助你构建你需要的Social能力。当然这个对于需要social能力的商业网站是可行，能力很强，干啥都可以。而Friend Connect就更进一步了，就是将OpenSocial的能力平民化。通过使用OpenSocial的API写相关的OpenSocial gadget，你就可以通过Copy/Paste的方式加入各种各样的gadget。Cool？YES.  当然Friend Connect另外提供了一些基本的login，管理的能力。</p>
+
+<p>看看几个简单的OpenSocial的API (当然就是JavaScript的)：</p>
+
+<ul>
+<li><p><strong>API:</strong> <code>opensocial.DataRequest.newFetchPersonRequest('OWNER')</code>
+<strong>Site Name:</strong> 李文兵的主页</p></li>
+<li><p><strong>API:</strong> <code>opensocial.DataRequest.newFetchPeopleRequest('OWNER_FRIENDS')</code>
+<strong>Site Members:。。。。</strong></p></li>
+<li><p><strong>API:</strong> <code>opensocial.DataRequest.newFetchPeopleRequest('VIEWER_FRIENDS')</code>
+<strong>Viewer friends:。。。</strong></p></li>
+</ul>
+
+
+<p>是不是很cool？你是不是也想抄起code写点东东,呵呵。 当然你也可以找些你喜欢的OpenSocial gadget来用就可以了。<a href="http://opensocialdirectory.org/">http://opensocialdirectory.org/</a>.</p>
+
+<p>未来的mashup会怎么样呢？还有多少infrastructure的东西都被google给占了? 期待&amp;反思。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/11/love-wordpress-new-ui/">实在是喜欢新版本Wordpress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-11T15:31:13+00:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2008/12/11/love-wordpress-new-ui/#disqus_thread"
+             data-disqus-identifier="http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Wordpress总是给我带来一些小小的惊喜，刚刚更新到2.7，居然有如此大的变化。</p>
+
+<ul>
+<li><p>超cool的界面，合理的布局，新的layout，适应各种resolution让我吃惊。不过以前的theme也挺爽的。有时候觉得wordpress就像美女一样，换肤就像换时装一样，需要时髦，嗯。</p></li>
+<li><p>支持gears了。对我的使用上带来的好处还是非常大的</p></li>
+<li><p>能够自动更新了。这点非常赞。以前总是提示你要upgrade，我总是要做一系列的事情。现在点个button就可以了。Love it!</p></li>
+<li><p>导航条可以折叠，关键是缩起来超炫。</p></li>
+<li><p>每个page的各个module(categories,tags&hellip;)都可以拖拽来调整位置。不过因人而异，默认位置就很好了。</p></li>
+</ul>
+
+
+<p>如何？一起来感受美妙软件带来快乐吧。</p>
+
+<p><a href="http://liwenbing.cn/wp-content/uploads/2008/12/wordpress27.jpg"><img src="http://liwenbing.cn/wp-content/uploads/2008/12/wordpress27-300x216.jpg" alt="wordpress27" /></a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="1">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/21/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/25/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/17/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2017 - Wenbing Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

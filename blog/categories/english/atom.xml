@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: English | Bruce Li]]></title>
+  <title><![CDATA[Category: English | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/english/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[在Mac机上搭建Projectzero的Build环境]]></title>
-    <link href="http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac/"/>
-    <updated>2008-11-25T04:56:02+13:00</updated>
-    <id>http://wbinglee.com/blog/2008/11/25/set-up-projectzero-build-environment-in-mac</id>
+    <link href="http://wbinglee.com/blog/2008/11/24/set-up-projectzero-build-environment-in-mac/"/>
+    <updated>2008-11-24T15:56:02+00:00</updated>
+    <id>http://wbinglee.com/blog/2008/11/24/set-up-projectzero-build-environment-in-mac</id>
     <content type="html"><![CDATA[<p>一直想在本地建立zero的Build环境，无奈总是太耗时，也没有机器，现在有了mac在旁边，当然要拿它来做build的环境了。最近几天下班后都要整一会这个，现在终于是过了，在欢快地BUILD,TEST&hellip;.</p>
 
 <p>所有的应该参考：<a href="http://www.projectzero.org/wiki/bin/view/Development/Build">http://www.projectzero.org/wiki/bin/view/Development/Build</a>。下面一步一步来讲吧。</p>
@@ -96,7 +96,7 @@ ant -f zbuild.xml BUILD
   <entry>
     <title type="html"><![CDATA[Improve Your English]]></title>
     <link href="http://wbinglee.com/blog/2008/04/13/improve-your-english/"/>
-    <updated>2008-04-13T21:16:30+12:00</updated>
+    <updated>2008-04-13T09:16:30+00:00</updated>
     <id>http://wbinglee.com/blog/2008/04/13/improve-your-english</id>
     <content type="html"><![CDATA[<p>LOL, What are you sinking about?</p>
 ]]></content>

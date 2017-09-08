@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Ops | Bruce Li]]></title>
+  <title><![CDATA[Category: Ops | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/ops/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -28,13 +28,13 @@
 SecRule REQUEST_METHOD "!@rx ^(?:GET)$" 
 </code></pre>
 
-<h2>Two layers application &ndash; AngularJS + CouchDB</h2>
+<h2>Two layers application - AngularJS + CouchDB</h2>
 
 <p>Speaking to this mod security, we are actually working some simple two layers application, only front-end(AngularJS) and datastore(Couchdb).</p>
 
 <p>This simple stack suits for some applications, which only load data from backend.And backend data would be updated by application operator.Those applications could be FAQ or News website etc. We use CouchDB because it has very good REST API and Web UI to manage the data.</p>
 
-<p>So no application layer, :&ndash;)</p>
+<p>So no application layer, :-)</p>
 ]]></content>
   </entry>
   

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Community | Bruce Li]]></title>
+  <title><![CDATA[Category: Community | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/community/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[在Beijing OpenParty]]></title>
-    <link href="http://wbinglee.com/blog/2009/04/26/at-beijing-openparty/"/>
-    <updated>2009-04-26T04:17:38+12:00</updated>
-    <id>http://wbinglee.com/blog/2009/04/26/at-beijing-openparty</id>
+    <link href="http://wbinglee.com/blog/2009/04/25/at-beijing-openparty/"/>
+    <updated>2009-04-25T16:17:38+00:00</updated>
+    <id>http://wbinglee.com/blog/2009/04/25/at-beijing-openparty</id>
     <content type="html"><![CDATA[<p>今天是第二次参加<a href="http://www.beijing-open-party.org/">OpenParty</a>的活动了。<a href="http://www.beijing-open-party.org/index.php/2009/03/beijing-open-party-2009-03-sunny-spring-event-preparation.html">第一次</a>参加时联系好了，还以为过去时讲东东，结果情况也不是我们预料的那样，最后的情况不是我们所想的但是依然收获颇丰，知道了有这样一个社区，认识了很多有意思的人。</p>
 
 <p><a href="http://www.beijing-open-party.org/index.php/2009/04/beijing-openparty-2009-04-serenade-to-spring-remind.html">这次</a>的活动更是精彩了，顺着QCon的风，请到了一些业界的大拿们到这里给大家讲些东西。周5的晚上还在和<a href="http://www.netvibes.com/shawnzhu">朱可</a>商量说，我们就不要讲了，这么多好的topic我们可以去听，就没有别要自讨没趣了。</p>

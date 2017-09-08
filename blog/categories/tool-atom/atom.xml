@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Tool,atom | Bruce Li]]></title>
+  <title><![CDATA[Category: Tool,atom | Wenbing Li]]></title>
   <link href="http://wbinglee.com/blog/categories/tool-atom/atom.xml" rel="self"/>
   <link href="http://wbinglee.com/"/>
-  <updated>2015-01-21T10:04:29+13:00</updated>
+  <updated>2017-09-08T13:32:25-07:00</updated>
   <id>http://wbinglee.com/</id>
   <author>
-    <name><![CDATA[Bruce Li]]></name>
+    <name><![CDATA[Wenbing Li]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -30,16 +30,14 @@
 
 <p>Simple solution is :</p>
 
-<p><code>bash
-sudo apt-get remove gyp
-</code></p>
+<pre><code class="bash">sudo apt-get remove gyp
+</code></pre>
 
 <p>After that, you will find a .deb atom file under <em>/tmp/atom-build</em> folder. Then install it :</p>
 
-<p><code>bash
-cd /tmp/atom-build
+<pre><code class="bash">cd /tmp/atom-build
 sudo dpkg -i atom-0.95.0-amd64.deb
-</code></p>
+</code></pre>
 
 <p>Now you can open it by command <code>atom</code>.</p>
 
@@ -47,18 +45,16 @@ sudo dpkg -i atom-0.95.0-amd64.deb
 
 <p>Most of the keybindings in atom are for Mac OS. You can add your own keys in key map file <code>~/.atom/keymap.cson</code>. There are some basic hotkeys I have added for Ubuntu:</p>
 
-<p>```
-&lsquo;.editor&rsquo;:</p>
+<pre><code>'.editor':
+    'ctrl-l': 'editor:select-line'
+    'ctrl-d': 'find-and-replace:select-next'
 
-<pre><code>'ctrl-l': 'editor:select-line'
-'ctrl-d': 'find-and-replace:select-next'
+'body':
+  'ctrl-pagedown': 'pane:show-next-item'
+  'ctrl-pageup': 'pane:show-previous-item'
 </code></pre>
 
-<p>&lsquo;body&rsquo;:
-  &lsquo;ctrl-pagedown&rsquo;: &lsquo;pane:show-next-item&rsquo;
-  &lsquo;ctrl-pageup&rsquo;: &lsquo;pane:show-previous-item&rsquo;
-```
-Check the source code e.g. <a href="https://github.com/atom/atom/blob/master/src/editor-view.coffee">edit-view.coffee</a> for available commands you can use.</p>
+<p>Check the source code e.g. <a href="https://github.com/atom/atom/blob/master/src/editor-view.coffee">edit-view.coffee</a> for available commands you can use.</p>
 
 <p>Happy hacking!</p>
 ]]></content>
