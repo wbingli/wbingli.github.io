@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>CSS Selector - 基础 - Wenbing Li</title>
+  <meta name="author" content="Wenbing Li">
+
+  
+  <meta name="description" content="想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是： 基础：主要是从CSS selector来谈起，也是平时用的最多的；
+高级：谈谈一些高级的selector的用法；
+关于Cascade：关于CSS继承， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Wenbing Li" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-52116997-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Wenbing Li</a></h1>
+  
+    <h2>It's all about the fundamentals.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.wenbing.dev" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">CSS Selector - 基础</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-02T23:22:25-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是：</p>
+
+<ol>
+<li><p>基础：主要是从CSS selector来谈起，也是平时用的最多的；</p></li>
+<li><p>高级：谈谈一些高级的selector的用法；</p></li>
+<li><p>关于Cascade：关于CSS继承，优先级的一些topic；</p></li>
+<li><p>未来的思考：未来的CSS selector会怎么发展？CSS 3做了什么？javascript所带来的影响是什么？</p></li>
+</ol>
+
+
+<h2>1.基础</h2>
+
+<p><strong>一.Tag selector</strong>
+标签selecor ,也可以称为类型selector，它将对HTML页面中所有的该类型有效。</p>
+
+<pre><code>h1 {
+   font-family:Arial, sans-serif;
+   color:#CCCCFF;
+}
+</code></pre>
+
+<p><strong>二.Class Selector</strong>
+类选择器和HTML中的class相结合，应用到所有声明了该class的标签中。类选择器必须要以 &ldquo;."来开头。
+对于</p>
+
+<pre><code>.title{
+   color:#FF000;
+   font-size:24px;
+}
+</code></pre>
+
+<p><strong>三.ID selector</strong>
+ID选择器会将其syle应用在HTML中该ID的tag上。
+对于</p>
+
+<pre><code> #sidebar{
+  float:left;
+  margin-left:30px;
+}
+</code></pre>
+
+<p>一个有意思的问题是如果在一个HTML中，有两个以上的tag用了同一个ID会怎么样呢？虽然并不是合法的HTML，但是大部分的游览器会忽略这个问题。这个时候ID选择器就像类选择器一样，只要哪个tag的使用了该ID，就会应用该style.
+<strong> 四.Descendent selector</strong></p>
+
+<p>这种选择器的的意思就是根据DOM树的祖先、父子关系来选择具体的元素。</p>
+
+<p>如:</p>
+
+<pre><code>h1 strong {
+     color:red;
+}
+</code></pre>
+
+<p>将对<h1> This is homepage of <strong>liwenbing</strong></h1>中的strong的内容进行标红。</p>
+
+<p>同样这种方式是可以组合前面的任何三种选择器：</p>
+
+<pre><code>h1 .intro a{
+      color:yellow;
+}
+</code></pre>
+
+<p>将对<h1> This is homepage of <strong >liwenbing   </strong> who is <span class="intro"><a href="#">lovely boy</a></span></h1>中的lovely boy标黄。</p>
+
+<p>注意tag和类之间是否有空格是非常重要的。</p>
+
+<p>有空格表示是应用该类的元素在tag之中，就像上面的例子；没有空格，则表示tag和class都标明的是同一个元素。</p>
+
+<pre><code>h1.intro a{   //注意h1和.intro之间没有空格
+     color:blue;
+}
+</code></pre>
+
+<p>对<h1 class="intro">This is homepage of <a href="#" >liwenbing </a></h1>中的liwenbing是有效的。</p>
+
+<p>再举一个和ID selector结合的例子：</p>
+
+<pre><code>#sidebar h2{
+      font-size:1.2em;
+}
+</code></pre>
+
+<p>上述style将对sidebar元素下面的所有h2进行应用。</p>
+
+<p><strong>五.Group selector</strong></p>
+
+<p>组选择器顾名思义就是对于一组selector应用同一中style，以逗号",&ldquo;隔开；组中的元素都可以是前面四中的任何一种。</p>
+
+<pre><code>h1,
+p .intro,
+#sidebar .title{
+ color:#6F6F6F;
+}
+</code></pre>
+
+<p><strong>六.伪选择</strong>
+伪选择器可以进一步地定义用户和页面的行为。最常用的就是对link的定义了；</p>
+
+<pre><code>a:hover{
+  text-decoration:  none;
+}
+a:visited{
+ color:blue;
+}
+</code></pre>
+
+<p>当然关于link的除了上述两种，还有a:link,a:active;
+其他还有很多的伪选择，例如现在在用的focus.下面这个CSS可以让input 有safari中的高亮效果（不过IE并不支持)。</p>
+
+<pre><code> input:focus{
+  border-color: #feca70;
+}
+</code></pre>
+
+<p>其他伪选择器还有:before,:after,:firs-child.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Bruce Li</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-06-02T23:22:25-07:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/css/'>css</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic/" data-via="" data-counturl="http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/05/31/project-zero-china-blog/" title="Previous Post: 我们有Project zero的中文博客啦">&laquo; 我们有Project zero的中文博客啦</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/06/03/google-app-engine-is-cool/" title="Next Post: Google App Engine很Cool">Google App Engine很Cool &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/20/cucumber-best-practices/">Cucumber Best Practices</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/13/using-atom-editor-in-ubuntu/">Using Atom Editor in Ubuntu</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/24/only-allow-get-for-specified-request-path-using-mod-security/">Only Allow GET for Specified Request Path Using Mod Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/16/start-blogging/">Start Blogging</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2019 - Wenbing Li -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wbinglee';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic/';
+        var disqus_url = 'http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Blog | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Start Blogging]]></title>
-    <link href="http://wbinglee.com/blog/2014/03/17/start-blogging/"/>
-    <updated>2014-03-17T18:23:36+13:00</updated>
-    <id>http://wbinglee.com/blog/2014/03/17/start-blogging</id>
+    <link href="http://blog.wenbing.dev/blog/2014/03/16/start-blogging/"/>
+    <updated>2014-03-16T22:23:36-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2014/03/16/start-blogging</id>
     <content type="html"><![CDATA[<h2>Blogging, NOW!</h2>
 
 <p>以前有一个blog，但是各种原因最后连之前的文章都找不回来了。这也是一个很好的教训，能不自己hosting就不要自己hosting，数据备份还是不如source code管理容易，于是我就选择了当然颇为流行的github+octopress.</p>
@@ -34,9 +34,9 @@
   
   <entry>
     <title type="html"><![CDATA[一直在写]]></title>
-    <link href="http://wbinglee.com/blog/2009/09/14/keep-writing/"/>
-    <updated>2009-09-14T15:25:15+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/09/14/keep-writing</id>
+    <link href="http://blog.wenbing.dev/blog/2009/09/14/keep-writing/"/>
+    <updated>2009-09-14T08:25:15-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/09/14/keep-writing</id>
     <content type="html"><![CDATA[<p>刚和同学聊天时，问我blog怎么好长时间都没有更新了。看了看上篇文章的日期，离现在也有两个月有余了，有些惭愧。最近在做一些有意思的技术调研，倒是会在接下来的文章中分享一些。其实这段日子也在写一些东西，不过不在自己的blog上面了罢了。</p>
 
 <ul>
@@ -52,9 +52,9 @@
   
   <entry>
     <title type="html"><![CDATA[怎么用twitter？]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/01/how-to-use-twitter/"/>
-    <updated>2009-05-01T17:12:09+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/01/how-to-use-twitter</id>
+    <link href="http://blog.wenbing.dev/blog/2009/05/01/how-to-use-twitter/"/>
+    <updated>2009-05-01T10:12:09-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/05/01/how-to-use-twitter</id>
     <content type="html"><![CDATA[<p>09年是year of twitter, 这个东西现在火的一塌糊涂，google和facebook对它是羡慕的不得了。国内IT圈中也是刮起了一阵twitter风，好像你没有个twitter都不好意思和别人打招呼。但是当你屁颠屁颠地在上面发点东西的时候，也同时也被大量的信息噪音给淹没。有的人用twitter在聊天，有的人发布的信息非常多但是毫无意义，慢慢地这个东西成为了一种负担。其实twitter火起来有它的原因，但要看怎么来用了。</p>
 
 <p>twitter来至一个简单的想法，告诉别人你在做什么。现在有很多的工具来帮助人们进行交流，比如blog和IM，但是日常发生在自己身上的一些事情使用这样一些工具都不太适合。我们不可以发一个blog告诉别人我在做什么，也不可能在聊天工具上面像疯了似的给每个人发这些消息。然而通过twitter，人们可以进一步加深相互的了解。比如，我的一个好朋友发消息说他在做一道菜。我看到后，很好奇他居然还会做菜呀，于是我们有了公共的兴趣点，可以进一步地聊聊。</p>
@@ -71,9 +71,9 @@
   
   <entry>
     <title type="html"><![CDATA[实在是喜欢新版本Wordpress]]></title>
-    <link href="http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui/"/>
-    <updated>2008-12-11T15:31:13+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/12/11/love-wordpress-new-ui</id>
+    <link href="http://blog.wenbing.dev/blog/2008/12/11/love-wordpress-new-ui/"/>
+    <updated>2008-12-11T07:31:13-08:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/12/11/love-wordpress-new-ui</id>
     <content type="html"><![CDATA[<p>Wordpress总是给我带来一些小小的惊喜，刚刚更新到2.7，居然有如此大的变化。</p>
 
 <ul>
@@ -93,9 +93,9 @@
   
   <entry>
     <title type="html"><![CDATA[Aptana Jaxer:The Ajax Server?]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
-    <updated>2008-06-13T16:04:22+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
+    <link href="http://blog.wenbing.dev/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
+    <updated>2008-06-13T09:04:22-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
     <content type="html"><![CDATA[<p>一直以来都在用Aptana的Editor来编辑Javascript/CSS/HTML,都挺好。今天尝试了Aptana自己一直在推的所谓‘世界上第一个Ajax Server的<a href="http://aptana.com/jaxer">Jaxer</a>。</p>
 
 <p>在Jaxar里面写code倒是很有意思，所有你需要做的事情就是写Javascript/CSS/HTML。你根本不需要使用任何其他server-side语言,所有的事情就是写Javascript就可以了。来看一个例子：</p>

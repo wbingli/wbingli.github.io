@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Tools | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/tools/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Start Blogging]]></title>
-    <link href="http://wbinglee.com/blog/2014/03/17/start-blogging/"/>
-    <updated>2014-03-17T18:23:36+13:00</updated>
-    <id>http://wbinglee.com/blog/2014/03/17/start-blogging</id>
+    <link href="http://blog.wenbing.dev/blog/2014/03/16/start-blogging/"/>
+    <updated>2014-03-16T22:23:36-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2014/03/16/start-blogging</id>
     <content type="html"><![CDATA[<h2>Blogging, NOW!</h2>
 
 <p>以前有一个blog，但是各种原因最后连之前的文章都找不回来了。这也是一个很好的教训，能不自己hosting就不要自己hosting，数据备份还是不如source code管理容易，于是我就选择了当然颇为流行的github+octopress.</p>

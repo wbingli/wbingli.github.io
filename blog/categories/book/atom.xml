@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Book | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/book/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/book/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[读《PPK on JavaScript》]]></title>
-    <link href="http://wbinglee.com/blog/2009/07/07/read-ppk-on-javascript/"/>
-    <updated>2009-07-07T23:53:46+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/07/07/read-ppk-on-javascript</id>
+    <link href="http://blog.wenbing.dev/blog/2009/07/07/read-ppk-on-javascript/"/>
+    <updated>2009-07-07T16:53:46-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/07/07/read-ppk-on-javascript</id>
     <content type="html"><![CDATA[<p> <a href="http://www.quirksmode.org/">PPK</a>也是在JavaScript世界中的风云人物了，这位老兄对于浏览器端的技术以及各种浏览器的兼容性有极其丰富的经验。在这本书中，他谈了很多关于可访问性(Accessibility)和可用性(Usability)的一些问题，非常有趣。比如他说“不同的开发者以不同的方式诠释了JavaScript的目的。简单而形象地说就是：深受CSS革命影响的传统Web开发者们，创建的是瘦的、可访问性很强、乱糟糟的JavaScript代码；而来至服务器端开发的‘资深程序员们’用完美的面向对象代码、创建的是胖的、可访问性很差的Ajax客户端”。显然，ppk同学应该属于写乱糟糟但可访问性很好的人，而现在我做的大量事情却是后者。他更多相信现在的Ajax只是一种泡沫，当这个泡沫破灭并且大量‘资深服务器程序员’消失时，JS的开发者会更加注重可访问性。  可能体会不到ppk经历浏览器各种痛苦的经历，但是总体来说浏览器都在坚定地遵循Web标准，JavaScript的支持也会成为浏览器必备要求。anyway，事情总在发展，好戏在后头。分享一下我觉得这本书中几个有趣的地方。</p>
 
 <h3>可访问性和可用性</h3>
@@ -69,9 +69,9 @@
   
   <entry>
     <title type="html"><![CDATA[Aptana Jaxer:The Ajax Server?]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
-    <updated>2008-06-13T16:04:22+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
+    <link href="http://blog.wenbing.dev/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
+    <updated>2008-06-13T09:04:22-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
     <content type="html"><![CDATA[<p>一直以来都在用Aptana的Editor来编辑Javascript/CSS/HTML,都挺好。今天尝试了Aptana自己一直在推的所谓‘世界上第一个Ajax Server的<a href="http://aptana.com/jaxer">Jaxer</a>。</p>
 
 <p>在Jaxar里面写code倒是很有意思，所有你需要做的事情就是写Javascript/CSS/HTML。你根本不需要使用任何其他server-side语言,所有的事情就是写Javascript就可以了。来看一个例子：</p>
@@ -103,9 +103,9 @@
   
   <entry>
     <title type="html"><![CDATA[读《Don't Make Me Think》]]></title>
-    <link href="http://wbinglee.com/blog/2008/04/29/reading-dont-make-me-think/"/>
-    <updated>2008-04-29T15:05:42+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/04/29/reading-dont-make-me-think</id>
+    <link href="http://blog.wenbing.dev/blog/2008/04/29/reading-dont-make-me-think/"/>
+    <updated>2008-04-29T08:05:42-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/04/29/reading-dont-make-me-think</id>
     <content type="html"><![CDATA[<p><a href="http://www.douban.com/subject/1901208/"><img src="http://liwenbing.cn/wp-content/uploads/2008/04/dontmakemethink-223x300.jpg" alt="The book &lt;Don\'t make me think&gt;" /></a>一本很薄的书，关于Web的可用性的书籍。这本书讲的还是一些最本质的东西。关键的还是从用户，咳，Web用户的角度来看问题，了解一个浏览Web页面人的行为到底是怎么样，从而来对现有的网点做一些改善。改善也是回归本质，就是用最直接的方式来提供最有用的信息给用户。特别喜欢的一个部分是如何来进行可用性测试，平时我们在每日每夜干，却并不知道自己的东西到底怎么样，经常觉得这个东西不可用呀&hellip;还是需要平时花点滴时间来做这样的可用性测试。另外，特别想从“救命！老板想我要&hellip;..”得到点什么，hoho，似乎也没有特别的地方。</p>
 
 <p>在lab里面做的东东和这个里面所讲的可能还是有很大的区别的。这里面讲的主要的还是基于content的website，而我们的项目都是基于Web的工具了。下面把该书用在本website来看看自己的website还有哪些需要改善的地方。一个巨熟悉本website的人的测试：</p>

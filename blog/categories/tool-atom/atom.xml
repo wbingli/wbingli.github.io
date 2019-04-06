@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Tool,atom | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/tool-atom/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/tool-atom/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Using Atom Editor in Ubuntu]]></title>
-    <link href="http://wbinglee.com/blog/2014/05/14/using-atom-editor-in-ubuntu/"/>
-    <updated>2014-05-14T11:01:26+12:00</updated>
-    <id>http://wbinglee.com/blog/2014/05/14/using-atom-editor-in-ubuntu</id>
+    <link href="http://blog.wenbing.dev/blog/2014/05/13/using-atom-editor-in-ubuntu/"/>
+    <updated>2014-05-13T16:01:26-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2014/05/13/using-atom-editor-in-ubuntu</id>
     <content type="html"><![CDATA[<p><a href="atom.io">Atom</a> is a new editor from github.com, which is very similar to Sublime. It&rsquo;s written using nodejs, coffeescript and less. And it&rsquo;s <strong>opensource</strong>. It makes lots of potentials for the future of the editor.</p>
 
 <p>However, atom does not provide a Linux package yet. As it&rsquo;s opensource, we can build from source.</p>

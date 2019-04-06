@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Projectzero | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/projectzero/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/projectzero/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[sMash Stakeholder Meeting]]></title>
-    <link href="http://wbinglee.com/blog/2009/06/17/smash-stakeholder-meeting/"/>
-    <updated>2009-06-17T15:41:37+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/06/17/smash-stakeholder-meeting</id>
+    <link href="http://blog.wenbing.dev/blog/2009/06/17/smash-stakeholder-meeting/"/>
+    <updated>2009-06-17T08:41:37-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/06/17/smash-stakeholder-meeting</id>
     <content type="html"><![CDATA[<p>上周进行了sMash的stakeholder meeting，在这个会上我介绍了Flow的新的特性，并且进行Demo的演示。我们的演示大概从5分钟开始，之前是产品开发经理的一些介绍。本人英文口语比较烂，不知道他们到底听懂了没有。详细的信息可以看<a href="http://www.projectzero.org/blog/index.php/2009/06/15/june-stakeholder-meeting-replay/">projectzero 的blog</a>。Vido在Viddler上，至于为什么在viddler上，我想可能是为了照顾中国用户无法访问YouTube的原因吧，呵呵。</p>
 
 <p><a href="http://www.viddler.com/explore/projectzero/videos/4/">http://www.viddler.com/explore/projectzero/videos/4/</a></p>
@@ -26,9 +26,9 @@
   
   <entry>
     <title type="html"><![CDATA[最近的一篇新的developerWorks文章 - 使用 Assemble Flow 开发简单协作流程]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks/"/>
-    <updated>2009-05-14T17:05:04+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks</id>
+    <link href="http://blog.wenbing.dev/blog/2009/05/14/new-article-in-developerworks/"/>
+    <updated>2009-05-14T10:05:04-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/05/14/new-article-in-developerworks</id>
     <content type="html"><![CDATA[<p>终于这篇文章在dWs上面发表出来了。
 <a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 2 部分: 使用 Assemble Flow 开发简单协作流程</a></p>
 
@@ -108,9 +108,9 @@
   
   <entry>
     <title type="html"><![CDATA[在Mac机上搭建Projectzero的Build环境]]></title>
-    <link href="http://wbinglee.com/blog/2008/11/24/set-up-projectzero-build-environment-in-mac/"/>
-    <updated>2008-11-24T15:56:02+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/11/24/set-up-projectzero-build-environment-in-mac</id>
+    <link href="http://blog.wenbing.dev/blog/2008/11/24/set-up-projectzero-build-environment-in-mac/"/>
+    <updated>2008-11-24T07:56:02-08:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/11/24/set-up-projectzero-build-environment-in-mac</id>
     <content type="html"><![CDATA[<p>一直想在本地建立zero的Build环境，无奈总是太耗时，也没有机器，现在有了mac在旁边，当然要拿它来做build的环境了。最近几天下班后都要整一会这个，现在终于是过了，在欢快地BUILD,TEST&hellip;.</p>
 
 <p>所有的应该参考：<a href="http://www.projectzero.org/wiki/bin/view/Development/Build">http://www.projectzero.org/wiki/bin/view/Development/Build</a>。下面一步一步来讲吧。</p>
@@ -188,9 +188,9 @@ ant -f zbuild.xml BUILD
   
   <entry>
     <title type="html"><![CDATA[Assemble在developerWorks上面的文章]]></title>
-    <link href="http://wbinglee.com/blog/2008/09/03/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0/"/>
-    <updated>2008-09-03T06:59:39+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/09/03/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0</id>
+    <link href="http://blog.wenbing.dev/blog/2008/09/02/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0/"/>
+    <updated>2008-09-02T23:59:39-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/09/02/assemblee59ca8developerworkse4b88ae99da2e79a84e69687e7aba0</id>
     <content type="html"><![CDATA[<p>一直都准备发很多文章来宣传我们的工作，但是总是由于很多的事情都没有时间来做。好不容易，终于完成了一篇。</p>
 
 <p><a href="http://www.ibm.com/developerworks/cn/web/wa-lo-pz-assembleflow1/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 1 部分</a>。</p>
@@ -201,9 +201,9 @@ ant -f zbuild.xml BUILD
   
   <entry>
     <title type="html"><![CDATA[昨天做的一次技术讲座]]></title>
-    <link href="http://wbinglee.com/blog/2008/07/10/smash-lecture/"/>
-    <updated>2008-07-10T09:29:13+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/07/10/smash-lecture</id>
+    <link href="http://blog.wenbing.dev/blog/2008/07/10/smash-lecture/"/>
+    <updated>2008-07-10T02:29:13-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/07/10/smash-lecture</id>
     <content type="html"><![CDATA[<p><a href="http://liwenbing.cn/wp-content/uploads/2008/07/e68a80e69cafe6b299e9be99.jpg"><img src="http://liwenbing.cn/wp-content/uploads/2008/07/e68a80e69cafe6b299e9be99-300x200.jpg" alt="" /></a>第一次给别人讲东西，呵呵，居然没有紧张，不错，虽然感觉自己讲错了很多东西，嘿嘿。</p>
 
 <p>quote:&ldquo;2008年7月8日下午IBM国际商业机器全球服务(中国)有限公司软件部在京伦饭店举办的IBM 技术专家沙龙&ndash;“解读WebSphere sMash”专场沙龙活动顺利开展，此次沙龙活动我们邀请到WebSphere sMash项目组的三位技术专家来与北京的WebSphere技术专家们一块探讨和演示 WebSphere sMash 的搭建、部署和使用。&rdquo;</p>

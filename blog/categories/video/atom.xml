@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Video | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/video/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/video/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[sMash Stakeholder Meeting]]></title>
-    <link href="http://wbinglee.com/blog/2009/06/17/smash-stakeholder-meeting/"/>
-    <updated>2009-06-17T15:41:37+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/06/17/smash-stakeholder-meeting</id>
+    <link href="http://blog.wenbing.dev/blog/2009/06/17/smash-stakeholder-meeting/"/>
+    <updated>2009-06-17T08:41:37-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/06/17/smash-stakeholder-meeting</id>
     <content type="html"><![CDATA[<p>上周进行了sMash的stakeholder meeting，在这个会上我介绍了Flow的新的特性，并且进行Demo的演示。我们的演示大概从5分钟开始，之前是产品开发经理的一些介绍。本人英文口语比较烂，不知道他们到底听懂了没有。详细的信息可以看<a href="http://www.projectzero.org/blog/index.php/2009/06/15/june-stakeholder-meeting-replay/">projectzero 的blog</a>。Vido在Viddler上，至于为什么在viddler上，我想可能是为了照顾中国用户无法访问YouTube的原因吧，呵呵。</p>
 
 <p><a href="http://www.viddler.com/explore/projectzero/videos/4/">http://www.viddler.com/explore/projectzero/videos/4/</a></p>

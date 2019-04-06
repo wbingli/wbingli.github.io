@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Fun | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/fun/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/fun/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[最近的一篇新的developerWorks文章 - 使用 Assemble Flow 开发简单协作流程]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks/"/>
-    <updated>2009-05-14T17:05:04+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks</id>
+    <link href="http://blog.wenbing.dev/blog/2009/05/14/new-article-in-developerworks/"/>
+    <updated>2009-05-14T10:05:04-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/05/14/new-article-in-developerworks</id>
     <content type="html"><![CDATA[<p>终于这篇文章在dWs上面发表出来了。
 <a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 2 部分: 使用 Assemble Flow 开发简单协作流程</a></p>
 
@@ -97,9 +97,9 @@
   
   <entry>
     <title type="html"><![CDATA[Enable Gmail Random Signature Using Google App Engine]]></title>
-    <link href="http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/"/>
-    <updated>2009-04-30T21:21:52+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine</id>
+    <link href="http://blog.wenbing.dev/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine/"/>
+    <updated>2009-04-30T14:21:52-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/04/30/enable-gmail-random-signature-using-google-app-engine</id>
     <content type="html"><![CDATA[<p>在GMail的Lab中有这样的一个小东西，它可以随机地加入签名档到你的邮件中。这个一直是我想要的，于是在五一无聊的时候试试。</p>
 
 <p>首先当然是要到GMail的Lab中enable这个功能了。</p>
@@ -134,7 +134,7 @@
 
 <ol>
 <li><p>下载后，修改app.yaml 文件中的application: 。</p></li>
-<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#58;&#x77;&#x62;&#x69;&#x6e;&#x67;&#108;&#101;&#x65;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#119;&#x62;&#105;&#110;&#x67;&#x6c;&#x65;&#101;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
+<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#119;&#98;&#x69;&#x6e;&#103;&#x6c;&#x65;&#x65;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#119;&#98;&#105;&#x6e;&#103;&#108;&#101;&#101;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
 <li><p>然后appcfg.gy update 就好了。</p></li>
 </ol>
 
@@ -143,9 +143,9 @@
   
   <entry>
     <title type="html"><![CDATA[Happy Time With Mac]]></title>
-    <link href="http://wbinglee.com/blog/2008/11/06/happy-time-with-mac/"/>
-    <updated>2008-11-06T11:57:08+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/11/06/happy-time-with-mac</id>
+    <link href="http://blog.wenbing.dev/blog/2008/11/06/happy-time-with-mac/"/>
+    <updated>2008-11-06T03:57:08-08:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/11/06/happy-time-with-mac</id>
     <content type="html"><![CDATA[<p>最近一直在我的mac机上折腾，简直是越来越喜欢这个小东西了。装了各种各样的软件，就是乐在其中呀。今天还down了vmware fusion.公司也有各种的虚拟机文件可以down。于是一不小心就下了Redhat，WinXP，Vista。看来以后做什么事情都可以在mac上了。</p>
 
 <p>show一下变态的界面。</p>
@@ -156,9 +156,9 @@
   
   <entry>
     <title type="html"><![CDATA[Aptana Jaxer:The Ajax Server?]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
-    <updated>2008-06-13T16:04:22+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
+    <link href="http://blog.wenbing.dev/blog/2008/06/13/aptana-jaxer-the-ajax-server/"/>
+    <updated>2008-06-13T09:04:22-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/06/13/aptana-jaxer-the-ajax-server</id>
     <content type="html"><![CDATA[<p>一直以来都在用Aptana的Editor来编辑Javascript/CSS/HTML,都挺好。今天尝试了Aptana自己一直在推的所谓‘世界上第一个Ajax Server的<a href="http://aptana.com/jaxer">Jaxer</a>。</p>
 
 <p>在Jaxar里面写code倒是很有意思，所有你需要做的事情就是写Javascript/CSS/HTML。你根本不需要使用任何其他server-side语言,所有的事情就是写Javascript就可以了。来看一个例子：</p>
@@ -190,9 +190,9 @@
   
   <entry>
     <title type="html"><![CDATA[Did You Know?]]></title>
-    <link href="http://wbinglee.com/blog/2008/05/13/did-you-know/"/>
-    <updated>2008-05-13T16:41:38+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/05/13/did-you-know</id>
+    <link href="http://blog.wenbing.dev/blog/2008/05/13/did-you-know/"/>
+    <updated>2008-05-13T09:41:38-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/05/13/did-you-know</id>
     <content type="html"><![CDATA[<p>很有意思的video。
 &ndash;quote&ndash;
 In 10 years it is predicted that the number one Enlish speaking country in the world will be China.</p>

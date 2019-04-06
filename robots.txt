@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://wbinglee.com/sitemap.xml 
+Sitemap: http://blog.wenbing.dev/sitemap.xml 

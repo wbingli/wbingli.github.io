@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Cucumber | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/cucumber/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/cucumber/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cucumber Best Practices]]></title>
-    <link href="http://wbinglee.com/blog/2015/01/21/cucumber-best-practices/"/>
-    <updated>2015-01-21T09:14:44+13:00</updated>
-    <id>http://wbinglee.com/blog/2015/01/21/cucumber-best-practices</id>
+    <link href="http://blog.wenbing.dev/blog/2015/01/20/cucumber-best-practices/"/>
+    <updated>2015-01-20T12:14:44-08:00</updated>
+    <id>http://blog.wenbing.dev/blog/2015/01/20/cucumber-best-practices</id>
     <content type="html"><![CDATA[<p><a href="http://cukes.info/">cucumber</a> is a BDD(Behaviour driver development) framework. Basically test cases are written in plain text which is called Gherkin language, just in Given-When-Then steps. After that, developer will write implementation for those steps.</p>
 
 <p>It&rsquo;s good to bridge the communication between business requirement and implementation. The ideal work flow would be business analysis or QA write features and developer implements them. However, in a real world, developer write both of them. Cucumber is different programming model than what we normmaly use like Java, ruby, etc. It is not mature enough like OO which has tons of patterns and best practices to apply.</p>

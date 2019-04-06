@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Css | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[CSS Selector - 高级]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/19/css-selector-advanced/"/>
-    <updated>2008-06-19T23:57:17+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/19/css-selector-advanced</id>
+    <link href="http://blog.wenbing.dev/blog/2008/06/19/css-selector-advanced/"/>
+    <updated>2008-06-19T16:57:17-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/06/19/css-selector-advanced</id>
     <content type="html"><![CDATA[<p>在前面一篇文章中(<a href="http://liwenbing.cn/2008/06/03/css-selector-basic/">CSS Selector - 基础</a>)介绍一些CSS selector的基本用法。里面来谈一些平时比较少用的CSS selector用法。</p>
 
 <p><strong>一.Child selector</strong>
@@ -77,9 +77,9 @@ p[title*=&ldquo;on&rdquo;] {background: green;}</p></li>
   
   <entry>
     <title type="html"><![CDATA[CSS Selector - 基础]]></title>
-    <link href="http://wbinglee.com/blog/2008/06/03/css-selector-basic/"/>
-    <updated>2008-06-03T06:22:25+00:00</updated>
-    <id>http://wbinglee.com/blog/2008/06/03/css-selector-basic</id>
+    <link href="http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic/"/>
+    <updated>2008-06-02T23:22:25-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2008/06/02/css-selector-basic</id>
     <content type="html"><![CDATA[<p>想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是：</p>
 
 <ol>

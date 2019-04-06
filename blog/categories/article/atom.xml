@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Article | Wenbing Li]]></title>
-  <link href="http://wbinglee.com/blog/categories/article/atom.xml" rel="self"/>
-  <link href="http://wbinglee.com/"/>
-  <updated>2017-09-08T13:32:25-07:00</updated>
-  <id>http://wbinglee.com/</id>
+  <link href="http://blog.wenbing.dev/blog/categories/article/atom.xml" rel="self"/>
+  <link href="http://blog.wenbing.dev/"/>
+  <updated>2019-04-06T07:58:36-07:00</updated>
+  <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[最近的一篇新的developerWorks文章 - 使用 Assemble Flow 开发简单协作流程]]></title>
-    <link href="http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks/"/>
-    <updated>2009-05-14T17:05:04+00:00</updated>
-    <id>http://wbinglee.com/blog/2009/05/14/new-article-in-developerworks</id>
+    <link href="http://blog.wenbing.dev/blog/2009/05/14/new-article-in-developerworks/"/>
+    <updated>2009-05-14T10:05:04-07:00</updated>
+    <id>http://blog.wenbing.dev/blog/2009/05/14/new-article-in-developerworks</id>
     <content type="html"><![CDATA[<p>终于这篇文章在dWs上面发表出来了。
 <a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0905_smash-assembleflow/">使用 Project Zero 和 WebSphere sMash Assemble Flow 构建 Mashup 应用，第 2 部分: 使用 Assemble Flow 开发简单协作流程</a></p>
 
