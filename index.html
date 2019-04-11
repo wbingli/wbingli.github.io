@@ -9,7 +9,7 @@
   <meta name="author" content="Wenbing Li">
 
   
-  <meta name="description" content="cucumber is a BDD(Behaviour driver development) framework. Basically test cases are written in plain text which is called Gherkin language, just in &hellip;">
+  <meta name="description" content="时隔上一次的Blog已经4年了，时间过的太快，也发生了很多的事情，匆匆忙忙，浑浑噩噩&hellip; Blog是很好让自己保持思考和清醒的方式，不管什么原因，买了wenbing.dev这个域名，也把之前的github的blog挂到了blog.wenbing.dev下面。 也很是神奇，通过https &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2019/04/10/blogging-again/">Blogging Again</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2019-04-10T20:26:34-07:00" pubdate data-updated="true"></time>
+        
+           | <a href="/blog/2019/04/10/blogging-again/#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev/blog/2019/04/10/blogging-again/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>时隔上一次的Blog已经4年了，时间过的太快，也发生了很多的事情，匆匆忙忙，浑浑噩噩&hellip;</p>
+
+<p>Blog是很好让自己保持思考和清醒的方式，不管什么原因，买了wenbing.dev这个域名，也把之前的github的blog挂到了blog.wenbing.dev下面。</p>
+
+<p>也很是神奇，通过<a href="https://archive.org">https://archive.org</a> 这个网站找到了之前的一些blog，也算是对于自己的Blog做了一些更新吧。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -606,7 +649,7 @@ SecRule REQUEST_METHOD "!@rx ^(?:GET)$"
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/05/16/design-is-new-innovation/">功能的设计是一种方法的创新</a></h1>
     
     
       <p class="meta">
@@ -622,91 +665,25 @@ SecRule REQUEST_METHOD "!@rx ^(?:GET)$"
   
 
 
-<time datetime="2009-11-29T01:40:19-08:00" pubdate data-updated="true"></time>
+<time datetime="2011-05-16T08:00:00-07:00" pubdate data-updated="true"></time>
         
-           | <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/#disqus_thread"
-             data-disqus-identifier="http://blog.wenbing.dev/blog/2009/11/29/using-jconsole-in-websphere-application-server/">Comments</a>
+           | <a href="/blog/2011/05/16/design-is-new-innovation/#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev/blog/2011/05/16/design-is-new-innovation/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>最近需要在WebSphere中做点魔术，所以要使用WAS(WebSphere Application Server)中的管理能力。JMX是WAS的管理的核心，苦于<a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.websphere.javadoc.doc/public_html/mbeandocs/index.html">WAS Mbean文档</a>并不是那么详细，这个时候就可以使用jconsole了。jconsole是一个JDK自带的JMX兼容的JVM管理工具，可以用它来可视化的查看和操作Mbean。</p>
+  <div class="entry-content"><p>有一个大家都知道的故事，家里两个孩子分苹果，开始总是吵架分不匀，后来妈妈想到一个办法，谁分苹果谁就最后选苹果，果然孩子再也不为分不均而吵架了。</p>
 
-<p>在启动jconsole时需要一些WAS的jar，所以我这样来做：</p>
+<p>最近也遇到一些事情，颇有感触。我们在运营一个面向公司内部基础设施平台，类似AmazonEC2.在提供什么样的master image的问题上面用户有了严重不一致，比如说redhat，有的组要最小安装，有的组要标准安装，有的组说最好的完全安装，有的组说我不管你怎么安装，你只要满足我这这这要求就行…打了一个星期的架也没有办法统一‥.仔细想后，这样的事情不是平台应该去提供的，应该用户自己去做，我们去提供方法和工具，这样就没人抱怨，我们也不会被累死。</p>
 
-<ul>
-<li>创建一个文件夹，例如：C:\programs\jconsole</li>
-<li>将一些需要的jar 拷贝进入到这个文件夹的libs中：</li>
-</ul>
+<p>另外一件事情，当前整个cloud的资源是有限的，所以如何分这个蛋糕就成了各个组争吵的焦点，我只有150个，为什么他有200个…看看EC2在这个问题就有创新的办法，好，你想要多少就给你多少，但是对不起，用什么都得交钱，机器按性能和时间收钱，网络流量收钱，disk io也收钱…如果我们使用这样的资源分配模式，只怕是各个组就不会开始拼的头破血流后期又大量浪费，而是都把智慧放到如何提供使用率而不是内斗。</p>
 
+<p>可以看出，软件不同的功能设计会带来何等不同的结果，有点只怕的给别人填麻烦。用软件来提供生产效率，归根结底还是看是否对于一些问题有合理的解决办法，或者说是一种创新的办法来解决已有的问题。</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>com.ibm.ws.admin.client_6.1.0.jar   （在&lt;WAS_HOME&gt;/runtimes)   
-</span><span class='line'>ibmorbapi.jar  (在&lt;WAS_HOME&gt;/java/jre/lib)
-</span><span class='line'>ibmorb.jar (在&lt;WAS_HOME&gt;/java/jre/lib)
-</span><span class='line'>ibmcfw.jar (在&lt;WAS_HOME&gt;/java/jre/lib)</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>编写一个bat文件</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='bat'><span class='line'><span class="k">set</span> <span class="nv">JAVA_HOME</span><span class="o">=</span><span class="s2">&quot;C:\Program Files\Java\jdk1.6.0_16&quot;</span>
-</span><span class='line'><span class="k">set</span> <span class="nv">WAS6</span>.<span class="m">1</span>_JARS<span class="o">=</span>C:\programs\jconsole\libs
-</span><span class='line'>
-</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmorbapi.jar
-</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%BOOTJARS%</span>;<span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmorb.jar
-</span><span class='line'><span class="k">set</span> <span class="nv">BOOTJARS</span><span class="o">=</span><span class="nv">%BOOTJARS%</span>;<span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\ibmcfw.jar
-</span><span class='line'>
-</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%WAS6</span>.<span class="m">1</span>_JARS%\com.ibm.ws.admin.client_<span class="m">6</span>.<span class="m">1</span>.<span class="m">0</span>.jar
-</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%CLASSPATH%</span>;<span class="nv">%JAVA_HOME%</span>\lib\tools.jar
-</span><span class='line'><span class="k">set</span> <span class="nv">CLASSPATH</span><span class="o">=</span><span class="nv">%CLASSPATH%</span>;<span class="nv">%JAVA_HOME%</span>\lib\jconsole.jar
-</span><span class='line'>
-</span><span class='line'><span class="nv">%JAVA_HOME%</span>\bin\jconsole  -J-Xbootclasspath<span class="n">/p:%BOOTJARS%</span> -J-Djava.class.path<span class="o">=</span><span class="nv">%CLASSPATH%</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<ul>
-<li>使用如下URL来远程连接WAS中的JMX server</li>
-</ul>
-
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bat'><span class='line'>service:jmx<span class="nl">:iiop</span>:<span class="n">//localhost:2809/jndi/JMXConnector</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其中这个端口号是RMI Connector的端口号，可以在启动的logs发现。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bat'><span class='line'>ADMC<span class="m">0026</span>I:The RMI Connector is available at port  <span class="m">2809</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>或者到admin console中查看
-Application servers > server1 >   Administration Services > JMX   connectors</p>
-
-<p>好，这样就可以了。</p>
+<p>现在很多新型的互联网公司，也是因为互联网的出现给社会中的各种问题有了一种新的解法。比如，微博能火就是用一种创新的方式来解决人之间的沟通问题信息的传播问题，而这只是一点。生活中有太多的问题需要我们找到一种创新的办法去解决。软件/服务很多时候它不是一种技术的创新，而是对解决问题的方法上的创新。</p>
 </div>
   
   
@@ -719,7 +696,7 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/09/14/keep-writing/">一直在写</a></h1>
+      <h1 class="entry-title"><a href="/blog/2011/01/22/if-i-am-architect/">如果我是architect</a></h1>
     
     
       <p class="meta">
@@ -735,26 +712,31 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
 
 
-<time datetime="2009-09-14T08:25:15-07:00" pubdate data-updated="true"></time>
+<time datetime="2011-01-22T07:00:00-08:00" pubdate data-updated="true"></time>
         
-           | <a href="/blog/2009/09/14/keep-writing/#disqus_thread"
-             data-disqus-identifier="http://blog.wenbing.dev/blog/2009/09/14/keep-writing/">Comments</a>
+           | <a href="/blog/2011/01/22/if-i-am-architect/#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev/blog/2011/01/22/if-i-am-architect/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>刚和同学聊天时，问我blog怎么好长时间都没有更新了。看了看上篇文章的日期，离现在也有两个月有余了，有些惭愧。最近在做一些有意思的技术调研，倒是会在接下来的文章中分享一些。其实这段日子也在写一些东西，不过不在自己的blog上面了罢了。</p>
+  <div class="entry-content"><p>我会做到如下事情：</p>
 
 <ul>
-<li><p>带给PHP 和 Java 世界的双赢  (<a href="http://www.netvibes.com/shawnzhu">朱可</a>&amp;me) -《 程序员》杂志 2009年09月刊</p></li>
-<li><p>Ajax - 超越桌面的Web 用户体验 - 《<a href="http://www.webspherechina.net">WebSphere 中国</a>》纸质杂志第二期</p></li>
-<li><p><a href="http://www.ibm.com/developerworks/cn/websphere/library/techarticles/0909_smash_dojo_Ajaxdev/index.html">在WebSphere sMash中使用Dojo开发Ajax的Web应用程序</a> - developerWorks</p></li>
+<li>爱我的项目。除了老婆，脑子里面就在想如何让这个项目成功。
+控制需求。无论是什么STSM， DE提出来的想法，都要严格控制。不能为了讨好而加入到已有版本中，可以放到backlog中由release manager去安排优先级。</li>
+<li>工程师素质。永远不要说“这个很简单，现在就加”。 工程师做的东西是已经被验证能行的通才去做的, 简单来说什么都很简单，不是攻克艾滋病和解决哥德巴赫猜想。能work不是工程项目关注点，应该想到项目的各种需求，各种潜在问题，时间资源安排，技术前景，工程质量等等。要关注工程项目中的每个环节，建立整个team的开发过程建立合理的流程，制定相应的rules去让项目快速健康发展，帮组组员梳理重要的技术环节。</li>
+<li>永远在解决最棘手的问题。棘手不是最urgent的事情，而是对于项目最重要的问题。例如如何考虑security，如何扩展，以后如何发展等等。</li>
+<li>了解细节。对于每个部分，能做到心中有数。能够帮组team控制代码质量，时常review。每个新功能投入时，一定要review清楚，不要让team实现出来的东西surprise你，而team认为自己没有做错。</li>
+<li>及时以及强势处理外围事务。例如老板们的要求，各种人的不同需求等等。永远站在项目成功的角度上面对待外来的各种信息，不要因为别人的位高权重而妥协。</li>
+<li>沟通。频繁和team各个角色人员进行聊天，了解他们的具体事情，他们遇到的问题，他们的考虑，他们的痛苦和满意的地方。这样往往能帮助你认识到当前的问题，及时做出调整。</li>
+<li>良好的工作习惯。规律，让team觉得可以依靠。</li>
 </ul>
 
 
-<p>时间总是匆匆，让我们继续前行&hellip;</p>
+<p>暂时想到这些。</p>
 </div>
   
   
@@ -767,7 +749,7 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/07/07/read-ppk-on-javascript/">读《PPK on JavaScript》</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/11/27/cloud-around-you/">Cloud 就在身边</a></h1>
     
     
       <p class="meta">
@@ -783,62 +765,19 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
 
 
-<time datetime="2009-07-07T16:53:46-07:00" pubdate data-updated="true"></time>
+<time datetime="2010-11-27T07:00:00-08:00" pubdate data-updated="true"></time>
         
-           | <a href="/blog/2009/07/07/read-ppk-on-javascript/#disqus_thread"
-             data-disqus-identifier="http://blog.wenbing.dev/blog/2009/07/07/read-ppk-on-javascript/">Comments</a>
+           | <a href="/blog/2010/11/27/cloud-around-you/#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev/blog/2010/11/27/cloud-around-you/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p> <a href="http://www.quirksmode.org/">PPK</a>也是在JavaScript世界中的风云人物了，这位老兄对于浏览器端的技术以及各种浏览器的兼容性有极其丰富的经验。在这本书中，他谈了很多关于可访问性(Accessibility)和可用性(Usability)的一些问题，非常有趣。比如他说“不同的开发者以不同的方式诠释了JavaScript的目的。简单而形象地说就是：深受CSS革命影响的传统Web开发者们，创建的是瘦的、可访问性很强、乱糟糟的JavaScript代码；而来至服务器端开发的‘资深程序员们’用完美的面向对象代码、创建的是胖的、可访问性很差的Ajax客户端”。显然，ppk同学应该属于写乱糟糟但可访问性很好的人，而现在我做的大量事情却是后者。他更多相信现在的Ajax只是一种泡沫，当这个泡沫破灭并且大量‘资深服务器程序员’消失时，JS的开发者会更加注重可访问性。  可能体会不到ppk经历浏览器各种痛苦的经历，但是总体来说浏览器都在坚定地遵循Web标准，JavaScript的支持也会成为浏览器必备要求。anyway，事情总在发展，好戏在后头。分享一下我觉得这本书中几个有趣的地方。</p>
+  <div class="entry-content"><p>今天老爸告诉我他要买一个软件，是网络版的，只要3000一年。仔细看了看，是很典型的SaaS应用。难怪可以把价格做到这么低。而且也发展过很长一段时间了。</p>
 
-<h3>可访问性和可用性</h3>
-
-<p>可访问性(<a href="http://en.wikipedia.org/wiki/Accessibility">Accessibility</a>)是指你的网页对于任何人、在任何环境下都是可持续访问的。特别是指某些用户，比如弱视、浏览器不支持JavaScript或者另外一些情况，比如用户使用Mobile使用你的网页等等。而可用性(Usability)是指使用或者浏览你的网页的容易程度(这里我们只谈web页面),通常它指我们能更有效率地使用、更容易地学习以及更加满意地使用它。举个例子来说，你让你的web页面支持IE6，或者支持mobile都是在提高它的可访问性；而是用CSS来改善布局让用户更容易阅读、使用JavaScript做一些对用户有帮助的互动都是在提高它的可用性。</p>
-
-<p>Web页面都是由下面三个层组成的，通过它们我们可以了解到它们之间的关系以及它们和可访问性和可用性之间的关系。</p>
-
-<ul>
-<li><p>HTML结构层</p></li>
-<li><p>CSS表现层</p></li>
-<li><p>JavaScript行为层</p></li>
-</ul>
-
-
-<p><img src="http://liwenbing.cn/wp-content/uploads/2009/07/web3layers-300x245.PNG" alt="web3layers" /></p>
-
-<p>Web页面的三个层，HTML结构层是必需的基础，CSS表现层和JavaScript行为层建于它之上。所以在客户端代码中不得不关注的话题就是这三个层的关注点分离。具体探讨一下这三个的分离：</p>
-
-<p><strong>表现与结构的分离(CSS与HTML)</strong></p>
-
-<p>这个分离很好理解，基本思想就是确保HTML来定义结构，而所有的表现都定义在另外单独的CSS文件中。HTML不应该出现<code>&lt;font&gt;</code>标签和用于表现的表格。如果想定义字体和布局，都应该在CSS中处理。</p>
-
-<p>大部分情况下面我们知道达到某个效果是修改表现或者结构是清楚的。但是有些情况下当更改HTML和修改CSS都可以时，你需要慎重地思考到底哪种是合理的。比如一个节点，你希望它不显示，那么你可以在HTML上面删除该节点或者使用CSS来“display:none”。当这种情况是，需要自己分析所需要的效果属于哪种情况，然后修改合理的层。</p>
-
-<p><strong>行为与结构的分离(JavaScript与HTML)</strong></p>
-
-<p>这个也比较好理解，就是不要把任何的JavaScript代码写到你的HTML页面中。应该把所有JavaScript代码放到一个独立的js文件中，然后将它链入到所有需要它的HTML页面中。</p>
-
-<p>关于这个有一个有趣的话题就是：<strong>无侵入脚本编程(unobtrusive scripting).</strong>简单来说它就是通过HTML和JavaScript的分离以达到页面的可访问性和可用性的最大化。既JavaScript失效了，页面还是可阅读和理解的；而通过引入脚本和JavaScript的hook，就可以让脚本运行，增强可用性。</p>
-
-<p><strong>行为与表现的分离(JavaScript与CSS)</strong></p>
-
-<p>这个的分离是非常复杂的，而且并没有总结出什么特别系统的规则。CSS和JavaScript是有重合的灰色地带的，有时候完全不能确切地把某个效果归为表现还是行为。比如是使用CSS中的hover还是JavaScript的mouseover/mouseout。基本来说你自己得根据具体情况做合理的选择吧。</p>
-
-<h3>事件捕捉模型</h3>
-
-<p>在HTML的事件模型中有一个有趣的话题。这个简单的问题就是：如果一个节点和它的父亲节点都有对同一个事件的处理，那么到底哪个事件会被先执行呢？这就是关于事件的冒泡和捕获。事件冒泡是说事件从它的目标元素开始，沿着文档树依次向上冒泡，并触发相应的事件处理函数。而事件的捕捉是刚好相反的，它从文档的第一级开始，然后沿着文档树向下游，知道事件目标为止。</p>
-
-<p>在W3C模型中，捕获和冒泡都会发生。当一个事件触发时，它先被文档捕获，到了事件目标后，再冒泡到文档顶层。而传统模型和微软模型只支持事件冒泡，而不支持事件捕获。所以最好是限制使用事件冒泡。其实在我们的实际编程中，很少关心这个话题，是因为大部分情况我们都只使用了事件冒泡。</p>
-
-<p>更加具体的可以查看ppk的文章：<a href="http://www.quirksmode.org/js/events_order.html">http://www.quirksmode.org/js/events_order.html</a></p>
-
-<h3>小记</h3>
-
-<p>应该来说PPK所谈的JavaScript是一个更加全面的浏览器编程的世界，让人可以全面来了解这个世界包含的东西。其实大部分的内容在PPK的网站上都有，值得读读。<a href="http://www.quirksmode.org/js/contents.html">http://www.quirksmode.org/js/contents.html</a></p>
+<p>小公司都要从Excel向SaaS的时代迁移了，商机无限啊。</p>
 </div>
   
   
@@ -851,7 +790,7 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/06/17/blue-blood/">蓝色的血液</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/11/13/sina-weibo/">新浪围脖</a></h1>
     
     
       <p class="meta">
@@ -867,27 +806,19 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
 
 
-<time datetime="2009-06-17T09:51:16-07:00" pubdate data-updated="true"></time>
+<time datetime="2010-11-13T07:00:00-08:00" pubdate data-updated="true"></time>
         
-           | <a href="/blog/2009/06/17/blue-blood/#disqus_thread"
-             data-disqus-identifier="http://blog.wenbing.dev/blog/2009/06/17/blue-blood/">Comments</a>
+           | <a href="/blog/2010/11/13/sina-weibo/#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev/blog/2010/11/13/sina-weibo/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>我是一名pure blue，从在IBM实习到开始工作到现在，在这样的一家百年老店工作，虽然有太多让人抱怨的地方，但是你会喜欢这里的人（虽然不是全部），并且从心里慢慢接受它的文化和价值观。这样的一个公司的价值观是令人敬佩的，足以指导你做人做事。特别不喜欢一些人张口闭口说这不如人那不爽，只怕自己没有自信罢了。不足就努力去改变它，你真受不了了就quit，what&rsquo;s the big deal？一个人在外人面前骂娘（自己老娘）的时候，是不可能得到尊重的，只是哗众取宠罢了。当你流淌着蓝色的血液时，你是自豪的。</p>
+  <div class="entry-content"><p>使用了一会新浪围脖，发现比较有趣的事情。新浪围脖是可以和社区绑定的，正准备抱怨为什么不可以和delicious，buzz，foursquare等绑定时，发现边上有这样的提示：由于系统调整，绑定开心网的服务不可用，给您带来的不便敬请谅解。搜索新闻发现新浪和开心原来确有合作。<a href="http://tech.sina.com.cn/i/2010-04-13/21334052349.shtml">http://tech.sina.com.cn/i/2010-04-13/21334052349.shtml</a></p>
 
-<p>今早一聊天之不爽，故有此文。下面摘除一些从《品味蓝色》上句子。我很喜欢。</p>
-
-<blockquote><p>任何一名优秀的IBM人，当你问他成功之道的时候，他也许无法教会你具体的流程和方法，但他一定会告诉你，没有什么，不过是秉承诚信负责之道好好做人、好好做事罢了，因为在IBM，机会永远青睐于那些有好的工作表现和正直诚实的人。 &ndash; 周伟焜</p>
-
-<p>学会尊重别人，同时赢得别人尊重，这很重要。尊重别人身上的优点，你会变得更宽容。执着、专业、深入是赢得他人尊重的根本。谁都有缺点，包括我们的公司。但是要学会用宽容的心来对待周围的一切。得到尊重，你每天都会快乐。 &ndash; 郭希文</p>
-
-<p>所谓分享成功其实就是看你怎样Increase your influence，这并不是仅指依靠手中的权力发号施令，而是指能够提供给别人有价值的意见或见地。同时，在团队合作中，“诚信（integrity）”则是最重要的原则。无论对公司，还是对在公司团队中工作的个体，诚信都是立足之本，信任之基。对一个科学家来说，诚信就更重要，科学是不容半点虚假成分的，谁想投机取巧，违背科学规律，只能是搬起石头砸自己的脚。&ndash; 叶天正</p>
-
-<p>认真积极地工作，让我在事业上可以不断进步；以尊重、信任的态度与家人、同事沟通，让我得到了家人的支持，同事的尊敬，从而拥有了和谐美满的家庭和成功的事业。面对这一切，我最深的感受就是四个字——“知福惜福”。 &ndash;于雪莉</p></blockquote>
+<p>看来除了3q之争，google/facebook之外，所谓的开放的互联网到处都是自我的封闭保护。</p>
 </div>
   
   
@@ -900,7 +831,7 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/06/17/smash-stakeholder-meeting/">sMash Stakeholder Meeting</a></h1>
+      <h1 class="entry-title"><a href="/blog/2010/05/01/websphere-app-server-for-dynamic-scripting/">WebSphere Application Server Feature Pack for Dynamic Scripting</a></h1>
     
     
       <p class="meta">
@@ -916,79 +847,19 @@ Application servers > server1 >   Administration Services > JMX   connectors</p>
   
 
 
-<time datetime="2009-06-17T08:41:37-07:00" pubdate data-updated="true"></time>
+<time datetime="2010-05-01T08:00:00-07:00" pubdate data-updated="true"></time>
         
-           | <a href="/blog/2009/06/17/smash-stakeholder-meeting/#disqus_thread"
-             data-disqus-identifier="http://blog.wenbing.dev/blog/2009/06/17/smash-stakeholder-meeting/">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>上周进行了sMash的stakeholder meeting，在这个会上我介绍了Flow的新的特性，并且进行Demo的演示。我们的演示大概从5分钟开始，之前是产品开发经理的一些介绍。本人英文口语比较烂，不知道他们到底听懂了没有。详细的信息可以看<a href="http://www.projectzero.org/blog/index.php/2009/06/15/june-stakeholder-meeting-replay/">projectzero 的blog</a>。Vido在Viddler上，至于为什么在viddler上，我想可能是为了照顾中国用户无法访问YouTube的原因吧，呵呵。</p>
-
-<p><a href="http://www.viddler.com/explore/projectzero/videos/4/">http://www.viddler.com/explore/projectzero/videos/4/</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/05/dojo-widget-destructor/">Dojo Widget的析构过程</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-05T04:09:13-07:00" pubdate data-updated="true"></time>
-        
-           | <a href="/blog/2009/06/05/dojo-widget-destructor/#disqus_thread"
-             data-disqus-identifier="http://blog.wenbing.dev/blog/2009/06/05/dojo-widget-destructor/">Comments</a>
+           | <a href="/blog/2010/05/01/websphere-app-server-for-dynamic-scripting/#disqus_thread"
+             data-disqus-identifier="http://blog.wenbing.dev/blog/2010/05/01/websphere-app-server-for-dynamic-scripting/">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>了解dojo widget（或者说dijit）的析构过程，不仅让你更加了解整个dijit的生命周期，同样也能帮助我们在自己定制化的dijit中如何正确地释放资源。（这里讨论的dojo应该是在0.9或者以上版本的)</p>
+  <div class="entry-content"><p>The WAS feature pack (sMash Enterprise Packager) is LIVE！see IBM.com <a href="http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=an&amp;subtype=ca&amp;supplier=897&amp;appname=IBMLinkRedirect&amp;letternum=ENUS210-144">announcement letter</a>， WebSphere Application Server Feature Pack for Dynamic Scripting.</p>
 
-<p>下面是dijit的析构过程：</p>
-
-<pre><code>                        destroyRecursive
-                    /                      \
-                destroy                   destroyDescendants
-        /        |        \
-uninitialize  disconnect() destroyRendering
-</code></pre>
-
-<p>一些常见的<strong>错误</strong>是如下：</p>
-
-<ul>
-<li><p>使用destroy()去销毁一个dijit。我们应该使用destroyRecursive()去销毁一个dijit，从上面的过程可以看出，destroyRecursive()会销毁其孩子widgets。</p></li>
-<li><p>使用destory()去销毁定制dijit中的资源。更可怕的是有的代码可能是直接覆盖destroy，而根本不调用_Widget中的destory。uninitialize()才是dijit暴露出来给定制化widget进行析构的stub function。</p></li>
-</ul>
-
-
-<h3>结论</h3>
-
-<p><strong>使用destroyRecursive()去销毁dijit，使用uninitialize()在定制化的dijit来释放自己的资源</strong>。destroyDescendants，destroyRendering基本上用不到，也不要去覆盖它们。</p>
+<p>终于将这baby从无到有，一步一步终于走了出来。很高兴能看到它成为zero现在的主要组成部分，想想自己也不是在做打杂的事情，在这半年迷茫的时间中有了些许的安慰。也最后要和sMash say goodbye了。希望sMash走好。</p>
 </div>
   
   
@@ -1011,6 +882,10 @@ uninitialize  disconnect() destroyRendering
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2019/04/10/blogging-again/">Blogging Again</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/20/cucumber-best-practices/">Cucumber Best Practices</a>
       </li>
     
@@ -1024,10 +899,6 @@ uninitialize  disconnect() destroyRendering
     
       <li class="post">
         <a href="/blog/2014/03/16/start-blogging/">Start Blogging</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2009/11/29/using-jconsole-in-websphere-application-server/">用jconsole来管理WebSphere AppServer的MBean</a>
       </li>
     
   </ul>

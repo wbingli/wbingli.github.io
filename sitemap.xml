@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://blog.wenbing.dev/blog/2019/04/10/blogging-again/</loc>
+<lastmod>2019-04-10T20:26:34-07:00</lastmod>
+</url>
+<url>
 <loc>http://blog.wenbing.dev/blog/2015/01/20/cucumber-best-practices/</loc>
 <lastmod>2015-01-20T12:14:44-08:00</lastmod>
 </url>
@@ -15,6 +19,34 @@
 <url>
 <loc>http://blog.wenbing.dev/blog/2014/03/16/start-blogging/</loc>
 <lastmod>2014-03-16T22:23:36-07:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2011/05/16/design-is-new-innovation/</loc>
+<lastmod>2011-05-16T08:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2011/01/22/if-i-am-architect/</loc>
+<lastmod>2011-01-22T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2010/11/27/cloud-around-you/</loc>
+<lastmod>2010-11-27T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2010/11/13/sina-weibo/</loc>
+<lastmod>2010-11-13T07:00:00-08:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2010/05/01/websphere-app-server-for-dynamic-scripting/</loc>
+<lastmod>2010-05-01T08:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2010/05/01/i-never-use-if-else/</loc>
+<lastmod>2010-05-01T08:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://blog.wenbing.dev/blog/2010/01/30/zhan-dian-zhong-yu-hui-fu-le/</loc>
+<lastmod>2010-01-30T23:00:00-08:00</lastmod>
 </url>
 <url>
 <loc>http://blog.wenbing.dev/blog/2009/11/29/using-jconsole-in-websphere-application-server/</loc>

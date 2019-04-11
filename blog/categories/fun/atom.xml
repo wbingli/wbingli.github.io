@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Fun | Wenbing Li]]></title>
   <link href="http://blog.wenbing.dev/blog/categories/fun/atom.xml" rel="self"/>
   <link href="http://blog.wenbing.dev/"/>
-  <updated>2019-04-06T07:58:36-07:00</updated>
+  <updated>2019-04-10T21:28:55-07:00</updated>
   <id>http://blog.wenbing.dev/</id>
   <author>
     <name><![CDATA[Wenbing Li]]></name>
@@ -134,7 +134,7 @@
 
 <ol>
 <li><p>下载后，修改app.yaml 文件中的application: 。</p></li>
-<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#58;&#119;&#98;&#x69;&#x6e;&#103;&#x6c;&#x65;&#x65;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#119;&#98;&#105;&#x6e;&#103;&#108;&#101;&#101;&#64;&#103;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
+<li><p>在main.py中需要把users.get_current_user().email()==&lsquo;<a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x77;&#98;&#105;&#x6e;&#103;&#x6c;&#101;&#x65;&#x40;&#103;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#x77;&#x62;&#105;&#x6e;&#103;&#108;&#101;&#x65;&#64;&#103;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;</a>'改成你自己的email，因为我让只有本人才有添加的能力，其他人只有浏览的权限。</p></li>
 <li><p>然后appcfg.gy update 就好了。</p></li>
 </ol>
 
