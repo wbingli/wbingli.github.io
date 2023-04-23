@@ -1,0 +1,17 @@
+<p>又是IE，为什么老是你？今天处理一个IE和firefox不兼容的问题，最后的原因是因为IE的一个奇怪的HTTP status code 1223.原来，IE会将<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2.5">HTTP的204(No Content)</a>转换成它内部的status code 1223，就会产生这个问题。本来期望dojo能屏蔽这个问题，但是看来它并没有按照期望的方式进行处理。status code还是1223返回，并且作为error来抛给Error callback给处理。</p>
+
+<p>解决的办法可以是在error的时候去判断处理：（感觉不是很好）</p>
+
+<pre><code>error:function(err, ioArgs){
+    if(dojo.isIE&amp;&amp;ioArgs.xhr.status;==1223){
+       //do something
+    }else{
+        //handle error
+    }
+}
+</code></pre>
+
+<p>Some links:
+<a href="http://vegdave.wordpress.com/2007/11/05/1223-status-code-in-ie/">http://vegdave.wordpress.com/2007/11/05/1223-status-code-in-ie/</a>
+<a href="http://trac.dojotoolkit.org/ticket/2418">http://trac.dojotoolkit.org/ticket/2418</a>
+<a href="https://groups.google.com/group/jquery-en/browse_thread/thread/8136195c67c9819b">https://groups.google.com/group/jquery-en/browse_thread/thread/8136195c67c9819b</a></p>

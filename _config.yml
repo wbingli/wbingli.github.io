@@ -29,17 +29,19 @@ email:
 root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source
-destination: public
-plugins: plugins
-code_dir: downloads/code
+destination: _site
+plugins: 
+  - jekyll-paginate
+# code_dir: downloads/code
 category_dir: blog/categories
 markdown: rdiscount
 rdiscount:
-  extensions:
+ extensions:
     - autolink
     - footnotes
     - smart
-highlighter: pygments # default python pygments have been replaced by pygments.rb
+ highlighter: pygments # default python pygments have been replaced by pygments.rb
+
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/

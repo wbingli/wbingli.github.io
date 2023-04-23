@@ -1,0 +1,16 @@
+<p>一段时间来一直受这样的困扰，就是我的Firefox无法运行本地的dojo的测试文件。一直以为是我的firefox或者机器出了什么问题，就只好去使用IE或者Chrome去运行这些测试例子，可惜不能用firebug的确让人很不爽。</p>
+
+<p>今天在firebug查看了一些错误情况，报错居然是“Access to restricted URI denied”。这个明显是跨域访问的错误，但是本地文件怎么报这样的错呢？在Firefox的about:config搜索了一下policy,居然找到了原因所在，原来Firefox对于本地文件也进行了同源访问的安全设置,配置参数是：security.fileuri.strict_origin_policy。这个新的设置只是在firefox 3才被加入，并且默认是开启的。不过你也可以将这个关掉，这样就可以如同以前那样运行本地的dojo测试用例，或者其它你想本地加载的JavaScript文件。</p>
+
+<p><a href="http://liwenbing.cn/2009/06/05/why-ff3-cannot-load-local-javascript-file/local-file-p-origin-policy/"><img src="http://liwenbing.cn/wp-content/uploads/2009/06/local-file-p-origin-policy-300x42.png" alt="local-file-p-origin-policy" /></a></p>
+
+<p>继续在google了一下，找了这个"feature"的由来，<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=230606">https://bugzilla.mozilla.org/show_bug.cgi?id=230606</a>，大概是说本地的文件如果没有这样的限制，可以访问本机的其他文件，这样会造成安全隐患。John Resig（Father of  jQuery) 也有一个blog关于这个问题，<a href="http://ejohn.org/blog/tightened-local-file-security/">http://ejohn.org/blog/tightened-local-file-security/</a>，下面的评论也挺值得看看的。</p>
+
+<p><strong>More Links: </strong></p>
+
+<ul>
+<li><p><a href="http://www.dojotoolkit.org/support/faq/why-does-dojo-fail-load-file-urls-firefox-3">http://www.dojotoolkit.org/support/faq/why-does-dojo-fail-load-file-urls-firefox-3</a></p></li>
+<li><p><a href="http://kb.mozillazine.org/Security.fileuri.origin_policy">http://kb.mozillazine.org/Security.fileuri.origin_policy</a></p></li>
+<li><p><a href="http://kb.mozillazine.org/Security.fileuri.strict_origin_policy">http://kb.mozillazine.org/Security.fileuri.strict_origin_policy</a></p></li>
+</ul>
+

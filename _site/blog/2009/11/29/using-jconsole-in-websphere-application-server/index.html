@@ -1,0 +1,52 @@
+<p>最近需要在WebSphere中做点魔术，所以要使用WAS(WebSphere Application Server)中的管理能力。JMX是WAS的管理的核心，苦于<a href="http://publib.boulder.ibm.com/infocenter/wasinfo/v6r1/index.jsp?topic=/com.ibm.websphere.javadoc.doc/public_html/mbeandocs/index.html">WAS Mbean文档</a>并不是那么详细，这个时候就可以使用jconsole了。jconsole是一个JDK自带的JMX兼容的JVM管理工具，可以用它来可视化的查看和操作Mbean。</p>
+
+<p>在启动jconsole时需要一些WAS的jar，所以我这样来做：</p>
+
+<ul>
+<li>创建一个文件夹，例如：C:\programs\jconsole</li>
+<li>将一些需要的jar 拷贝进入到这个文件夹的libs中：</li>
+</ul>
+
+
+<pre><code>com.ibm.ws.admin.client_6.1.0.jar   （在&lt;WAS_HOME&gt;/runtimes)    
+ibmorbapi.jar  (在&lt;WAS_HOME&gt;/java/jre/lib)
+ibmorb.jar (在&lt;WAS_HOME&gt;/java/jre/lib)
+ibmcfw.jar (在&lt;WAS_HOME&gt;/java/jre/lib)
+</code></pre>
+
+<ul>
+<li>编写一个bat文件</li>
+</ul>
+
+
+<pre><code class="bat">set JAVA_HOME="C:\Program Files\Java\jdk1.6.0_16"
+set WAS6.1_JARS=C:\programs\jconsole\libs
+
+set BOOTJARS=%WAS6.1_JARS%\ibmorbapi.jar
+set BOOTJARS=%BOOTJARS%;%WAS6.1_JARS%\ibmorb.jar
+set BOOTJARS=%BOOTJARS%;%WAS6.1_JARS%\ibmcfw.jar
+
+set CLASSPATH=%WAS6.1_JARS%\com.ibm.ws.admin.client_6.1.0.jar
+set CLASSPATH=%CLASSPATH%;%JAVA_HOME%\lib\tools.jar
+set CLASSPATH=%CLASSPATH%;%JAVA_HOME%\lib\jconsole.jar
+
+%JAVA_HOME%\bin\jconsole  -J-Xbootclasspath/p:%BOOTJARS% -J-Djava.class.path=%CLASSPATH%
+</code></pre>
+
+<ul>
+<li>使用如下URL来远程连接WAS中的JMX server</li>
+</ul>
+
+
+<pre><code>service:jmx:iiop://localhost:2809/jndi/JMXConnector
+</code></pre>
+
+<p>其中这个端口号是RMI Connector的端口号，可以在启动的logs发现。</p>
+
+<pre><code>ADMC0026I:The RMI Connector is available at port  2809
+</code></pre>
+
+<p>或者到admin console中查看
+Application servers > server1 >   Administration Services > JMX   connectors</p>
+
+<p>好，这样就可以了。</p>

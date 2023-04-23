@@ -1,0 +1,115 @@
+<p>想总结一下关于CSS的selector部分以及对selector的一些思考。我准备分成四个部分来写，算是系列文章吧。四个部分分别是：</p>
+
+<ol>
+<li><p>基础：主要是从CSS selector来谈起，也是平时用的最多的；</p></li>
+<li><p>高级：谈谈一些高级的selector的用法；</p></li>
+<li><p>关于Cascade：关于CSS继承，优先级的一些topic；</p></li>
+<li><p>未来的思考：未来的CSS selector会怎么发展？CSS 3做了什么？javascript所带来的影响是什么？</p></li>
+</ol>
+
+
+<h2>1.基础</h2>
+
+<p><strong>一.Tag selector</strong>
+标签selecor ,也可以称为类型selector，它将对HTML页面中所有的该类型有效。</p>
+
+<pre><code>h1 {
+   font-family:Arial, sans-serif;
+   color:#CCCCFF;
+}
+</code></pre>
+
+<p><strong>二.Class Selector</strong>
+类选择器和HTML中的class相结合，应用到所有声明了该class的标签中。类选择器必须要以 &ldquo;."来开头。
+对于</p>
+
+<pre><code>.title{
+   color:#FF000;
+   font-size:24px;
+}
+</code></pre>
+
+<p><strong>三.ID selector</strong>
+ID选择器会将其syle应用在HTML中该ID的tag上。
+对于</p>
+
+<pre><code> #sidebar{
+  float:left;
+  margin-left:30px;
+}
+</code></pre>
+
+<p>一个有意思的问题是如果在一个HTML中，有两个以上的tag用了同一个ID会怎么样呢？虽然并不是合法的HTML，但是大部分的游览器会忽略这个问题。这个时候ID选择器就像类选择器一样，只要哪个tag的使用了该ID，就会应用该style.
+<strong> 四.Descendent selector</strong></p>
+
+<p>这种选择器的的意思就是根据DOM树的祖先、父子关系来选择具体的元素。</p>
+
+<p>如:</p>
+
+<pre><code>h1 strong {
+     color:red;
+}
+</code></pre>
+
+<p>将对<h1> This is homepage of <strong>liwenbing</strong></h1>中的strong的内容进行标红。</p>
+
+<p>同样这种方式是可以组合前面的任何三种选择器：</p>
+
+<pre><code>h1 .intro a{
+      color:yellow;
+}
+</code></pre>
+
+<p>将对<h1> This is homepage of <strong >liwenbing   </strong> who is <span class="intro"><a href="#">lovely boy</a></span></h1>中的lovely boy标黄。</p>
+
+<p>注意tag和类之间是否有空格是非常重要的。</p>
+
+<p>有空格表示是应用该类的元素在tag之中，就像上面的例子；没有空格，则表示tag和class都标明的是同一个元素。</p>
+
+<pre><code>h1.intro a{   //注意h1和.intro之间没有空格
+     color:blue;
+}
+</code></pre>
+
+<p>对<h1 class="intro">This is homepage of <a href="#" >liwenbing </a></h1>中的liwenbing是有效的。</p>
+
+<p>再举一个和ID selector结合的例子：</p>
+
+<pre><code>#sidebar h2{
+      font-size:1.2em;
+}
+</code></pre>
+
+<p>上述style将对sidebar元素下面的所有h2进行应用。</p>
+
+<p><strong>五.Group selector</strong></p>
+
+<p>组选择器顾名思义就是对于一组selector应用同一中style，以逗号",&ldquo;隔开；组中的元素都可以是前面四中的任何一种。</p>
+
+<pre><code>h1,
+p .intro,
+#sidebar .title{
+ color:#6F6F6F;
+}
+</code></pre>
+
+<p><strong>六.伪选择</strong>
+伪选择器可以进一步地定义用户和页面的行为。最常用的就是对link的定义了；</p>
+
+<pre><code>a:hover{
+  text-decoration:  none;
+}
+a:visited{
+ color:blue;
+}
+</code></pre>
+
+<p>当然关于link的除了上述两种，还有a:link,a:active;
+其他还有很多的伪选择，例如现在在用的focus.下面这个CSS可以让input 有safari中的高亮效果（不过IE并不支持)。</p>
+
+<pre><code> input:focus{
+  border-color: #feca70;
+}
+</code></pre>
+
+<p>其他伪选择器还有:before,:after,:firs-child.</p>

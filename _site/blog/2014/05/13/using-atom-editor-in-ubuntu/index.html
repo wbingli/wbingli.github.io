@@ -1,0 +1,39 @@
+<p><a href="atom.io">Atom</a> is a new editor from github.com, which is very similar to Sublime. It&rsquo;s written using nodejs, coffeescript and less. And it&rsquo;s <strong>opensource</strong>. It makes lots of potentials for the future of the editor.</p>
+
+<p>However, atom does not provide a Linux package yet. As it&rsquo;s opensource, we can build from source.</p>
+
+<h2>Build Atom Editor for Ubuntu 14.04</h2>
+
+<p>From <a href="https://github.com/atom/atom">atom github repo</a> you can find the <a href="https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md">Linux installation guide</a>. Basically just following this guide should be OK.</p>
+
+<p>The only problem I met is <strong>node-gyp rebuild</strong> issue. It&rsquo;s because of the <strong>gyp</strong> installed in your machine which is conflicting with gyp version in node-gyp.</p>
+
+<p>Simple solution is :</p>
+
+<pre><code class="bash">sudo apt-get remove gyp
+</code></pre>
+
+<p>After that, you will find a .deb atom file under <em>/tmp/atom-build</em> folder. Then install it :</p>
+
+<pre><code class="bash">cd /tmp/atom-build
+sudo dpkg -i atom-0.95.0-amd64.deb
+</code></pre>
+
+<p>Now you can open it by command <code>atom</code>.</p>
+
+<h2>Configure keybindings for Ubuntu</h2>
+
+<p>Most of the keybindings in atom are for Mac OS. You can add your own keys in key map file <code>~/.atom/keymap.cson</code>. There are some basic hotkeys I have added for Ubuntu:</p>
+
+<pre><code>'.editor':
+    'ctrl-l': 'editor:select-line'
+    'ctrl-d': 'find-and-replace:select-next'
+
+'body':
+  'ctrl-pagedown': 'pane:show-next-item'
+  'ctrl-pageup': 'pane:show-previous-item'
+</code></pre>
+
+<p>Check the source code e.g. <a href="https://github.com/atom/atom/blob/master/src/editor-view.coffee">edit-view.coffee</a> for available commands you can use.</p>
+
+<p>Happy hacking!</p>
