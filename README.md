@@ -1,5 +1,16 @@
 # Wenbing's Personal Blog
 
+## Quick Start
+
+Run `jekyll compose "Post Title"`
+
+Run `jekyll serve` to start preview
+
+## How to Deploy
+
+A Github Action is configured to build and deploy it. All you need is to push the change to the default branch.
+
+## More
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
