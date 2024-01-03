@@ -1,5 +1,7 @@
 # Wenbing's Personal Blog
 
+This repo is my personal Blog : https://blog.wenbing.dev/
+
 ## Quick Start
 
 Run `jekyll compose "Post Title"`
