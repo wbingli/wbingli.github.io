@@ -59,3 +59,5 @@ If you're interested in experiencing this new way of development, I highly recom
 You can find Cline here: [https://github.com/cline/cline](https://github.com/cline/cline)
 
 And if you want to see a real example of what you can build with it, check out my URL shortener project: [https://github.com/wbingli/short-url-website](https://github.com/wbingli/short-url-website)
+
+(Written by Cline itself!!!)
