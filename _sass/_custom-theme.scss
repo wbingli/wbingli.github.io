@@ -1,0 +1,327 @@
+// ============================================
+// Custom theme overrides
+// Imported AFTER Minima so these override defaults
+// ============================================
+
+$title-font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+
+// ----- Base typography refinements -----
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: $text-color;
+}
+
+p {
+  margin-bottom: $spacing-unit * 0.667;
+}
+
+// ----- Site header -----
+.site-header {
+  border-top: none;
+  border-bottom: 1px solid $grey-color-light;
+  padding: 16px 0;
+}
+
+.site-title {
+  font-family: $base-font-family;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+
+  &,
+  &:visited {
+    color: $text-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $brand-color;
+  }
+}
+
+.site-nav {
+  .page-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: $grey-color-dark;
+    letter-spacing: 0.01em;
+
+    &:hover {
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+}
+
+// ----- Post list (home page) -----
+.post-list {
+  > li {
+    margin-bottom: $spacing-unit * 1.25;
+    padding-bottom: $spacing-unit * 1.25;
+    border-bottom: 1px solid $grey-color-light;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.post-link {
+  font-family: $title-font-family;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: $text-color;
+
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
+
+  &:visited {
+    color: $text-color;
+  }
+}
+
+.post-meta {
+  font-size: 14px;
+  color: $grey-color;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+// ----- Individual post page -----
+.post-header {
+  margin-bottom: $spacing-unit * 1.5;
+  padding-bottom: $spacing-unit;
+}
+
+.post-title {
+  font-family: $title-font-family;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: $text-color;
+  margin-bottom: $spacing-unit * 0.5;
+
+  @include media-query($on-laptop) {
+    font-size: 36px;
+  }
+
+  @include media-query($on-palm) {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+}
+
+// ----- Post content typography -----
+.post-content {
+  font-size: 17px;
+  line-height: 1.7;
+
+  h2 {
+    font-family: $base-font-family;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    margin-top: $spacing-unit * 1.5;
+    margin-bottom: $spacing-unit * 0.5;
+
+    @include media-query($on-laptop) {
+      font-size: 24px;
+    }
+  }
+
+  h3 {
+    font-family: $base-font-family;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    margin-top: $spacing-unit * 1.25;
+    margin-bottom: $spacing-unit * 0.4;
+
+    @include media-query($on-laptop) {
+      font-size: 20px;
+    }
+  }
+
+  h4 {
+    font-family: $base-font-family;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: $spacing-unit;
+    margin-bottom: $spacing-unit * 0.33;
+  }
+
+  ul, ol {
+    margin-bottom: $spacing-unit * 0.667;
+  }
+
+  li {
+    margin-bottom: 6px;
+    line-height: 1.7;
+  }
+}
+
+// ----- Links -----
+a {
+  color: $brand-color;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:visited {
+    color: darken($brand-color, 10%);
+  }
+
+  &:hover {
+    color: darken($brand-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+.post-content a {
+  text-decoration: underline;
+  text-decoration-color: rgba($brand-color, 0.4);
+  text-underline-offset: 2px;
+
+  &:hover {
+    text-decoration-color: $brand-color;
+  }
+}
+
+// ----- Blockquotes -----
+blockquote {
+  font-family: $title-font-family;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.6;
+  color: $grey-color-dark;
+  border-left: 3px solid $brand-color;
+  padding-left: $spacing-unit * 0.667;
+  margin: $spacing-unit 0;
+  letter-spacing: 0;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ----- Code blocks -----
+pre,
+code {
+  font-family: "JetBrains Mono", "SF Mono", "Fira Code",
+    "Fira Mono", Menlo, Consolas, monospace;
+  font-size: 14px;
+  border-radius: 6px;
+}
+
+code {
+  background-color: #f0ede8;
+  border: none;
+  padding: 2px 6px;
+  color: $grey-color-dark;
+}
+
+pre {
+  background-color: #f0ede8;
+  border: none;
+  padding: 20px 24px;
+  overflow-x: auto;
+  line-height: 1.5;
+
+  > code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+.highlight {
+  background: #f0ede8;
+
+  .highlighter-rouge & {
+    background: #f0ede8;
+  }
+}
+
+// ----- Tables -----
+table {
+  font-size: 15px;
+  border: none;
+  border-collapse: collapse;
+
+  th {
+    background-color: #f0ede8;
+    border: none;
+    border-bottom: 2px solid $grey-color-light;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid $grey-color-light;
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: transparent;
+    }
+  }
+}
+
+// ----- Page content area -----
+.page-content {
+  padding: $spacing-unit * 2 0;
+}
+
+// ----- Footer -----
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit * 1.5 0;
+}
+
+.footer-heading {
+  font-weight: 600;
+  font-size: 16px;
+  color: $text-color;
+}
+
+.footer-col-wrapper {
+  color: $grey-color;
+  font-size: 14px;
+}
+
+// ----- Images -----
+img {
+  border-radius: 8px;
+}
+
+// ----- HR -----
+hr {
+  border: none;
+  border-top: 1px solid $grey-color-light;
+  margin: $spacing-unit * 1.5 0;
+}
+
+// ----- RSS subscribe link -----
+.rss-subscribe {
+  font-size: 14px;
+  color: $grey-color;
+  margin-top: $spacing-unit;
+}

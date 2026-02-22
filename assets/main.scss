@@ -1,0 +1,32 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// Minima variable overrides (BEFORE @import)
+
+// Typography
+$base-font-family: "Inter", -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$base-font-size:   17px;
+$base-font-weight: 400;
+$base-line-height: 1.7;
+$small-font-size:  $base-font-size * 0.824;
+
+// Spacing
+$spacing-unit: 36px;
+
+// Colors (warm, editorial palette)
+$text-color:       #1a1a1a;
+$background-color: #faf9f6;
+$brand-color:      #c7522a;
+$grey-color:       #6b6b6b;
+$grey-color-light: #e8e5e0;
+$grey-color-dark:  #3d3d3d;
+
+// Layout
+$content-width: 720px;
+$on-palm:       600px;
+$on-laptop:     720px;
+
+@import "minima";
+@import "custom-theme";
